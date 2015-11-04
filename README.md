@@ -2,21 +2,21 @@
 MDE project - Textual language to represent component's diagram
 
 
-Vocabulaire: 						Vocabulary: 
-    -Composant							-Component
-    -Interface (requise fournie)		-Interface (required provided)
-    -Port (requis fournis)				-Port (required provided)
-    -Dépendances						-Dependances
-    -Connecteur							-Connector
-    -Spécification instance				-Spécification instance
-    -Système/Sous-système				-System/Sub-system
+Vocabulaire: 
+    -Composant
+    -Interface (requise fournie)
+    -Port (requis fournis)
+    -Dépendances
+    -Connecteur
+    -Spécification instance
+    -Système/Sous-système
     
-
-    
-    
-    
-    
-    
-    
-    
+Vocabulary: 
+    -Component
+    -Interface (required provided)
+    -Port (required provided)
+    -Dependances
+    -Connector
+    -Spécification instance
+    -System/Sub-system
 
