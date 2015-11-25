@@ -9,7 +9,7 @@
             class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
-            extensions="mydsl1"
+            extensions="cpn"
             id="org.xtext.example.compoNantes.MyDsl"
             name="MyDsl Editor">
         </editor>
@@ -213,13 +213,13 @@
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
 			class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="mydsl1">
+			type="cpn">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
             class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-            uriExtension="mydsl1">
+            uriExtension="cpn">
         </resourceServiceProvider>
     </extension>
 
@@ -251,7 +251,7 @@
          point="org.eclipse.xtext.builder.participant">
       <participant
             class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-            fileExtensions="mydsl1"
+            fileExtensions="cpn"
             >
       </participant>
    </extension>
@@ -400,24 +400,24 @@
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="org.xtext.example.compoNantes.MyDsl.compare.contentViewers"
             class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="mydsl1">
+            extensions="cpn">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="org.xtext.example.compoNantes.MyDsl.compare.contentMergeViewers"
             class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="mydsl1" label="MyDsl Compare">
+            extensions="cpn" label="MyDsl Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
     <provider id="org.xtext.example.compoNantes.MyDsl.editors.documentProviders"
             class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-            extensions="mydsl1">
+            extensions="cpn">
     </provider>
   </extension>
   <extension point="org.eclipse.team.core.fileTypes">
     <fileTypes
-            extension="mydsl1"
+            extension="cpn"
             type="text">
     </fileTypes>
   </extension>
