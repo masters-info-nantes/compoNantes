@@ -3,7 +3,33 @@ grammar org.xtext.example.compoNantes.MyDsl with org.eclipse.xtext.common.Termin
 generate myDsl "http://www.xtext.org/example/compoNantes/MyDsl"
 
 Model:
-	greetings+=Greeting*;
+	systems+=System*;
 	
-Greeting:
-	'Hello' name=ID '!';
+System:
+	'system' name=ID '{'
+		components+=Component*
+		connectors+=Connector*
+	'}';
+
+Component:
+	'component' name=ID '{'
+		interfaces+=Interface*
+		ports+=Port*
+	'}';
+	
+Required:'required';
+Provided:'provided';
+
+Type:
+	Required | Provided;
+	
+Interface:
+	'interface' type=Type name=ID ;
+	
+Port:
+	'port' type=Type name=ID;
+	
+Connector:
+	'connector' name=ID '{'
+		components+=Component*
+	'}';
