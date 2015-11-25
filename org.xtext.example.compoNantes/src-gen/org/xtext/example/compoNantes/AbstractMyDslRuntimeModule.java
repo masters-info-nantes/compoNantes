@@ -30,7 +30,7 @@ public abstract class AbstractMyDslRuntimeModule extends org.eclipse.xtext.commo
 	
 	public void configureFileExtensions(Binder binder) {
 		if (properties == null || properties.getProperty(Constants.FILE_EXTENSIONS) == null)
-			binder.bind(String.class).annotatedWith(Names.named(Constants.FILE_EXTENSIONS)).toInstance("mydsl1");
+			binder.bind(String.class).annotatedWith(Names.named(Constants.FILE_EXTENSIONS)).toInstance("cpn");
 	}
 	
 	// contributed by org.eclipse.xtext.generator.grammarAccess.GrammarAccessFragment

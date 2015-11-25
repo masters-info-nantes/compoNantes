@@ -394,9 +394,27 @@ ruleInterface returns [EObject current=null]
     }
 (
 (
-		lv_name_1_0=RULE_ID
+		{ 
+	        newCompositeNode(grammarAccess.getInterfaceAccess().getTypeTypeParserRuleCall_1_0()); 
+	    }
+		lv_type_1_0=ruleType		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getInterfaceRule());
+	        }
+       		set(
+       			$current, 
+       			"type",
+        		lv_type_1_0, 
+        		"Type");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		lv_name_2_0=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getInterfaceAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_2_0, grammarAccess.getInterfaceAccess().getNameIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -405,26 +423,8 @@ ruleInterface returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_2_0, 
         		"ID");
-	    }
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getInterfaceAccess().getTypeTypeParserRuleCall_2_0()); 
-	    }
-		lv_type_2_0=ruleType		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getInterfaceRule());
-	        }
-       		set(
-       			$current, 
-       			"type",
-        		lv_type_2_0, 
-        		"Type");
-	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -455,9 +455,27 @@ rulePort returns [EObject current=null]
     }
 (
 (
-		lv_name_1_0=RULE_ID
+		{ 
+	        newCompositeNode(grammarAccess.getPortAccess().getTypeTypeParserRuleCall_1_0()); 
+	    }
+		lv_type_1_0=ruleType		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPortRule());
+	        }
+       		set(
+       			$current, 
+       			"type",
+        		lv_type_1_0, 
+        		"Type");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		lv_name_2_0=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getPortAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_2_0, grammarAccess.getPortAccess().getNameIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -466,7 +484,7 @@ rulePort returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_2_0, 
         		"ID");
 	    }
 

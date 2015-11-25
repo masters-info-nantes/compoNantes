@@ -75,19 +75,19 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID type=Type)
+	 *     (type=Type name=ID)
 	 */
 	protected void sequence_Interface(EObject context, Interface semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.INTERFACE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.INTERFACE__NAME));
 			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.INTERFACE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.INTERFACE__TYPE));
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.INTERFACE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.INTERFACE__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getInterfaceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getInterfaceAccess().getTypeTypeParserRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getInterfaceAccess().getTypeTypeParserRuleCall_1_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getInterfaceAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -103,16 +103,19 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     (type=Type name=ID)
 	 */
 	protected void sequence_Port(EObject context, Port semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.PORT__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.PORT__TYPE));
 			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.PORT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.PORT__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPortAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getPortAccess().getTypeTypeParserRuleCall_1_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getPortAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

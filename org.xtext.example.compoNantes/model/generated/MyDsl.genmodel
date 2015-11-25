@@ -6,7 +6,7 @@
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.example.compoNantes.edit"
     editorPluginID="org.xtext.example.compoNantes.editor" runtimeVersion="2.11">
   <genPackages prefix="MyDsl" basePackage="org.xtext.example.compoNantes" disposableProviderFactory="true"
-      fileExtensions="mydsl1" ecorePackage="MyDsl.ecore#/">
+      fileExtensions="cpn" ecorePackage="MyDsl.ecore#/">
     <genClasses ecoreClass="MyDsl.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Model/systems"/>
     </genClasses>
@@ -21,10 +21,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Component/ports"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Interface">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Interface/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Interface/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Interface/name"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Port/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Port/name"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Connector">

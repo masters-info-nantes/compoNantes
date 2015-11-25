@@ -245,7 +245,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInterface_Name()
+  public EAttribute getInterface_Type()
   {
     return (EAttribute)interfaceEClass.getEStructuralFeatures().get(0);
   }
@@ -255,7 +255,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInterface_Type()
+  public EAttribute getInterface_Name()
   {
     return (EAttribute)interfaceEClass.getEStructuralFeatures().get(1);
   }
@@ -275,9 +275,19 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPort_Name()
+  public EAttribute getPort_Type()
   {
     return (EAttribute)portEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPort_Name()
+  {
+    return (EAttribute)portEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -354,10 +364,11 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEReference(componentEClass, COMPONENT__PORTS);
 
     interfaceEClass = createEClass(INTERFACE);
-    createEAttribute(interfaceEClass, INTERFACE__NAME);
     createEAttribute(interfaceEClass, INTERFACE__TYPE);
+    createEAttribute(interfaceEClass, INTERFACE__NAME);
 
     portEClass = createEClass(PORT);
+    createEAttribute(portEClass, PORT__TYPE);
     createEAttribute(portEClass, PORT__NAME);
 
     connectorEClass = createEClass(CONNECTOR);
@@ -410,10 +421,11 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEReference(getComponent_Ports(), this.getPort(), null, "ports", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInterface_Name(), ecorePackage.getEString(), "name", null, 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInterface_Type(), ecorePackage.getEString(), "type", null, 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInterface_Name(), ecorePackage.getEString(), "name", null, 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPort_Type(), ecorePackage.getEString(), "type", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(connectorEClass, Connector.class, "Connector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

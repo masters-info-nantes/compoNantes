@@ -20,34 +20,14 @@ import org.xtext.example.compoNantes.myDsl.MyDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.compoNantes.myDsl.impl.InterfaceImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.myDsl.impl.InterfaceImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.myDsl.impl.InterfaceImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class InterfaceImpl extends MinimalEObjectImpl.Container implements Interface
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -69,6 +49,26 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
   protected String type = TYPE_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -87,29 +87,6 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
   protected EClass eStaticClass()
   {
     return MyDslPackage.Literals.INTERFACE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INTERFACE__NAME, oldName, name));
   }
 
   /**
@@ -140,15 +117,38 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INTERFACE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case MyDslPackage.INTERFACE__NAME:
-        return getName();
       case MyDslPackage.INTERFACE__TYPE:
         return getType();
+      case MyDslPackage.INTERFACE__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -163,11 +163,11 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
   {
     switch (featureID)
     {
-      case MyDslPackage.INTERFACE__NAME:
-        setName((String)newValue);
-        return;
       case MyDslPackage.INTERFACE__TYPE:
         setType((String)newValue);
+        return;
+      case MyDslPackage.INTERFACE__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -183,11 +183,11 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
   {
     switch (featureID)
     {
-      case MyDslPackage.INTERFACE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case MyDslPackage.INTERFACE__TYPE:
         setType(TYPE_EDEFAULT);
+        return;
+      case MyDslPackage.INTERFACE__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -203,10 +203,10 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
   {
     switch (featureID)
     {
-      case MyDslPackage.INTERFACE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MyDslPackage.INTERFACE__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+      case MyDslPackage.INTERFACE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -222,10 +222,10 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", type: ");
+    result.append(" (type: ");
     result.append(type);
+    result.append(", name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

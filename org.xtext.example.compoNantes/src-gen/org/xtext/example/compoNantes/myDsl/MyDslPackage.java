@@ -187,22 +187,22 @@ public interface MyDslPackage extends EPackage
   int INTERFACE = 3;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERFACE__NAME = 0;
-
-  /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERFACE__TYPE = 1;
+  int INTERFACE__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERFACE__NAME = 1;
 
   /**
    * The number of structural features of the '<em>Interface</em>' class.
@@ -224,13 +224,22 @@ public interface MyDslPackage extends EPackage
   int PORT = 4;
 
   /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PORT__TYPE = 0;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PORT__NAME = 0;
+  int PORT__NAME = 1;
 
   /**
    * The number of structural features of the '<em>Port</em>' class.
@@ -239,7 +248,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_FEATURE_COUNT = 1;
+  int PORT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.compoNantes.myDsl.impl.ConnectorImpl <em>Connector</em>}' class.
@@ -397,17 +406,6 @@ public interface MyDslPackage extends EPackage
   EClass getInterface();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.compoNantes.myDsl.Interface#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.compoNantes.myDsl.Interface#getName()
-   * @see #getInterface()
-   * @generated
-   */
-  EAttribute getInterface_Name();
-
-  /**
    * Returns the meta object for the attribute '{@link org.xtext.example.compoNantes.myDsl.Interface#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -419,6 +417,17 @@ public interface MyDslPackage extends EPackage
   EAttribute getInterface_Type();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.compoNantes.myDsl.Interface#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.compoNantes.myDsl.Interface#getName()
+   * @see #getInterface()
+   * @generated
+   */
+  EAttribute getInterface_Name();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.compoNantes.myDsl.Port <em>Port</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -427,6 +436,17 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getPort();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.compoNantes.myDsl.Port#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.example.compoNantes.myDsl.Port#getType()
+   * @see #getPort()
+   * @generated
+   */
+  EAttribute getPort_Type();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.compoNantes.myDsl.Port#getName <em>Name</em>}'.
@@ -591,20 +611,20 @@ public interface MyDslPackage extends EPackage
     EClass INTERFACE = eINSTANCE.getInterface();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INTERFACE__NAME = eINSTANCE.getInterface_Name();
-
-    /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute INTERFACE__TYPE = eINSTANCE.getInterface_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTERFACE__NAME = eINSTANCE.getInterface_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.compoNantes.myDsl.impl.PortImpl <em>Port</em>}' class.
@@ -615,6 +635,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass PORT = eINSTANCE.getPort();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PORT__TYPE = eINSTANCE.getPort_Type();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
