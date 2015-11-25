@@ -5,7 +5,7 @@ import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/org/xtext/example/compoNantes/MyDsl.xtext"
-var fileExtensions = "mydsl1"
+var fileExtensions = "cpn"
 var projectName = "org.xtext.example.compoNantes"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
