@@ -3,6 +3,7 @@
 package org.xtext.example.compoNantes.myDsl.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -12,11 +13,14 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.xtext.example.compoNantes.myDsl.Component;
 import org.xtext.example.compoNantes.myDsl.Connector;
+import org.xtext.example.compoNantes.myDsl.Dependancy;
 import org.xtext.example.compoNantes.myDsl.Interface;
 import org.xtext.example.compoNantes.myDsl.Model;
 import org.xtext.example.compoNantes.myDsl.MyDslFactory;
 import org.xtext.example.compoNantes.myDsl.MyDslPackage;
 import org.xtext.example.compoNantes.myDsl.Port;
+import org.xtext.example.compoNantes.myDsl.Type;
+import org.xtext.example.compoNantes.myDsl.Usage;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,11 +77,47 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.MODEL: return createModel();
       case MyDslPackage.SYSTEM: return createSystem();
       case MyDslPackage.COMPONENT: return createComponent();
+      case MyDslPackage.CONNECTOR: return createConnector();
       case MyDslPackage.INTERFACE: return createInterface();
       case MyDslPackage.PORT: return createPort();
-      case MyDslPackage.CONNECTOR: return createConnector();
+      case MyDslPackage.DEPENDANCY: return createDependancy();
+      case MyDslPackage.USAGE: return createUsage();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case MyDslPackage.TYPE:
+        return createTypeFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case MyDslPackage.TYPE:
+        return convertTypeToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -119,6 +159,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Connector createConnector()
+  {
+    ConnectorImpl connector = new ConnectorImpl();
+    return connector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Interface createInterface()
   {
     InterfaceImpl interface_ = new InterfaceImpl();
@@ -141,10 +192,43 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Connector createConnector()
+  public Dependancy createDependancy()
   {
-    ConnectorImpl connector = new ConnectorImpl();
-    return connector;
+    DependancyImpl dependancy = new DependancyImpl();
+    return dependancy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Usage createUsage()
+  {
+    UsageImpl usage = new UsageImpl();
+    return usage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Type createTypeFromString(EDataType eDataType, String initialValue)
+  {
+    Type result = Type.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

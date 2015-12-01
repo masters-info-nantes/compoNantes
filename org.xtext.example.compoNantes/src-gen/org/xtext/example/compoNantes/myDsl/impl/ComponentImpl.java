@@ -19,9 +19,11 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.compoNantes.myDsl.Component;
+import org.xtext.example.compoNantes.myDsl.Dependancy;
 import org.xtext.example.compoNantes.myDsl.Interface;
 import org.xtext.example.compoNantes.myDsl.MyDslPackage;
 import org.xtext.example.compoNantes.myDsl.Port;
+import org.xtext.example.compoNantes.myDsl.Usage;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +36,8 @@ import org.xtext.example.compoNantes.myDsl.Port;
  *   <li>{@link org.xtext.example.compoNantes.myDsl.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.myDsl.impl.ComponentImpl#getInterfaces <em>Interfaces</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.myDsl.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.myDsl.impl.ComponentImpl#getDependancies <em>Dependancies</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.myDsl.impl.ComponentImpl#getUsages <em>Usages</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,6 +83,26 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * @ordered
    */
   protected EList<Port> ports;
+
+  /**
+   * The cached value of the '{@link #getDependancies() <em>Dependancies</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDependancies()
+   * @generated
+   * @ordered
+   */
+  protected EList<Dependancy> dependancies;
+
+  /**
+   * The cached value of the '{@link #getUsages() <em>Usages</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUsages()
+   * @generated
+   * @ordered
+   */
+  protected EList<Usage> usages;
 
   /**
    * <!-- begin-user-doc -->
@@ -157,6 +181,34 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Dependancy> getDependancies()
+  {
+    if (dependancies == null)
+    {
+      dependancies = new EObjectContainmentEList<Dependancy>(Dependancy.class, this, MyDslPackage.COMPONENT__DEPENDANCIES);
+    }
+    return dependancies;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Usage> getUsages()
+  {
+    if (usages == null)
+    {
+      usages = new EObjectContainmentEList<Usage>(Usage.class, this, MyDslPackage.COMPONENT__USAGES);
+    }
+    return usages;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -166,6 +218,10 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
         return ((InternalEList<?>)getInterfaces()).basicRemove(otherEnd, msgs);
       case MyDslPackage.COMPONENT__PORTS:
         return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.COMPONENT__DEPENDANCIES:
+        return ((InternalEList<?>)getDependancies()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.COMPONENT__USAGES:
+        return ((InternalEList<?>)getUsages()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -186,6 +242,10 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
         return getInterfaces();
       case MyDslPackage.COMPONENT__PORTS:
         return getPorts();
+      case MyDslPackage.COMPONENT__DEPENDANCIES:
+        return getDependancies();
+      case MyDslPackage.COMPONENT__USAGES:
+        return getUsages();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -212,6 +272,14 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
         getPorts().clear();
         getPorts().addAll((Collection<? extends Port>)newValue);
         return;
+      case MyDslPackage.COMPONENT__DEPENDANCIES:
+        getDependancies().clear();
+        getDependancies().addAll((Collection<? extends Dependancy>)newValue);
+        return;
+      case MyDslPackage.COMPONENT__USAGES:
+        getUsages().clear();
+        getUsages().addAll((Collection<? extends Usage>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -235,6 +303,12 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
       case MyDslPackage.COMPONENT__PORTS:
         getPorts().clear();
         return;
+      case MyDslPackage.COMPONENT__DEPENDANCIES:
+        getDependancies().clear();
+        return;
+      case MyDslPackage.COMPONENT__USAGES:
+        getUsages().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -255,6 +329,10 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
         return interfaces != null && !interfaces.isEmpty();
       case MyDslPackage.COMPONENT__PORTS:
         return ports != null && !ports.isEmpty();
+      case MyDslPackage.COMPONENT__DEPENDANCIES:
+        return dependancies != null && !dependancies.isEmpty();
+      case MyDslPackage.COMPONENT__USAGES:
+        return usages != null && !usages.isEmpty();
     }
     return super.eIsSet(featureID);
   }

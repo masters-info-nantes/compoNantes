@@ -9,27 +9,39 @@ System:
 	'system' name=ID '{'
 		components+=Component*
 		connectors+=Connector*
-	'}';
+	'}'
+;
 
 Component:
 	'component' name=ID '{'
 		interfaces+=Interface*
 		ports+=Port*
-	'}';
-	
-Required:'required';
-Provided:'provided';
+		dependancies+=Dependancy*
+		usages+=Usage*
+	'}'
+;
 
-Type:
-	Required | Provided;
-	
-Interface:
-	'interface' type=Type name=ID ;
-	
-Port:
-	'port' type=Type name=ID;
-	
 Connector:
 	'connector' name=ID '{'
 		components+=Component*
-	'}';
+	'}'
+;
+	
+Interface:
+	'interface' type=Type name=ID
+;
+	
+Port:
+	'port' name=ID
+;
+	
+Dependancy:
+	'depends of' component = Component
+;
+
+Usage:
+	'uses' component = Component
+;
+enum Type:
+	REQUIRED='required' | PROVIDED='provided'
+;

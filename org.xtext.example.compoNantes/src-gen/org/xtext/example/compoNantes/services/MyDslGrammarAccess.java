@@ -93,13 +93,17 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInterfacesInterfaceParserRuleCall_3_0 = (RuleCall)cInterfacesAssignment_3.eContents().get(0);
 		private final Assignment cPortsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cPortsPortParserRuleCall_4_0 = (RuleCall)cPortsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cDependanciesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDependanciesDependancyParserRuleCall_5_0 = (RuleCall)cDependanciesAssignment_5.eContents().get(0);
+		private final Assignment cUsagesAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cUsagesUsageParserRuleCall_6_0 = (RuleCall)cUsagesAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Component:
-		//	"component" name=ID "{" interfaces+=Interface* ports+=Port* "}";
+		//	"component" name=ID "{" interfaces+=Interface* ports+=Port* dependancies+=Dependancy* usages+=Usage* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"component" name=ID "{" interfaces+=Interface* ports+=Port* "}"
+		//"component" name=ID "{" interfaces+=Interface* ports+=Port* dependancies+=Dependancy* usages+=Usage* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"component"
@@ -126,116 +130,20 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Port
 		public RuleCall getPortsPortParserRuleCall_4_0() { return cPortsPortParserRuleCall_4_0; }
 
+		//dependancies+=Dependancy*
+		public Assignment getDependanciesAssignment_5() { return cDependanciesAssignment_5; }
+
+		//Dependancy
+		public RuleCall getDependanciesDependancyParserRuleCall_5_0() { return cDependanciesDependancyParserRuleCall_5_0; }
+
+		//usages+=Usage*
+		public Assignment getUsagesAssignment_6() { return cUsagesAssignment_6; }
+
+		//Usage
+		public RuleCall getUsagesUsageParserRuleCall_6_0() { return cUsagesUsageParserRuleCall_6_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-
-	public class RequiredElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Required");
-		private final Keyword cRequiredKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Required:
-		//	"required";
-		@Override public ParserRule getRule() { return rule; }
-
-		//"required"
-		public Keyword getRequiredKeyword() { return cRequiredKeyword; }
-	}
-
-	public class ProvidedElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Provided");
-		private final Keyword cProvidedKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Provided:
-		//	"provided";
-		@Override public ParserRule getRule() { return rule; }
-
-		//"provided"
-		public Keyword getProvidedKeyword() { return cProvidedKeyword; }
-	}
-
-	public class TypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cRequiredParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cProvidedParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//Type:
-		//	Required | Provided;
-		@Override public ParserRule getRule() { return rule; }
-
-		//Required | Provided
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//Required
-		public RuleCall getRequiredParserRuleCall_0() { return cRequiredParserRuleCall_0; }
-
-		//Provided
-		public RuleCall getProvidedParserRuleCall_1() { return cProvidedParserRuleCall_1; }
-	}
-
-	public class InterfaceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Interface");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cInterfaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTypeTypeParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		
-		//Interface:
-		//	"interface" type=Type name=ID;
-		@Override public ParserRule getRule() { return rule; }
-
-		//"interface" type=Type name=ID
-		public Group getGroup() { return cGroup; }
-
-		//"interface"
-		public Keyword getInterfaceKeyword_0() { return cInterfaceKeyword_0; }
-
-		//type=Type
-		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
-
-		//Type
-		public RuleCall getTypeTypeParserRuleCall_1_0() { return cTypeTypeParserRuleCall_1_0; }
-
-		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
-	}
-
-	public class PortElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Port");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPortKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTypeTypeParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		
-		//Port:
-		//	"port" type=Type name=ID;
-		@Override public ParserRule getRule() { return rule; }
-
-		//"port" type=Type name=ID
-		public Group getGroup() { return cGroup; }
-
-		//"port"
-		public Keyword getPortKeyword_0() { return cPortKeyword_0; }
-
-		//type=Type
-		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
-
-		//Type
-		public RuleCall getTypeTypeParserRuleCall_1_0() { return cTypeTypeParserRuleCall_1_0; }
-
-		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class ConnectorElements extends AbstractParserRuleElementFinder {
@@ -277,17 +185,149 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
+
+	public class InterfaceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Interface");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cInterfaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTypeTypeEnumRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		
+		//Interface:
+		//	"interface" type=Type name=ID;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"interface" type=Type name=ID
+		public Group getGroup() { return cGroup; }
+
+		//"interface"
+		public Keyword getInterfaceKeyword_0() { return cInterfaceKeyword_0; }
+
+		//type=Type
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
+
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_1_0() { return cTypeTypeEnumRuleCall_1_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+	}
+
+	public class PortElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Port");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPortKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//Port:
+		//	"port" name=ID;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"port" name=ID
+		public Group getGroup() { return cGroup; }
+
+		//"port"
+		public Keyword getPortKeyword_0() { return cPortKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+
+	public class DependancyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Dependancy");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDependsOfKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cComponentAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cComponentComponentParserRuleCall_1_0 = (RuleCall)cComponentAssignment_1.eContents().get(0);
+		
+		//Dependancy:
+		//	"depends of" component=Component;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"depends of" component=Component
+		public Group getGroup() { return cGroup; }
+
+		//"depends of"
+		public Keyword getDependsOfKeyword_0() { return cDependsOfKeyword_0; }
+
+		//component=Component
+		public Assignment getComponentAssignment_1() { return cComponentAssignment_1; }
+
+		//Component
+		public RuleCall getComponentComponentParserRuleCall_1_0() { return cComponentComponentParserRuleCall_1_0; }
+	}
+
+	public class UsageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Usage");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cUsesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cComponentAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cComponentComponentParserRuleCall_1_0 = (RuleCall)cComponentAssignment_1.eContents().get(0);
+		
+		//Usage:
+		//	"uses" component=Component;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"uses" component=Component
+		public Group getGroup() { return cGroup; }
+
+		//"uses"
+		public Keyword getUsesKeyword_0() { return cUsesKeyword_0; }
+
+		//component=Component
+		public Assignment getComponentAssignment_1() { return cComponentAssignment_1; }
+
+		//Component
+		public RuleCall getComponentComponentParserRuleCall_1_0() { return cComponentComponentParserRuleCall_1_0; }
+	}
 	
+	
+	public class TypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cREQUIREDEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cREQUIREDRequiredKeyword_0_0 = (Keyword)cREQUIREDEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cPROVIDEDEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cPROVIDEDProvidedKeyword_1_0 = (Keyword)cPROVIDEDEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum Type:
+		//	REQUIRED="required" | PROVIDED="provided";
+		public EnumRule getRule() { return rule; }
+
+		//REQUIRED="required" | PROVIDED="provided"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//REQUIRED="required"
+		public EnumLiteralDeclaration getREQUIREDEnumLiteralDeclaration_0() { return cREQUIREDEnumLiteralDeclaration_0; }
+
+		//"required"
+		public Keyword getREQUIREDRequiredKeyword_0_0() { return cREQUIREDRequiredKeyword_0_0; }
+
+		//PROVIDED="provided"
+		public EnumLiteralDeclaration getPROVIDEDEnumLiteralDeclaration_1() { return cPROVIDEDEnumLiteralDeclaration_1; }
+
+		//"provided"
+		public Keyword getPROVIDEDProvidedKeyword_1_0() { return cPROVIDEDProvidedKeyword_1_0; }
+	}
 	
 	private final ModelElements pModel;
 	private final SystemElements pSystem;
 	private final ComponentElements pComponent;
-	private final RequiredElements pRequired;
-	private final ProvidedElements pProvided;
-	private final TypeElements pType;
+	private final ConnectorElements pConnector;
 	private final InterfaceElements pInterface;
 	private final PortElements pPort;
-	private final ConnectorElements pConnector;
+	private final DependancyElements pDependancy;
+	private final UsageElements pUsage;
+	private final TypeElements unknownRuleType;
 	
 	private final Grammar grammar;
 
@@ -301,12 +341,12 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pModel = new ModelElements();
 		this.pSystem = new SystemElements();
 		this.pComponent = new ComponentElements();
-		this.pRequired = new RequiredElements();
-		this.pProvided = new ProvidedElements();
-		this.pType = new TypeElements();
+		this.pConnector = new ConnectorElements();
 		this.pInterface = new InterfaceElements();
 		this.pPort = new PortElements();
-		this.pConnector = new ConnectorElements();
+		this.pDependancy = new DependancyElements();
+		this.pUsage = new UsageElements();
+		this.unknownRuleType = new TypeElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -357,7 +397,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Component:
-	//	"component" name=ID "{" interfaces+=Interface* ports+=Port* "}";
+	//	"component" name=ID "{" interfaces+=Interface* ports+=Port* dependancies+=Dependancy* usages+=Usage* "}";
 	public ComponentElements getComponentAccess() {
 		return pComponent;
 	}
@@ -366,34 +406,14 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getComponentAccess().getRule();
 	}
 
-	//Required:
-	//	"required";
-	public RequiredElements getRequiredAccess() {
-		return pRequired;
+	//Connector:
+	//	"connector" name=ID "{" components+=Component* "}";
+	public ConnectorElements getConnectorAccess() {
+		return pConnector;
 	}
 	
-	public ParserRule getRequiredRule() {
-		return getRequiredAccess().getRule();
-	}
-
-	//Provided:
-	//	"provided";
-	public ProvidedElements getProvidedAccess() {
-		return pProvided;
-	}
-	
-	public ParserRule getProvidedRule() {
-		return getProvidedAccess().getRule();
-	}
-
-	//Type:
-	//	Required | Provided;
-	public TypeElements getTypeAccess() {
-		return pType;
-	}
-	
-	public ParserRule getTypeRule() {
-		return getTypeAccess().getRule();
+	public ParserRule getConnectorRule() {
+		return getConnectorAccess().getRule();
 	}
 
 	//Interface:
@@ -407,7 +427,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Port:
-	//	"port" type=Type name=ID;
+	//	"port" name=ID;
 	public PortElements getPortAccess() {
 		return pPort;
 	}
@@ -416,14 +436,34 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getPortAccess().getRule();
 	}
 
-	//Connector:
-	//	"connector" name=ID "{" components+=Component* "}";
-	public ConnectorElements getConnectorAccess() {
-		return pConnector;
+	//Dependancy:
+	//	"depends of" component=Component;
+	public DependancyElements getDependancyAccess() {
+		return pDependancy;
 	}
 	
-	public ParserRule getConnectorRule() {
-		return getConnectorAccess().getRule();
+	public ParserRule getDependancyRule() {
+		return getDependancyAccess().getRule();
+	}
+
+	//Usage:
+	//	"uses" component=Component;
+	public UsageElements getUsageAccess() {
+		return pUsage;
+	}
+	
+	public ParserRule getUsageRule() {
+		return getUsageAccess().getRule();
+	}
+
+	//enum Type:
+	//	REQUIRED="required" | PROVIDED="provided";
+	public TypeElements getTypeAccess() {
+		return unknownRuleType;
+	}
+	
+	public EnumRule getTypeRule() {
+		return getTypeAccess().getRule();
 	}
 
 	//terminal ID:

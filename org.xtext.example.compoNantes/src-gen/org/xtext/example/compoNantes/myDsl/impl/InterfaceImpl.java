@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.compoNantes.myDsl.Interface;
 import org.xtext.example.compoNantes.myDsl.MyDslPackage;
+import org.xtext.example.compoNantes.myDsl.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +37,7 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
    * @generated
    * @ordered
    */
-  protected static final String TYPE_EDEFAULT = null;
+  protected static final Type TYPE_EDEFAULT = Type.REQUIRED;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -46,7 +47,7 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
    * @generated
    * @ordered
    */
-  protected String type = TYPE_EDEFAULT;
+  protected Type type = TYPE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -94,7 +95,7 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getType()
+  public Type getType()
   {
     return type;
   }
@@ -104,10 +105,10 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(String newType)
+  public void setType(Type newType)
   {
-    String oldType = type;
-    type = newType;
+    Type oldType = type;
+    type = newType == null ? TYPE_EDEFAULT : newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INTERFACE__TYPE, oldType, type));
   }
@@ -164,7 +165,7 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
     switch (featureID)
     {
       case MyDslPackage.INTERFACE__TYPE:
-        setType((String)newValue);
+        setType((Type)newValue);
         return;
       case MyDslPackage.INTERFACE__NAME:
         setName((String)newValue);
@@ -204,7 +205,7 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
     switch (featureID)
     {
       case MyDslPackage.INTERFACE__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+        return type != TYPE_EDEFAULT;
       case MyDslPackage.INTERFACE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }

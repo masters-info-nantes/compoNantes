@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.compoNantes.myDsl.Component#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.myDsl.Component#getInterfaces <em>Interfaces</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.myDsl.Component#getPorts <em>Ports</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.myDsl.Component#getDependancies <em>Dependancies</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.myDsl.Component#getUsages <em>Usages</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.compoNantes.myDsl.MyDslPackage#getComponent()
@@ -83,5 +85,37 @@ public interface Component extends EObject
    * @generated
    */
   EList<Port> getPorts();
+
+  /**
+   * Returns the value of the '<em><b>Dependancies</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.compoNantes.myDsl.Dependancy}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Dependancies</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Dependancies</em>' containment reference list.
+   * @see org.xtext.example.compoNantes.myDsl.MyDslPackage#getComponent_Dependancies()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Dependancy> getDependancies();
+
+  /**
+   * Returns the value of the '<em><b>Usages</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.compoNantes.myDsl.Usage}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Usages</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Usages</em>' containment reference list.
+   * @see org.xtext.example.compoNantes.myDsl.MyDslPackage#getComponent_Usages()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Usage> getUsages();
 
 } // Component

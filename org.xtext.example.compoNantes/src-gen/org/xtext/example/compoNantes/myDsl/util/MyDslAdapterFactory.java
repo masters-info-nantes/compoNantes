@@ -11,10 +11,12 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.xtext.example.compoNantes.myDsl.Component;
 import org.xtext.example.compoNantes.myDsl.Connector;
+import org.xtext.example.compoNantes.myDsl.Dependancy;
 import org.xtext.example.compoNantes.myDsl.Interface;
 import org.xtext.example.compoNantes.myDsl.Model;
 import org.xtext.example.compoNantes.myDsl.MyDslPackage;
 import org.xtext.example.compoNantes.myDsl.Port;
+import org.xtext.example.compoNantes.myDsl.Usage;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,6 +97,11 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createComponentAdapter();
       }
       @Override
+      public Adapter caseConnector(Connector object)
+      {
+        return createConnectorAdapter();
+      }
+      @Override
       public Adapter caseInterface(Interface object)
       {
         return createInterfaceAdapter();
@@ -105,9 +112,14 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createPortAdapter();
       }
       @Override
-      public Adapter caseConnector(Connector object)
+      public Adapter caseDependancy(Dependancy object)
       {
-        return createConnectorAdapter();
+        return createDependancyAdapter();
+      }
+      @Override
+      public Adapter caseUsage(Usage object)
+      {
+        return createUsageAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -177,6 +189,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.myDsl.Connector <em>Connector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.compoNantes.myDsl.Connector
+   * @generated
+   */
+  public Adapter createConnectorAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.myDsl.Interface <em>Interface</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -207,16 +234,31 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.myDsl.Connector <em>Connector</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.myDsl.Dependancy <em>Dependancy</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.compoNantes.myDsl.Connector
+   * @see org.xtext.example.compoNantes.myDsl.Dependancy
    * @generated
    */
-  public Adapter createConnectorAdapter()
+  public Adapter createDependancyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.myDsl.Usage <em>Usage</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.compoNantes.myDsl.Usage
+   * @generated
+   */
+  public Adapter createUsageAdapter()
   {
     return null;
   }
