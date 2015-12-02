@@ -114,22 +114,13 @@ public interface MyDslPackage extends EPackage
   int SYSTEM__COMPONENTS = 1;
 
   /**
-   * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SYSTEM__CONNECTORS = 2;
-
-  /**
    * The number of structural features of the '<em>System</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SYSTEM_FEATURE_COUNT = 3;
+  int SYSTEM_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.compoNantes.myDsl.impl.ComponentImpl <em>Component</em>}' class.
@@ -196,43 +187,6 @@ public interface MyDslPackage extends EPackage
   int COMPONENT_FEATURE_COUNT = 5;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.compoNantes.myDsl.impl.ConnectorImpl <em>Connector</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.compoNantes.myDsl.impl.ConnectorImpl
-   * @see org.xtext.example.compoNantes.myDsl.impl.MyDslPackageImpl#getConnector()
-   * @generated
-   */
-  int CONNECTOR = 3;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Components</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR__COMPONENTS = 1;
-
-  /**
-   * The number of structural features of the '<em>Connector</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_FEATURE_COUNT = 2;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.compoNantes.myDsl.impl.InterfaceImpl <em>Interface</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -240,7 +194,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.compoNantes.myDsl.impl.MyDslPackageImpl#getInterface()
    * @generated
    */
-  int INTERFACE = 4;
+  int INTERFACE = 3;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -277,7 +231,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.compoNantes.myDsl.impl.MyDslPackageImpl#getPort()
    * @generated
    */
-  int PORT = 5;
+  int PORT = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -305,10 +259,10 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.compoNantes.myDsl.impl.MyDslPackageImpl#getDependancy()
    * @generated
    */
-  int DEPENDANCY = 6;
+  int DEPENDANCY = 5;
 
   /**
-   * The feature id for the '<em><b>Component</b></em>' containment reference.
+   * The feature id for the '<em><b>Component</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -333,10 +287,10 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.compoNantes.myDsl.impl.MyDslPackageImpl#getUsage()
    * @generated
    */
-  int USAGE = 7;
+  int USAGE = 6;
 
   /**
-   * The feature id for the '<em><b>Component</b></em>' containment reference.
+   * The feature id for the '<em><b>Component</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -361,7 +315,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.compoNantes.myDsl.impl.MyDslPackageImpl#getType()
    * @generated
    */
-  int TYPE = 8;
+  int TYPE = 7;
 
 
   /**
@@ -416,17 +370,6 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EReference getSystem_Components();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.compoNantes.myDsl.System#getConnectors <em>Connectors</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Connectors</em>'.
-   * @see org.xtext.example.compoNantes.myDsl.System#getConnectors()
-   * @see #getSystem()
-   * @generated
-   */
-  EReference getSystem_Connectors();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.compoNantes.myDsl.Component <em>Component</em>}'.
@@ -494,38 +437,6 @@ public interface MyDslPackage extends EPackage
   EReference getComponent_Usages();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.compoNantes.myDsl.Connector <em>Connector</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Connector</em>'.
-   * @see org.xtext.example.compoNantes.myDsl.Connector
-   * @generated
-   */
-  EClass getConnector();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.compoNantes.myDsl.Connector#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.compoNantes.myDsl.Connector#getName()
-   * @see #getConnector()
-   * @generated
-   */
-  EAttribute getConnector_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.compoNantes.myDsl.Connector#getComponents <em>Components</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Components</em>'.
-   * @see org.xtext.example.compoNantes.myDsl.Connector#getComponents()
-   * @see #getConnector()
-   * @generated
-   */
-  EReference getConnector_Components();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.compoNantes.myDsl.Interface <em>Interface</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -589,10 +500,10 @@ public interface MyDslPackage extends EPackage
   EClass getDependancy();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.compoNantes.myDsl.Dependancy#getComponent <em>Component</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.myDsl.Dependancy#getComponent <em>Component</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Component</em>'.
+   * @return the meta object for the reference '<em>Component</em>'.
    * @see org.xtext.example.compoNantes.myDsl.Dependancy#getComponent()
    * @see #getDependancy()
    * @generated
@@ -610,10 +521,10 @@ public interface MyDslPackage extends EPackage
   EClass getUsage();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.compoNantes.myDsl.Usage#getComponent <em>Component</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.myDsl.Usage#getComponent <em>Component</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Component</em>'.
+   * @return the meta object for the reference '<em>Component</em>'.
    * @see org.xtext.example.compoNantes.myDsl.Usage#getComponent()
    * @see #getUsage()
    * @generated
@@ -698,14 +609,6 @@ public interface MyDslPackage extends EPackage
     EReference SYSTEM__COMPONENTS = eINSTANCE.getSystem_Components();
 
     /**
-     * The meta object literal for the '<em><b>Connectors</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SYSTEM__CONNECTORS = eINSTANCE.getSystem_Connectors();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.compoNantes.myDsl.impl.ComponentImpl <em>Component</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -754,32 +657,6 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EReference COMPONENT__USAGES = eINSTANCE.getComponent_Usages();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.compoNantes.myDsl.impl.ConnectorImpl <em>Connector</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.compoNantes.myDsl.impl.ConnectorImpl
-     * @see org.xtext.example.compoNantes.myDsl.impl.MyDslPackageImpl#getConnector()
-     * @generated
-     */
-    EClass CONNECTOR = eINSTANCE.getConnector();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONNECTOR__NAME = eINSTANCE.getConnector_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Components</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CONNECTOR__COMPONENTS = eINSTANCE.getConnector_Components();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.compoNantes.myDsl.impl.InterfaceImpl <em>Interface</em>}' class.
@@ -836,7 +713,7 @@ public interface MyDslPackage extends EPackage
     EClass DEPENDANCY = eINSTANCE.getDependancy();
 
     /**
-     * The meta object literal for the '<em><b>Component</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Component</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -854,7 +731,7 @@ public interface MyDslPackage extends EPackage
     EClass USAGE = eINSTANCE.getUsage();
 
     /**
-     * The meta object literal for the '<em><b>Component</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Component</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.xtext.example.compoNantes.myDsl.Component;
-import org.xtext.example.compoNantes.myDsl.Connector;
 import org.xtext.example.compoNantes.myDsl.Dependancy;
 import org.xtext.example.compoNantes.myDsl.Interface;
 import org.xtext.example.compoNantes.myDsl.Model;
@@ -100,13 +99,6 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.CONNECTOR:
-      {
-        Connector connector = (Connector)theEObject;
-        T result = caseConnector(connector);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MyDslPackage.INTERFACE:
       {
         Interface interface_ = (Interface)theEObject;
@@ -183,22 +175,6 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseComponent(Component object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Connector</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Connector</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseConnector(Connector object)
   {
     return null;
   }

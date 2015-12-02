@@ -161,27 +161,9 @@ ruleSystem returns [EObject current=null]
 	    }
 
 )
-)*(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getSystemAccess().getConnectorsConnectorParserRuleCall_4_0()); 
-	    }
-		lv_connectors_4_0=ruleConnector		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getSystemRule());
-	        }
-       		add(
-       			$current, 
-       			"connectors",
-        		lv_connectors_4_0, 
-        		"Connector");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*	otherlv_5='}' 
+)*	otherlv_4='}' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getSystemAccess().getRightCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_4, grammarAccess.getSystemAccess().getRightCurlyBracketKeyword_4());
     }
 )
 ;
@@ -313,75 +295,6 @@ ruleComponent returns [EObject current=null]
 
 
 
-// Entry rule entryRuleConnector
-entryRuleConnector returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getConnectorRule()); }
-	 iv_ruleConnector=ruleConnector 
-	 { $current=$iv_ruleConnector.current; } 
-	 EOF 
-;
-
-// Rule Connector
-ruleConnector returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='connector' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getConnectorAccess().getConnectorKeyword_0());
-    }
-(
-(
-		lv_name_1_0=RULE_ID
-		{
-			newLeafNode(lv_name_1_0, grammarAccess.getConnectorAccess().getNameIDTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getConnectorRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"name",
-        		lv_name_1_0, 
-        		"ID");
-	    }
-
-)
-)	otherlv_2='{' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getConnectorAccess().getLeftCurlyBracketKeyword_2());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getConnectorAccess().getComponentsComponentParserRuleCall_3_0()); 
-	    }
-		lv_components_3_0=ruleComponent		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getConnectorRule());
-	        }
-       		add(
-       			$current, 
-       			"components",
-        		lv_components_3_0, 
-        		"Component");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*	otherlv_4='}' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getConnectorAccess().getRightCurlyBracketKeyword_4());
-    }
-)
-;
-
-
-
-
-
 // Entry rule entryRuleInterface
 entryRuleInterface returns [EObject current=null] 
 	:
@@ -500,26 +413,21 @@ ruleDependancy returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='depends of' 
+(	otherlv_0='dependancy' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getDependancyAccess().getDependsOfKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getDependancyAccess().getDependancyKeyword_0());
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getDependancyAccess().getComponentComponentParserRuleCall_1_0()); 
-	    }
-		lv_component_1_0=ruleComponent		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getDependancyRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDependancyRule());
 	        }
-       		set(
-       			$current, 
-       			"component",
-        		lv_component_1_0, 
-        		"Component");
-	        afterParserOrEnumRuleCall();
-	    }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getDependancyAccess().getComponentComponentCrossReference_1_0()); 
+	}
 
 )
 ))
@@ -543,26 +451,21 @@ ruleUsage returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='uses' 
+(	otherlv_0='usage' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getUsageAccess().getUsesKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getUsageAccess().getUsageKeyword_0());
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getUsageAccess().getComponentComponentParserRuleCall_1_0()); 
-	    }
-		lv_component_1_0=ruleComponent		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getUsageRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getUsageRule());
 	        }
-       		set(
-       			$current, 
-       			"component",
-        		lv_component_1_0, 
-        		"Component");
-	        afterParserOrEnumRuleCall();
-	    }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getUsageAccess().getComponentComponentCrossReference_1_0()); 
+	}
 
 )
 ))

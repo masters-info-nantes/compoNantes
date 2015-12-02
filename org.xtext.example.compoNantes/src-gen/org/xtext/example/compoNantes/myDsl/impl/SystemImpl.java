@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.compoNantes.myDsl.Component;
-import org.xtext.example.compoNantes.myDsl.Connector;
 import org.xtext.example.compoNantes.myDsl.MyDslPackage;
 
 /**
@@ -32,7 +31,6 @@ import org.xtext.example.compoNantes.myDsl.MyDslPackage;
  * <ul>
  *   <li>{@link org.xtext.example.compoNantes.myDsl.impl.SystemImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.myDsl.impl.SystemImpl#getComponents <em>Components</em>}</li>
- *   <li>{@link org.xtext.example.compoNantes.myDsl.impl.SystemImpl#getConnectors <em>Connectors</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,16 +66,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.xtex
    * @ordered
    */
   protected EList<Component> components;
-
-  /**
-   * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getConnectors()
-   * @generated
-   * @ordered
-   */
-  protected EList<Connector> connectors;
 
   /**
    * <!-- begin-user-doc -->
@@ -142,20 +130,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.xtex
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Connector> getConnectors()
-  {
-    if (connectors == null)
-    {
-      connectors = new EObjectContainmentEList<Connector>(Connector.class, this, MyDslPackage.SYSTEM__CONNECTORS);
-    }
-    return connectors;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -163,8 +137,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.xtex
     {
       case MyDslPackage.SYSTEM__COMPONENTS:
         return ((InternalEList<?>)getComponents()).basicRemove(otherEnd, msgs);
-      case MyDslPackage.SYSTEM__CONNECTORS:
-        return ((InternalEList<?>)getConnectors()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -183,8 +155,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.xtex
         return getName();
       case MyDslPackage.SYSTEM__COMPONENTS:
         return getComponents();
-      case MyDslPackage.SYSTEM__CONNECTORS:
-        return getConnectors();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -207,10 +177,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.xtex
         getComponents().clear();
         getComponents().addAll((Collection<? extends Component>)newValue);
         return;
-      case MyDslPackage.SYSTEM__CONNECTORS:
-        getConnectors().clear();
-        getConnectors().addAll((Collection<? extends Connector>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -231,9 +197,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.xtex
       case MyDslPackage.SYSTEM__COMPONENTS:
         getComponents().clear();
         return;
-      case MyDslPackage.SYSTEM__CONNECTORS:
-        getConnectors().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -252,8 +215,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.xtex
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MyDslPackage.SYSTEM__COMPONENTS:
         return components != null && !components.isEmpty();
-      case MyDslPackage.SYSTEM__CONNECTORS:
-        return connectors != null && !connectors.isEmpty();
     }
     return super.eIsSet(featureID);
   }

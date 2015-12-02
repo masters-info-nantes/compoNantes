@@ -17,7 +17,6 @@
     <genClasses ecoreClass="MyDsl.ecore#//System">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//System/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//System/components"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//System/connectors"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Component">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Component/name"/>
@@ -25,10 +24,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Component/ports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Component/dependancies"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Component/usages"/>
-    </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//Connector">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Connector/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Connector/components"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Interface">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Interface/type"/>
@@ -38,10 +33,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Port/name"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Dependancy">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Dependancy/component"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Dependancy/component"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Usage">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Usage/component"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Usage/component"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

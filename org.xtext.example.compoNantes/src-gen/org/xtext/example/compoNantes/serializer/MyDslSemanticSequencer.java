@@ -17,7 +17,6 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.compoNantes.myDsl.Component;
-import org.xtext.example.compoNantes.myDsl.Connector;
 import org.xtext.example.compoNantes.myDsl.Dependancy;
 import org.xtext.example.compoNantes.myDsl.Interface;
 import org.xtext.example.compoNantes.myDsl.Model;
@@ -37,9 +36,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		if(semanticObject.eClass().getEPackage() == MyDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case MyDslPackage.COMPONENT:
 				sequence_Component(context, (Component) semanticObject); 
-				return; 
-			case MyDslPackage.CONNECTOR:
-				sequence_Connector(context, (Connector) semanticObject); 
 				return; 
 			case MyDslPackage.DEPENDANCY:
 				sequence_Dependancy(context, (Dependancy) semanticObject); 
@@ -74,16 +70,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID components+=Component*)
-	 */
-	protected void sequence_Connector(EObject context, Connector semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     component=Component
+	 *     component=[Component|ID]
 	 */
 	protected void sequence_Dependancy(EObject context, Dependancy semanticObject) {
 		if(errorAcceptor != null) {
@@ -92,7 +79,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDependancyAccess().getComponentComponentParserRuleCall_1_0(), semanticObject.getComponent());
+		feeder.accept(grammarAccess.getDependancyAccess().getComponentComponentIDTerminalRuleCall_1_0_1(), semanticObject.getComponent());
 		feeder.finish();
 	}
 	
@@ -143,7 +130,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID components+=Component* connectors+=Connector*)
+	 *     (name=ID components+=Component*)
 	 */
 	protected void sequence_System(EObject context, org.xtext.example.compoNantes.myDsl.System semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -152,7 +139,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     component=Component
+	 *     component=[Component|ID]
 	 */
 	protected void sequence_Usage(EObject context, Usage semanticObject) {
 		if(errorAcceptor != null) {
@@ -161,7 +148,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUsageAccess().getComponentComponentParserRuleCall_1_0(), semanticObject.getComponent());
+		feeder.accept(grammarAccess.getUsageAccess().getComponentComponentIDTerminalRuleCall_1_0_1(), semanticObject.getComponent());
 		feeder.finish();
 	}
 }

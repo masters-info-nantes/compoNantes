@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.xtext.example.compoNantes.myDsl.Component;
-import org.xtext.example.compoNantes.myDsl.Connector;
 import org.xtext.example.compoNantes.myDsl.Dependancy;
 import org.xtext.example.compoNantes.myDsl.Interface;
 import org.xtext.example.compoNantes.myDsl.Model;
@@ -97,11 +96,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createComponentAdapter();
       }
       @Override
-      public Adapter caseConnector(Connector object)
-      {
-        return createConnectorAdapter();
-      }
-      @Override
       public Adapter caseInterface(Interface object)
       {
         return createInterfaceAdapter();
@@ -184,21 +178,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createComponentAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.myDsl.Connector <em>Connector</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.compoNantes.myDsl.Connector
-   * @generated
-   */
-  public Adapter createConnectorAdapter()
   {
     return null;
   }

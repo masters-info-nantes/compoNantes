@@ -40,7 +40,6 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 					put(grammarAccess.getSystemAccess().getGroup(), "rule__System__Group__0");
 					put(grammarAccess.getComponentAccess().getGroup(), "rule__Component__Group__0");
-					put(grammarAccess.getConnectorAccess().getGroup(), "rule__Connector__Group__0");
 					put(grammarAccess.getInterfaceAccess().getGroup(), "rule__Interface__Group__0");
 					put(grammarAccess.getPortAccess().getGroup(), "rule__Port__Group__0");
 					put(grammarAccess.getDependancyAccess().getGroup(), "rule__Dependancy__Group__0");
@@ -48,14 +47,11 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getSystemsAssignment(), "rule__Model__SystemsAssignment");
 					put(grammarAccess.getSystemAccess().getNameAssignment_1(), "rule__System__NameAssignment_1");
 					put(grammarAccess.getSystemAccess().getComponentsAssignment_3(), "rule__System__ComponentsAssignment_3");
-					put(grammarAccess.getSystemAccess().getConnectorsAssignment_4(), "rule__System__ConnectorsAssignment_4");
 					put(grammarAccess.getComponentAccess().getNameAssignment_1(), "rule__Component__NameAssignment_1");
 					put(grammarAccess.getComponentAccess().getInterfacesAssignment_3(), "rule__Component__InterfacesAssignment_3");
 					put(grammarAccess.getComponentAccess().getPortsAssignment_4(), "rule__Component__PortsAssignment_4");
 					put(grammarAccess.getComponentAccess().getDependanciesAssignment_5(), "rule__Component__DependanciesAssignment_5");
 					put(grammarAccess.getComponentAccess().getUsagesAssignment_6(), "rule__Component__UsagesAssignment_6");
-					put(grammarAccess.getConnectorAccess().getNameAssignment_1(), "rule__Connector__NameAssignment_1");
-					put(grammarAccess.getConnectorAccess().getComponentsAssignment_3(), "rule__Connector__ComponentsAssignment_3");
 					put(grammarAccess.getInterfaceAccess().getTypeAssignment_1(), "rule__Interface__TypeAssignment_1");
 					put(grammarAccess.getInterfaceAccess().getNameAssignment_2(), "rule__Interface__NameAssignment_2");
 					put(grammarAccess.getPortAccess().getNameAssignment_1(), "rule__Port__NameAssignment_1");

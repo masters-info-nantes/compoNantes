@@ -43,15 +43,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cComponentsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cComponentsComponentParserRuleCall_3_0 = (RuleCall)cComponentsAssignment_3.eContents().get(0);
-		private final Assignment cConnectorsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cConnectorsConnectorParserRuleCall_4_0 = (RuleCall)cConnectorsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//System:
-		//	"system" name=ID "{" components+=Component* connectors+=Connector* "}";
+		//	"system" name=ID "{" components+=Component* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"system" name=ID "{" components+=Component* connectors+=Connector* "}"
+		//"system" name=ID "{" components+=Component* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"system"
@@ -72,14 +70,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Component
 		public RuleCall getComponentsComponentParserRuleCall_3_0() { return cComponentsComponentParserRuleCall_3_0; }
 
-		//connectors+=Connector*
-		public Assignment getConnectorsAssignment_4() { return cConnectorsAssignment_4; }
-
-		//Connector
-		public RuleCall getConnectorsConnectorParserRuleCall_4_0() { return cConnectorsConnectorParserRuleCall_4_0; }
-
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class ComponentElements extends AbstractParserRuleElementFinder {
@@ -146,46 +138,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
-	public class ConnectorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Connector");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cConnectorKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cComponentsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cComponentsComponentParserRuleCall_3_0 = (RuleCall)cComponentsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//Connector:
-		//	"connector" name=ID "{" components+=Component* "}";
-		@Override public ParserRule getRule() { return rule; }
-
-		//"connector" name=ID "{" components+=Component* "}"
-		public Group getGroup() { return cGroup; }
-
-		//"connector"
-		public Keyword getConnectorKeyword_0() { return cConnectorKeyword_0; }
-
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-
-		//components+=Component*
-		public Assignment getComponentsAssignment_3() { return cComponentsAssignment_3; }
-
-		//Component
-		public RuleCall getComponentsComponentParserRuleCall_3_0() { return cComponentsComponentParserRuleCall_3_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
-
 	public class InterfaceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Interface");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -245,49 +197,57 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class DependancyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Dependancy");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDependsOfKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cDependancyKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cComponentAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cComponentComponentParserRuleCall_1_0 = (RuleCall)cComponentAssignment_1.eContents().get(0);
+		private final CrossReference cComponentComponentCrossReference_1_0 = (CrossReference)cComponentAssignment_1.eContents().get(0);
+		private final RuleCall cComponentComponentIDTerminalRuleCall_1_0_1 = (RuleCall)cComponentComponentCrossReference_1_0.eContents().get(1);
 		
 		//Dependancy:
-		//	"depends of" component=Component;
+		//	"dependancy" component=[Component];
 		@Override public ParserRule getRule() { return rule; }
 
-		//"depends of" component=Component
+		//"dependancy" component=[Component]
 		public Group getGroup() { return cGroup; }
 
-		//"depends of"
-		public Keyword getDependsOfKeyword_0() { return cDependsOfKeyword_0; }
+		//"dependancy"
+		public Keyword getDependancyKeyword_0() { return cDependancyKeyword_0; }
 
-		//component=Component
+		//component=[Component]
 		public Assignment getComponentAssignment_1() { return cComponentAssignment_1; }
 
-		//Component
-		public RuleCall getComponentComponentParserRuleCall_1_0() { return cComponentComponentParserRuleCall_1_0; }
+		//[Component]
+		public CrossReference getComponentComponentCrossReference_1_0() { return cComponentComponentCrossReference_1_0; }
+
+		//ID
+		public RuleCall getComponentComponentIDTerminalRuleCall_1_0_1() { return cComponentComponentIDTerminalRuleCall_1_0_1; }
 	}
 
 	public class UsageElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Usage");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cUsesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cUsageKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cComponentAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cComponentComponentParserRuleCall_1_0 = (RuleCall)cComponentAssignment_1.eContents().get(0);
+		private final CrossReference cComponentComponentCrossReference_1_0 = (CrossReference)cComponentAssignment_1.eContents().get(0);
+		private final RuleCall cComponentComponentIDTerminalRuleCall_1_0_1 = (RuleCall)cComponentComponentCrossReference_1_0.eContents().get(1);
 		
 		//Usage:
-		//	"uses" component=Component;
+		//	"usage" component=[Component];
 		@Override public ParserRule getRule() { return rule; }
 
-		//"uses" component=Component
+		//"usage" component=[Component]
 		public Group getGroup() { return cGroup; }
 
-		//"uses"
-		public Keyword getUsesKeyword_0() { return cUsesKeyword_0; }
+		//"usage"
+		public Keyword getUsageKeyword_0() { return cUsageKeyword_0; }
 
-		//component=Component
+		//component=[Component]
 		public Assignment getComponentAssignment_1() { return cComponentAssignment_1; }
 
-		//Component
-		public RuleCall getComponentComponentParserRuleCall_1_0() { return cComponentComponentParserRuleCall_1_0; }
+		//[Component]
+		public CrossReference getComponentComponentCrossReference_1_0() { return cComponentComponentCrossReference_1_0; }
+
+		//ID
+		public RuleCall getComponentComponentIDTerminalRuleCall_1_0_1() { return cComponentComponentIDTerminalRuleCall_1_0_1; }
 	}
 	
 	
@@ -322,7 +282,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ModelElements pModel;
 	private final SystemElements pSystem;
 	private final ComponentElements pComponent;
-	private final ConnectorElements pConnector;
 	private final InterfaceElements pInterface;
 	private final PortElements pPort;
 	private final DependancyElements pDependancy;
@@ -341,7 +300,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pModel = new ModelElements();
 		this.pSystem = new SystemElements();
 		this.pComponent = new ComponentElements();
-		this.pConnector = new ConnectorElements();
 		this.pInterface = new InterfaceElements();
 		this.pPort = new PortElements();
 		this.pDependancy = new DependancyElements();
@@ -387,7 +345,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//System:
-	//	"system" name=ID "{" components+=Component* connectors+=Connector* "}";
+	//	"system" name=ID "{" components+=Component* "}";
 	public SystemElements getSystemAccess() {
 		return pSystem;
 	}
@@ -404,16 +362,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getComponentRule() {
 		return getComponentAccess().getRule();
-	}
-
-	//Connector:
-	//	"connector" name=ID "{" components+=Component* "}";
-	public ConnectorElements getConnectorAccess() {
-		return pConnector;
-	}
-	
-	public ParserRule getConnectorRule() {
-		return getConnectorAccess().getRule();
 	}
 
 	//Interface:
@@ -437,7 +385,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Dependancy:
-	//	"depends of" component=Component;
+	//	"dependancy" component=[Component];
 	public DependancyElements getDependancyAccess() {
 		return pDependancy;
 	}
@@ -447,7 +395,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Usage:
-	//	"uses" component=Component;
+	//	"usage" component=[Component];
 	public UsageElements getUsageAccess() {
 		return pUsage;
 	}

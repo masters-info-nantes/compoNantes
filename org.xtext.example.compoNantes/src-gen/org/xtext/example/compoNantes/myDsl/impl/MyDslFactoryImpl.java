@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.xtext.example.compoNantes.myDsl.Component;
-import org.xtext.example.compoNantes.myDsl.Connector;
 import org.xtext.example.compoNantes.myDsl.Dependancy;
 import org.xtext.example.compoNantes.myDsl.Interface;
 import org.xtext.example.compoNantes.myDsl.Model;
@@ -77,7 +76,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.MODEL: return createModel();
       case MyDslPackage.SYSTEM: return createSystem();
       case MyDslPackage.COMPONENT: return createComponent();
-      case MyDslPackage.CONNECTOR: return createConnector();
       case MyDslPackage.INTERFACE: return createInterface();
       case MyDslPackage.PORT: return createPort();
       case MyDslPackage.DEPENDANCY: return createDependancy();
@@ -152,17 +150,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     ComponentImpl component = new ComponentImpl();
     return component;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Connector createConnector()
-  {
-    ConnectorImpl connector = new ConnectorImpl();
-    return connector;
   }
 
   /**

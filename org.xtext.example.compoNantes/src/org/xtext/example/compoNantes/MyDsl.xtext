@@ -8,7 +8,6 @@ Model:
 System:
 	'system' name=ID '{'
 		components+=Component*
-		connectors+=Connector*
 	'}'
 ;
 
@@ -18,12 +17,6 @@ Component:
 		ports+=Port*
 		dependancies+=Dependancy*
 		usages+=Usage*
-	'}'
-;
-
-Connector:
-	'connector' name=ID '{'
-		components+=Component*
 	'}'
 ;
 	
@@ -36,12 +29,13 @@ Port:
 ;
 	
 Dependancy:
-	'depends of' component = Component
+	'dependancy' component = [Component]
 ;
 
 Usage:
-	'uses' component = Component
+	'usage' component = [Component]
 ;
+
 enum Type:
 	REQUIRED='required' | PROVIDED='provided'
 ;

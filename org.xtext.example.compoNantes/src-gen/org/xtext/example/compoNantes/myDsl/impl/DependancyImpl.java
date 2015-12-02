@@ -3,7 +3,6 @@
 package org.xtext.example.compoNantes.myDsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -31,7 +30,7 @@ import org.xtext.example.compoNantes.myDsl.MyDslPackage;
 public class DependancyImpl extends MinimalEObjectImpl.Container implements Dependancy
 {
   /**
-   * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference.
+   * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getComponent()
@@ -68,6 +67,16 @@ public class DependancyImpl extends MinimalEObjectImpl.Container implements Depe
    */
   public Component getComponent()
   {
+    if (component != null && component.eIsProxy())
+    {
+      InternalEObject oldComponent = (InternalEObject)component;
+      component = (Component)eResolveProxy(oldComponent);
+      if (component != oldComponent)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MyDslPackage.DEPENDANCY__COMPONENT, oldComponent, component));
+      }
+    }
     return component;
   }
 
@@ -76,16 +85,9 @@ public class DependancyImpl extends MinimalEObjectImpl.Container implements Depe
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetComponent(Component newComponent, NotificationChain msgs)
+  public Component basicGetComponent()
   {
-    Component oldComponent = component;
-    component = newComponent;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.DEPENDANCY__COMPONENT, oldComponent, newComponent);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+    return component;
   }
 
   /**
@@ -95,34 +97,10 @@ public class DependancyImpl extends MinimalEObjectImpl.Container implements Depe
    */
   public void setComponent(Component newComponent)
   {
-    if (newComponent != component)
-    {
-      NotificationChain msgs = null;
-      if (component != null)
-        msgs = ((InternalEObject)component).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.DEPENDANCY__COMPONENT, null, msgs);
-      if (newComponent != null)
-        msgs = ((InternalEObject)newComponent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.DEPENDANCY__COMPONENT, null, msgs);
-      msgs = basicSetComponent(newComponent, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.DEPENDANCY__COMPONENT, newComponent, newComponent));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MyDslPackage.DEPENDANCY__COMPONENT:
-        return basicSetComponent(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    Component oldComponent = component;
+    component = newComponent;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.DEPENDANCY__COMPONENT, oldComponent, component));
   }
 
   /**
@@ -136,7 +114,8 @@ public class DependancyImpl extends MinimalEObjectImpl.Container implements Depe
     switch (featureID)
     {
       case MyDslPackage.DEPENDANCY__COMPONENT:
-        return getComponent();
+        if (resolve) return getComponent();
+        return basicGetComponent();
     }
     return super.eGet(featureID, resolve, coreType);
   }

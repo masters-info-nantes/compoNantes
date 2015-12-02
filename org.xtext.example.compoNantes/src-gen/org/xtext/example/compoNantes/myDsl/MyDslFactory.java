@@ -50,15 +50,6 @@ public interface MyDslFactory extends EFactory
   Component createComponent();
 
   /**
-   * Returns a new object of class '<em>Connector</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Connector</em>'.
-   * @generated
-   */
-  Connector createConnector();
-
-  /**
    * Returns a new object of class '<em>Interface</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
