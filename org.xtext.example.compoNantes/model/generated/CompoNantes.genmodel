@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.example.compoNantes/src-gen" editDirectory="/org.xtext.example.compoNantes.edit/src"
+    editorDirectory="/org.xtext.example.compoNantes.editor/src" modelPluginID="org.xtext.example.compoNantes"
+    forceOverwrite="true" modelName="CompoNantes" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.example.compoNantes.edit"
+    editorPluginID="org.xtext.example.compoNantes.editor" runtimeVersion="2.11">
+  <genPackages prefix="CompoNantes" basePackage="org.xtext.example.compoNantes" disposableProviderFactory="true"
+      fileExtensions="cpn" ecorePackage="CompoNantes.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CompoNantes.ecore#//Type">
+      <genEnumLiterals ecoreEnumLiteral="CompoNantes.ecore#//Type/REQUIRED"/>
+      <genEnumLiterals ecoreEnumLiteral="CompoNantes.ecore#//Type/PROVIDED"/>
+    </genEnums>
+    <genClasses ecoreClass="CompoNantes.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Model/subsystem"/>
+    </genClasses>
+    <genClasses ecoreClass="CompoNantes.ecore#//SubSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//SubSystem/components"/>
+    </genClasses>
+    <genClasses ecoreClass="CompoNantes.ecore#//Component"/>
+    <genClasses ecoreClass="CompoNantes.ecore#//Interface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Interface/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Interface/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CompoNantes.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Port/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CompoNantes.ecore#//Dependency">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Dependency/component"/>
+    </genClasses>
+    <genClasses ecoreClass="CompoNantes.ecore#//Usage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Usage/component"/>
+    </genClasses>
+    <genClasses ecoreClass="CompoNantes.ecore#//Truc">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Truc/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Truc/interfaces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Truc/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Truc/dependencies"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Truc/usages"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

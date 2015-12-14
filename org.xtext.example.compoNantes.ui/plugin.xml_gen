@@ -6,48 +6,48 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="cpn"
-            id="org.xtext.example.compoNantes.MyDsl"
-            name="MyDsl Editor">
+            id="org.xtext.example.compoNantes.CompoNantes"
+            name="CompoNantes Editor">
         </editor>
     </extension>
     <extension
         point="org.eclipse.ui.handlers">
         <handler
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
             commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
             <activeWhen>
                 <reference
-                    definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened">
+                    definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
         <handler
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-            commandId="org.xtext.example.compoNantes.MyDsl.validate">
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="org.xtext.example.compoNantes.CompoNantes.validate">
          <activeWhen>
             <reference
-                    definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened">
+                    definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened">
             </reference>
          </activeWhen>
       	</handler>
       	<!-- copy qualified name -->
         <handler
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
             <activeWhen>
-				<reference definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened" />
+				<reference definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened" />
             </activeWhen>
         </handler>
         <handler
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
             <activeWhen>
             	<and>
-            		<reference definitionId="org.xtext.example.compoNantes.MyDsl.XtextEditor.opened" />
+            		<reference definitionId="org.xtext.example.compoNantes.CompoNantes.XtextEditor.opened" />
 	                <iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -56,22 +56,22 @@
         </handler>
     </extension>
     <extension point="org.eclipse.core.expressions.definitions">
-        <definition id="org.xtext.example.compoNantes.MyDsl.Editor.opened">
+        <definition id="org.xtext.example.compoNantes.CompoNantes.Editor.opened">
             <and>
                 <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="org.xtext.example.compoNantes.MyDsl" 
+                        value="org.xtext.example.compoNantes.CompoNantes" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
         </definition>
-        <definition id="org.xtext.example.compoNantes.MyDsl.XtextEditor.opened">
+        <definition id="org.xtext.example.compoNantes.CompoNantes.XtextEditor.opened">
             <and>
                 <reference definitionId="isXtextEditorActive"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="org.xtext.example.compoNantes.MyDsl" 
+                        value="org.xtext.example.compoNantes.CompoNantes" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
@@ -80,33 +80,33 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="org.xtext.example.compoNantes.MyDsl"
-            name="MyDsl">
-            <keywordReference id="org.xtext.example.compoNantes.ui.keyword_MyDsl"/>
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.xtext.example.compoNantes.CompoNantes"
+            name="CompoNantes">
+            <keywordReference id="org.xtext.example.compoNantes.ui.keyword_CompoNantes"/>
         </page>
         <page
-            category="org.xtext.example.compoNantes.MyDsl"
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-            id="org.xtext.example.compoNantes.MyDsl.coloring"
+            category="org.xtext.example.compoNantes.CompoNantes"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="org.xtext.example.compoNantes.CompoNantes.coloring"
             name="Syntax Coloring">
-            <keywordReference id="org.xtext.example.compoNantes.ui.keyword_MyDsl"/>
+            <keywordReference id="org.xtext.example.compoNantes.ui.keyword_CompoNantes"/>
         </page>
         <page
-            category="org.xtext.example.compoNantes.MyDsl"
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-            id="org.xtext.example.compoNantes.MyDsl.templates"
+            category="org.xtext.example.compoNantes.CompoNantes"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="org.xtext.example.compoNantes.CompoNantes.templates"
             name="Templates">
-            <keywordReference id="org.xtext.example.compoNantes.ui.keyword_MyDsl"/>
+            <keywordReference id="org.xtext.example.compoNantes.ui.keyword_CompoNantes"/>
         </page>
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="org.xtext.example.compoNantes.MyDsl"
-            name="MyDsl">
-            <keywordReference id="org.xtext.example.compoNantes.ui.keyword_MyDsl"/>
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.xtext.example.compoNantes.CompoNantes"
+            name="CompoNantes">
+            <keywordReference id="org.xtext.example.compoNantes.ui.keyword_CompoNantes"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -116,14 +116,14 @@
     <extension
         point="org.eclipse.ui.keywords">
         <keyword
-            id="org.xtext.example.compoNantes.ui.keyword_MyDsl"
-            label="MyDsl"/>
+            id="org.xtext.example.compoNantes.ui.keyword_CompoNantes"
+            label="CompoNantes"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
             description="Trigger expensive validation"
-            id="org.xtext.example.compoNantes.MyDsl.validate"
+            id="org.xtext.example.compoNantes.CompoNantes.validate"
             name="Validate">
       </command>
       <!-- copy qualified name -->
@@ -144,12 +144,12 @@
         <menuContribution
             locationURI="popup:#TextEditorContext?after=group.edit">
              <command
-                 commandId="org.xtext.example.compoNantes.MyDsl.validate"
+                 commandId="org.xtext.example.compoNantes.CompoNantes.validate"
                  style="push"
                  tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
-                    definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened">
+                    definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened">
                 </reference>
             </visibleWhen>
          </command>  
@@ -159,7 +159,7 @@
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
          		style="push" tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
-                	<reference definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened" />
+                	<reference definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened" />
             	</visibleWhen>
          	</command>  
          </menuContribution>
@@ -167,7 +167,7 @@
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
             	style="push" tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
-                	<reference definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened" />
+                	<reference definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened" />
             	</visibleWhen>
          	</command>  
          </menuContribution>
@@ -176,7 +176,7 @@
 				style="push" tooltip="Copy Qualified Name">
          		<visibleWhen checkEnabled="false">
 	            	<and>
-	            		<reference definitionId="org.xtext.example.compoNantes.MyDsl.XtextEditor.opened" />
+	            		<reference definitionId="org.xtext.example.compoNantes.CompoNantes.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -189,7 +189,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-                	<reference definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened">
+                	<reference definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened">
                 	</reference>
             	</visibleWhen>
 			</command>
@@ -197,11 +197,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 	    <handler
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
             commandId="org.eclipse.xtext.ui.editor.FindReferences">
             <activeWhen>
                 <reference
-                    definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened">
+                    definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
@@ -212,36 +212,36 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="cpn">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
             uriExtension="cpn">
         </resourceServiceProvider>
     </extension>
 
 
-	<!-- marker definitions for org.xtext.example.compoNantes.MyDsl -->
+	<!-- marker definitions for org.xtext.example.compoNantes.CompoNantes -->
 	<extension
-	        id="mydsl.check.fast"
-	        name="MyDsl Problem"
+	        id="componantes.check.fast"
+	        name="CompoNantes Problem"
 	        point="org.eclipse.core.resources.markers">
 	    <super type="org.eclipse.xtext.ui.check.fast"/>
 	    <persistent value="true"/>
 	</extension>
 	<extension
-	        id="mydsl.check.normal"
-	        name="MyDsl Problem"
+	        id="componantes.check.normal"
+	        name="CompoNantes Problem"
 	        point="org.eclipse.core.resources.markers">
 	    <super type="org.eclipse.xtext.ui.check.normal"/>
 	    <persistent value="true"/>
 	</extension>
 	<extension
-	        id="mydsl.check.expensive"
-	        name="MyDsl Problem"
+	        id="componantes.check.expensive"
+	        name="CompoNantes Problem"
 	        point="org.eclipse.core.resources.markers">
 	    <super type="org.eclipse.xtext.ui.check.expensive"/>
 	    <persistent value="true"/>
@@ -250,7 +250,7 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
             fileExtensions="cpn"
             >
       </participant>
@@ -258,21 +258,21 @@
    <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            category="org.xtext.example.compoNantes.MyDsl"
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="org.xtext.example.compoNantes.MyDsl.compiler.preferencePage"
+            category="org.xtext.example.compoNantes.CompoNantes"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="org.xtext.example.compoNantes.CompoNantes.compiler.preferencePage"
             name="Compiler">
-            <keywordReference id="org.xtext.example.compoNantes.ui.keyword_MyDsl"/>
+            <keywordReference id="org.xtext.example.compoNantes.ui.keyword_CompoNantes"/>
         </page>
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
-            category="org.xtext.example.compoNantes.MyDsl"
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="org.xtext.example.compoNantes.MyDsl.compiler.propertyPage"
+            category="org.xtext.example.compoNantes.CompoNantes"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="org.xtext.example.compoNantes.CompoNantes.compiler.propertyPage"
             name="Compiler">
-            <keywordReference id="org.xtext.example.compoNantes.ui.keyword_MyDsl"/>
+            <keywordReference id="org.xtext.example.compoNantes.ui.keyword_CompoNantes"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -283,20 +283,20 @@
 		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
 			<command
 				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
-				id="org.xtext.example.compoNantes.MyDsl.OpenGeneratedCode"
+				id="org.xtext.example.compoNantes.CompoNantes.OpenGeneratedCode"
 				style="push">
 					<visibleWhen checkEnabled="false">
-						<reference definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened" />
+						<reference definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened" />
 					</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
 			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
 				<activeWhen>
-					<reference definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened" />
+					<reference definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened" />
 				</activeWhen>
 		</handler>
 	</extension>
@@ -305,11 +305,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened">
+					definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -329,33 +329,33 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened"/>
+					<reference definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-    <!-- quickfix marker resolution generator for org.xtext.example.compoNantes.MyDsl -->
+    <!-- quickfix marker resolution generator for org.xtext.example.compoNantes.CompoNantes -->
     <extension
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.xtext.example.compoNantes.ui.mydsl.check.fast">
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.xtext.example.compoNantes.ui.componantes.check.fast">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
             </attribute>
         </markerResolutionGenerator>
         <markerResolutionGenerator
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.xtext.example.compoNantes.ui.mydsl.check.normal">
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.xtext.example.compoNantes.ui.componantes.check.normal">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
             </attribute>
         </markerResolutionGenerator>
         <markerResolutionGenerator
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.xtext.example.compoNantes.ui.mydsl.check.expensive">
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.xtext.example.compoNantes.ui.componantes.check.expensive">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -365,11 +365,11 @@
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened">
+					definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -381,7 +381,7 @@
                style="push">
             <visibleWhen checkEnabled="false">
                <reference
-                     definitionId="org.xtext.example.compoNantes.MyDsl.Editor.opened">
+                     definitionId="org.xtext.example.compoNantes.CompoNantes.Editor.opened">
                </reference>
             </visibleWhen>
          </command>
@@ -389,29 +389,29 @@
    </extension>
    <extension point="org.eclipse.ui.preferencePages">
 	    <page
-	        category="org.xtext.example.compoNantes.MyDsl"
-	        class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-	        id="org.xtext.example.compoNantes.MyDsl.refactoring"
+	        category="org.xtext.example.compoNantes.CompoNantes"
+	        class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="org.xtext.example.compoNantes.CompoNantes.refactoring"
 	        name="Refactoring">
-	        <keywordReference id="org.xtext.example.compoNantes.ui.keyword_MyDsl"/>
+	        <keywordReference id="org.xtext.example.compoNantes.ui.keyword_CompoNantes"/>
 	    </page>
 	</extension>
 
   <extension point="org.eclipse.compare.contentViewers">
-    <viewer id="org.xtext.example.compoNantes.MyDsl.compare.contentViewers"
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+    <viewer id="org.xtext.example.compoNantes.CompoNantes.compare.contentViewers"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
             extensions="cpn">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
-    <viewer id="org.xtext.example.compoNantes.MyDsl.compare.contentMergeViewers"
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="cpn" label="MyDsl Compare">
+    <viewer id="org.xtext.example.compoNantes.CompoNantes.compare.contentMergeViewers"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="cpn" label="CompoNantes Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
-    <provider id="org.xtext.example.compoNantes.MyDsl.editors.documentProviders"
-            class="org.xtext.example.compoNantes.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+    <provider id="org.xtext.example.compoNantes.CompoNantes.editors.documentProviders"
+            class="org.xtext.example.compoNantes.ui.CompoNantesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="cpn">
     </provider>
   </extension>

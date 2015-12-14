@@ -22,4 +22,4 @@ Export-Package: org.xtext.example.compoNantes.ui.quickfix,
  org.xtext.example.compoNantes.ui.contentassist,
  org.xtext.example.compoNantes.ui.internal,
  org.xtext.example.compoNantes.ui.contentassist.antlr
-Bundle-Activator: org.xtext.example.compoNantes.ui.internal.MyDslActivator
+Bundle-Activator: org.xtext.example.compoNantes.ui.internal.CompoNantesActivator

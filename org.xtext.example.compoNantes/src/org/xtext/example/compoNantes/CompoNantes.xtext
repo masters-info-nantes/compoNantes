@@ -1,0 +1,53 @@
+grammar org.xtext.example.compoNantes.CompoNantes with org.eclipse.xtext.common.Terminals
+
+generate compoNantes "http://www.xtext.org/example/compoNantes/CompoNantes"
+
+Model:
+	subsystem+=(SubSystem|Component)*;
+
+SubSystem:
+	'subsystem' name=ID '{'
+		components+=Component*
+		interfaces+=Interface*
+		ports+=Port*
+		dependencies+=Dependency*
+		usages+=Usage*
+	'}'
+;
+
+Component:
+	'component' name=ID '{'
+		interfaces+=Interface*
+		ports+=Port*
+		dependencies+=Dependency*
+		usages+=Usage*
+	'}'
+	
+;
+	
+Interface:
+	'interface' type=Type name=ID
+;
+	
+Port:
+	'port' name=ID
+;
+	
+Dependency:
+	'dependency' component = [Element|QualifiedName]
+;
+
+Usage:
+	'usage' component = [Element|QualifiedName]
+;
+
+Element:
+	Component | SubSystem
+;
+
+QualifiedName:
+    ID ('.' ID)*;
+
+enum Type:
+	REQUIRED='required' | PROVIDED='provided'
+;

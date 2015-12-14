@@ -18,14 +18,17 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.example.compoNantes,
  org.xtext.example.compoNantes.services,
- org.xtext.example.compoNantes.myDsl,
- org.xtext.example.compoNantes.myDsl.impl,
- org.xtext.example.compoNantes.myDsl.util,
+ org.xtext.example.compoNantes.compoNantes,
+ org.xtext.example.compoNantes.compoNantes.impl,
+ org.xtext.example.compoNantes.compoNantes.util,
  org.xtext.example.compoNantes.serializer,
  org.xtext.example.compoNantes.parser.antlr,
  org.xtext.example.compoNantes.parser.antlr.internal,
  org.xtext.example.compoNantes.validation,
  org.xtext.example.compoNantes.scoping,
  org.xtext.example.compoNantes.generator,
- org.xtext.example.compoNantes.formatting
+ org.xtext.example.compoNantes.formatting,
+ org.xtext.example.compoNantes.compoNantes,
+ org.xtext.example.compoNantes.compoNantes.impl,
+ org.xtext.example.compoNantes.compoNantes.util
 
