@@ -26,21 +26,9 @@ public class CompoNantesSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getConnectorTypeRule())
-			return getConnectorTypeToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * enum ConnectorType:
-	 * 	ASSEMBLY='assembly' | DELEGATION='delegation'
-	 * ;
-	 */
-	protected String getConnectorTypeToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

@@ -13,9 +13,9 @@ public class ModelGenerator {
 		
         CompoNantesStandaloneSetup.doSetup();
         XtextResourceSet resourceSet = new XtextResourceSet();
-        URI uri = URI.createURI("src/org/xtext/example/compoNantes/CompoNantes.xtext");
+        URI uri = URI.createURI("sample/test.cpn");
         Resource xtextResource = resourceSet.getResource(uri , true);
-        Resource xmiResource = new EcoreResourceFactoryImpl().createResource(URI.createURI("src/test.ecore"));
+        Resource xmiResource = new EcoreResourceFactoryImpl().createResource(URI.createURI("model/generated/test.ecore"));
         xmiResource.getContents().add(xtextResource.getContents().get(0));
         try {
             xmiResource.save(null);
@@ -23,7 +23,6 @@ public class ModelGenerator {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-               
     }
 
 }

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.compoNantes.compoNantes.CompoNantesPackage;
 import org.xtext.example.compoNantes.compoNantes.Connector;
+import org.xtext.example.compoNantes.compoNantes.ConnectorType;
 import org.xtext.example.compoNantes.compoNantes.Interface;
 
 /**
@@ -22,7 +23,7 @@ import org.xtext.example.compoNantes.compoNantes.Interface;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl#isType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl#getInt1 <em>Int1</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl#getInt2 <em>Int2</em>}</li>
@@ -33,24 +34,24 @@ import org.xtext.example.compoNantes.compoNantes.Interface;
 public class ConnectorImpl extends MinimalEObjectImpl.Container implements Connector
 {
   /**
-   * The default value of the '{@link #isType() <em>Type</em>}' attribute.
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isType()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final boolean TYPE_EDEFAULT = false;
+  protected static final ConnectorType TYPE_EDEFAULT = ConnectorType.ASSEMBLY;
 
   /**
-   * The cached value of the '{@link #isType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isType()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected boolean type = TYPE_EDEFAULT;
+  protected ConnectorType type = TYPE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -118,7 +119,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isType()
+  public ConnectorType getType()
   {
     return type;
   }
@@ -128,10 +129,10 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(boolean newType)
+  public void setType(ConnectorType newType)
   {
-    boolean oldType = type;
-    type = newType;
+    ConnectorType oldType = type;
+    type = newType == null ? TYPE_EDEFAULT : newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.CONNECTOR__TYPE, oldType, type));
   }
@@ -256,7 +257,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
     switch (featureID)
     {
       case CompoNantesPackage.CONNECTOR__TYPE:
-        return isType();
+        return getType();
       case CompoNantesPackage.CONNECTOR__NAME:
         return getName();
       case CompoNantesPackage.CONNECTOR__INT1:
@@ -280,7 +281,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
     switch (featureID)
     {
       case CompoNantesPackage.CONNECTOR__TYPE:
-        setType((Boolean)newValue);
+        setType((ConnectorType)newValue);
         return;
       case CompoNantesPackage.CONNECTOR__NAME:
         setName((String)newValue);

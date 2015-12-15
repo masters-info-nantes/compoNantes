@@ -82,7 +82,7 @@ public class CompoNantesSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Constraint:
-	 *     (type?=ConnectorType name=ID int1=[Interface|QualifiedName] int2=[Interface|QualifiedName])
+	 *     (type=ConnectorType name=ID int1=[Interface|QualifiedName] int2=[Interface|QualifiedName])
 	 */
 	protected void sequence_Connector(EObject context, Connector semanticObject) {
 		if(errorAcceptor != null) {
@@ -97,7 +97,7 @@ public class CompoNantesSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getConnectorAccess().getTypeConnectorTypeEnumRuleCall_1_0(), semanticObject.isType());
+		feeder.accept(grammarAccess.getConnectorAccess().getTypeConnectorTypeEnumRuleCall_1_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getConnectorAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getConnectorAccess().getInt1InterfaceQualifiedNameParserRuleCall_4_0_1(), semanticObject.getInt1());
 		feeder.accept(grammarAccess.getConnectorAccess().getInt2InterfaceQualifiedNameParserRuleCall_6_0_1(), semanticObject.getInt2());
@@ -187,16 +187,16 @@ public class CompoNantesSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Constraint:
-	 *     component=[Element|QualifiedName]
+	 *     interface=[Interface|QualifiedName]
 	 */
 	protected void sequence_Usage(EObject context, Usage semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.USAGE__COMPONENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.USAGE__COMPONENT));
+			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.USAGE__INTERFACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.USAGE__INTERFACE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUsageAccess().getComponentElementQualifiedNameParserRuleCall_1_0_1(), semanticObject.getComponent());
+		feeder.accept(grammarAccess.getUsageAccess().getInterfaceInterfaceQualifiedNameParserRuleCall_1_0_1(), semanticObject.getInterface());
 		feeder.finish();
 	}
 }

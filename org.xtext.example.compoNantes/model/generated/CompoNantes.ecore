@@ -12,7 +12,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Element"/>
   <eClassifiers xsi:type="ecore:EClass" name="Connector">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ConnectorType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="int1" eType="#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="int2" eType="#//Interface"/>
@@ -29,7 +29,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Element"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Usage">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Element"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//Interface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Element">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

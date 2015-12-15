@@ -4258,31 +4258,31 @@ public class InternalCompoNantesParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Usage__Group__1__Impl"
-    // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1572:1: rule__Usage__Group__1__Impl : ( ( rule__Usage__ComponentAssignment_1 ) ) ;
+    // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1572:1: rule__Usage__Group__1__Impl : ( ( rule__Usage__InterfaceAssignment_1 ) ) ;
     public final void rule__Usage__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1576:1: ( ( ( rule__Usage__ComponentAssignment_1 ) ) )
-            // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1577:1: ( ( rule__Usage__ComponentAssignment_1 ) )
+            // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1576:1: ( ( ( rule__Usage__InterfaceAssignment_1 ) ) )
+            // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1577:1: ( ( rule__Usage__InterfaceAssignment_1 ) )
             {
-            // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1577:1: ( ( rule__Usage__ComponentAssignment_1 ) )
-            // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1578:1: ( rule__Usage__ComponentAssignment_1 )
+            // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1577:1: ( ( rule__Usage__InterfaceAssignment_1 ) )
+            // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1578:1: ( rule__Usage__InterfaceAssignment_1 )
             {
-             before(grammarAccess.getUsageAccess().getComponentAssignment_1()); 
-            // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1579:1: ( rule__Usage__ComponentAssignment_1 )
-            // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1579:2: rule__Usage__ComponentAssignment_1
+             before(grammarAccess.getUsageAccess().getInterfaceAssignment_1()); 
+            // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1579:1: ( rule__Usage__InterfaceAssignment_1 )
+            // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:1579:2: rule__Usage__InterfaceAssignment_1
             {
-            pushFollow(FOLLOW_rule__Usage__ComponentAssignment_1_in_rule__Usage__Group__1__Impl3125);
-            rule__Usage__ComponentAssignment_1();
+            pushFollow(FOLLOW_rule__Usage__InterfaceAssignment_1_in_rule__Usage__Group__1__Impl3125);
+            rule__Usage__InterfaceAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getUsageAccess().getComponentAssignment_1()); 
+             after(grammarAccess.getUsageAccess().getInterfaceAssignment_1()); 
 
             }
 
@@ -5579,9 +5579,9 @@ public class InternalCompoNantesParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Dependency__ComponentAssignment_1"
 
 
-    // $ANTLR start "rule__Usage__ComponentAssignment_1"
-    // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:2080:1: rule__Usage__ComponentAssignment_1 : ( ( ruleQualifiedName ) ) ;
-    public final void rule__Usage__ComponentAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Usage__InterfaceAssignment_1"
+    // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:2080:1: rule__Usage__InterfaceAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    public final void rule__Usage__InterfaceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -5592,21 +5592,21 @@ public class InternalCompoNantesParser extends AbstractInternalContentAssistPars
             // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:2085:1: ( ( ruleQualifiedName ) )
             // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:2086:1: ( ruleQualifiedName )
             {
-             before(grammarAccess.getUsageAccess().getComponentElementCrossReference_1_0()); 
+             before(grammarAccess.getUsageAccess().getInterfaceInterfaceCrossReference_1_0()); 
             // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:2087:1: ( ruleQualifiedName )
             // ../org.xtext.example.compoNantes.ui/src-gen/org/xtext/example/compoNantes/ui/contentassist/antlr/internal/InternalCompoNantes.g:2088:1: ruleQualifiedName
             {
-             before(grammarAccess.getUsageAccess().getComponentElementQualifiedNameParserRuleCall_1_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Usage__ComponentAssignment_14158);
+             before(grammarAccess.getUsageAccess().getInterfaceInterfaceQualifiedNameParserRuleCall_1_0_1()); 
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Usage__InterfaceAssignment_14158);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getUsageAccess().getComponentElementQualifiedNameParserRuleCall_1_0_1()); 
+             after(grammarAccess.getUsageAccess().getInterfaceInterfaceQualifiedNameParserRuleCall_1_0_1()); 
 
             }
 
-             after(grammarAccess.getUsageAccess().getComponentElementCrossReference_1_0()); 
+             after(grammarAccess.getUsageAccess().getInterfaceInterfaceCrossReference_1_0()); 
 
             }
 
@@ -5625,7 +5625,7 @@ public class InternalCompoNantesParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Usage__ComponentAssignment_1"
+    // $ANTLR end "rule__Usage__InterfaceAssignment_1"
 
     // Delegated rules
 
@@ -5770,7 +5770,7 @@ public class InternalCompoNantesParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_rule__Usage__Group__1_in_rule__Usage__Group__03039 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_25_in_rule__Usage__Group__0__Impl3067 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Usage__Group__1__Impl_in_rule__Usage__Group__13098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Usage__ComponentAssignment_1_in_rule__Usage__Group__1__Impl3125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Usage__InterfaceAssignment_1_in_rule__Usage__Group__1__Impl3125 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__03159 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__03162 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl3189 = new BitSet(new long[]{0x0000000000000002L});
@@ -5804,6 +5804,6 @@ public class InternalCompoNantesParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_RULE_ID_in_rule__Interface__PortAssignment_44049 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Port__NameAssignment_14084 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Dependency__ComponentAssignment_14119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Usage__ComponentAssignment_14158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Usage__InterfaceAssignment_14158 = new BitSet(new long[]{0x0000000000000002L});
 
 }

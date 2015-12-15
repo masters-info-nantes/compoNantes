@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.Usage#getComponent <em>Component</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.Usage#getInterface <em>Interface</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getUsage()
@@ -23,29 +23,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Usage extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Component</b></em>' reference.
+   * Returns the value of the '<em><b>Interface</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Component</em>' reference isn't clear,
+   * If the meaning of the '<em>Interface</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Component</em>' reference.
-   * @see #setComponent(Element)
-   * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getUsage_Component()
+   * @return the value of the '<em>Interface</em>' reference.
+   * @see #setInterface(Interface)
+   * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getUsage_Interface()
    * @model
    * @generated
    */
-  Element getComponent();
+  Interface getInterface();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.compoNantes.compoNantes.Usage#getComponent <em>Component</em>}' reference.
+   * Sets the value of the '{@link org.xtext.example.compoNantes.compoNantes.Usage#getInterface <em>Interface</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Component</em>' reference.
-   * @see #getComponent()
+   * @param value the new value of the '<em>Interface</em>' reference.
+   * @see #getInterface()
    * @generated
    */
-  void setComponent(Element value);
+  void setInterface(Interface value);
 
 } // Usage

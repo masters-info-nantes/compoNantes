@@ -216,16 +216,16 @@ public class CompoNantesGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInt2InterfaceQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cInt2InterfaceCrossReference_6_0.eContents().get(1);
 		
 		//Connector:
-		//	"connector" type?=ConnectorType name=ID ":" int1=[Interface|QualifiedName] "to" int2=[Interface|QualifiedName];
+		//	"connector" type=ConnectorType name=ID ":" int1=[Interface|QualifiedName] "to" int2=[Interface|QualifiedName];
 		@Override public ParserRule getRule() { return rule; }
 
-		//"connector" type?=ConnectorType name=ID ":" int1=[Interface|QualifiedName] "to" int2=[Interface|QualifiedName]
+		//"connector" type=ConnectorType name=ID ":" int1=[Interface|QualifiedName] "to" int2=[Interface|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//"connector"
 		public Keyword getConnectorKeyword_0() { return cConnectorKeyword_0; }
 
-		//type?=ConnectorType
+		//type=ConnectorType
 		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 
 		//ConnectorType
@@ -366,28 +366,28 @@ public class CompoNantesGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Usage");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cUsageKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cComponentAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cComponentElementCrossReference_1_0 = (CrossReference)cComponentAssignment_1.eContents().get(0);
-		private final RuleCall cComponentElementQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cComponentElementCrossReference_1_0.eContents().get(1);
+		private final Assignment cInterfaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cInterfaceInterfaceCrossReference_1_0 = (CrossReference)cInterfaceAssignment_1.eContents().get(0);
+		private final RuleCall cInterfaceInterfaceQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cInterfaceInterfaceCrossReference_1_0.eContents().get(1);
 		
 		//Usage:
-		//	"usage" component=[Element|QualifiedName];
+		//	"usage" interface=[Interface|QualifiedName];
 		@Override public ParserRule getRule() { return rule; }
 
-		//"usage" component=[Element|QualifiedName]
+		//"usage" interface=[Interface|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//"usage"
 		public Keyword getUsageKeyword_0() { return cUsageKeyword_0; }
 
-		//component=[Element|QualifiedName]
-		public Assignment getComponentAssignment_1() { return cComponentAssignment_1; }
+		//interface=[Interface|QualifiedName]
+		public Assignment getInterfaceAssignment_1() { return cInterfaceAssignment_1; }
 
-		//[Element|QualifiedName]
-		public CrossReference getComponentElementCrossReference_1_0() { return cComponentElementCrossReference_1_0; }
+		//[Interface|QualifiedName]
+		public CrossReference getInterfaceInterfaceCrossReference_1_0() { return cInterfaceInterfaceCrossReference_1_0; }
 
 		//QualifiedName
-		public RuleCall getComponentElementQualifiedNameParserRuleCall_1_0_1() { return cComponentElementQualifiedNameParserRuleCall_1_0_1; }
+		public RuleCall getInterfaceInterfaceQualifiedNameParserRuleCall_1_0_1() { return cInterfaceInterfaceQualifiedNameParserRuleCall_1_0_1; }
 	}
 
 	public class ElementElements extends AbstractParserRuleElementFinder {
@@ -591,7 +591,7 @@ public class CompoNantesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Connector:
-	//	"connector" type?=ConnectorType name=ID ":" int1=[Interface|QualifiedName] "to" int2=[Interface|QualifiedName];
+	//	"connector" type=ConnectorType name=ID ":" int1=[Interface|QualifiedName] "to" int2=[Interface|QualifiedName];
 	public ConnectorElements getConnectorAccess() {
 		return pConnector;
 	}
@@ -631,7 +631,7 @@ public class CompoNantesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Usage:
-	//	"usage" component=[Element|QualifiedName];
+	//	"usage" interface=[Interface|QualifiedName];
 	public UsageElements getUsageAccess() {
 		return pUsage;
 	}

@@ -1575,9 +1575,9 @@ rule__Usage__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getUsageAccess().getComponentAssignment_1()); }
-(rule__Usage__ComponentAssignment_1)
-{ after(grammarAccess.getUsageAccess().getComponentAssignment_1()); }
+{ before(grammarAccess.getUsageAccess().getInterfaceAssignment_1()); }
+(rule__Usage__InterfaceAssignment_1)
+{ after(grammarAccess.getUsageAccess().getInterfaceAssignment_1()); }
 )
 
 ;
@@ -2077,18 +2077,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Usage__ComponentAssignment_1
+rule__Usage__InterfaceAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getUsageAccess().getComponentElementCrossReference_1_0()); }
+{ before(grammarAccess.getUsageAccess().getInterfaceInterfaceCrossReference_1_0()); }
 (
-{ before(grammarAccess.getUsageAccess().getComponentElementQualifiedNameParserRuleCall_1_0_1()); }
-	ruleQualifiedName{ after(grammarAccess.getUsageAccess().getComponentElementQualifiedNameParserRuleCall_1_0_1()); }
+{ before(grammarAccess.getUsageAccess().getInterfaceInterfaceQualifiedNameParserRuleCall_1_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getUsageAccess().getInterfaceInterfaceQualifiedNameParserRuleCall_1_0_1()); }
 )
-{ after(grammarAccess.getUsageAccess().getComponentElementCrossReference_1_0()); }
+{ after(grammarAccess.getUsageAccess().getInterfaceInterfaceCrossReference_1_0()); }
 )
 
 ;

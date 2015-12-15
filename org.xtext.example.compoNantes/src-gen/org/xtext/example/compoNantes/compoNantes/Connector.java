@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.Connector#isType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.Connector#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.Connector#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt1 <em>Int1</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt2 <em>Int2</em>}</li>
@@ -27,6 +27,7 @@ public interface Connector extends EObject
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * The literals are from the enumeration {@link org.xtext.example.compoNantes.compoNantes.ConnectorType}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -34,22 +35,24 @@ public interface Connector extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' attribute.
-   * @see #setType(boolean)
+   * @see org.xtext.example.compoNantes.compoNantes.ConnectorType
+   * @see #setType(ConnectorType)
    * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getConnector_Type()
    * @model
    * @generated
    */
-  boolean isType();
+  ConnectorType getType();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.compoNantes.compoNantes.Connector#isType <em>Type</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.compoNantes.compoNantes.Connector#getType <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' attribute.
-   * @see #isType()
+   * @see org.xtext.example.compoNantes.compoNantes.ConnectorType
+   * @see #getType()
    * @generated
    */
-  void setType(boolean value);
+  void setType(ConnectorType value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

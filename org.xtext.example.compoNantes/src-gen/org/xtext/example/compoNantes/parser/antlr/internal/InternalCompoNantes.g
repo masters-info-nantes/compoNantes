@@ -451,7 +451,7 @@ ruleConnector returns [EObject current=null]
        		set(
        			$current, 
        			"type",
-        		true, 
+        		lv_type_1_0, 
         		"ConnectorType");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -707,7 +707,7 @@ ruleUsage returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getUsageAccess().getComponentElementCrossReference_1_0()); 
+	        newCompositeNode(grammarAccess.getUsageAccess().getInterfaceInterfaceCrossReference_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();

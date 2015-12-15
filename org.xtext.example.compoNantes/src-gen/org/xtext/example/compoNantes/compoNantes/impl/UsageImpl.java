@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.compoNantes.compoNantes.CompoNantesPackage;
-import org.xtext.example.compoNantes.compoNantes.Element;
+import org.xtext.example.compoNantes.compoNantes.Interface;
 import org.xtext.example.compoNantes.compoNantes.Usage;
 
 /**
@@ -22,7 +22,7 @@ import org.xtext.example.compoNantes.compoNantes.Usage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.UsageImpl#getComponent <em>Component</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.UsageImpl#getInterface <em>Interface</em>}</li>
  * </ul>
  *
  * @generated
@@ -30,14 +30,14 @@ import org.xtext.example.compoNantes.compoNantes.Usage;
 public class UsageImpl extends MinimalEObjectImpl.Container implements Usage
 {
   /**
-   * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
+   * The cached value of the '{@link #getInterface() <em>Interface</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComponent()
+   * @see #getInterface()
    * @generated
    * @ordered
    */
-  protected Element component;
+  protected Interface interface_;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,19 +65,19 @@ public class UsageImpl extends MinimalEObjectImpl.Container implements Usage
    * <!-- end-user-doc -->
    * @generated
    */
-  public Element getComponent()
+  public Interface getInterface()
   {
-    if (component != null && component.eIsProxy())
+    if (interface_ != null && interface_.eIsProxy())
     {
-      InternalEObject oldComponent = (InternalEObject)component;
-      component = (Element)eResolveProxy(oldComponent);
-      if (component != oldComponent)
+      InternalEObject oldInterface = (InternalEObject)interface_;
+      interface_ = (Interface)eResolveProxy(oldInterface);
+      if (interface_ != oldInterface)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompoNantesPackage.USAGE__COMPONENT, oldComponent, component));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompoNantesPackage.USAGE__INTERFACE, oldInterface, interface_));
       }
     }
-    return component;
+    return interface_;
   }
 
   /**
@@ -85,9 +85,9 @@ public class UsageImpl extends MinimalEObjectImpl.Container implements Usage
    * <!-- end-user-doc -->
    * @generated
    */
-  public Element basicGetComponent()
+  public Interface basicGetInterface()
   {
-    return component;
+    return interface_;
   }
 
   /**
@@ -95,12 +95,12 @@ public class UsageImpl extends MinimalEObjectImpl.Container implements Usage
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setComponent(Element newComponent)
+  public void setInterface(Interface newInterface)
   {
-    Element oldComponent = component;
-    component = newComponent;
+    Interface oldInterface = interface_;
+    interface_ = newInterface;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.USAGE__COMPONENT, oldComponent, component));
+      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.USAGE__INTERFACE, oldInterface, interface_));
   }
 
   /**
@@ -113,9 +113,9 @@ public class UsageImpl extends MinimalEObjectImpl.Container implements Usage
   {
     switch (featureID)
     {
-      case CompoNantesPackage.USAGE__COMPONENT:
-        if (resolve) return getComponent();
-        return basicGetComponent();
+      case CompoNantesPackage.USAGE__INTERFACE:
+        if (resolve) return getInterface();
+        return basicGetInterface();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -130,8 +130,8 @@ public class UsageImpl extends MinimalEObjectImpl.Container implements Usage
   {
     switch (featureID)
     {
-      case CompoNantesPackage.USAGE__COMPONENT:
-        setComponent((Element)newValue);
+      case CompoNantesPackage.USAGE__INTERFACE:
+        setInterface((Interface)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -147,8 +147,8 @@ public class UsageImpl extends MinimalEObjectImpl.Container implements Usage
   {
     switch (featureID)
     {
-      case CompoNantesPackage.USAGE__COMPONENT:
-        setComponent((Element)null);
+      case CompoNantesPackage.USAGE__INTERFACE:
+        setInterface((Interface)null);
         return;
     }
     super.eUnset(featureID);
@@ -164,8 +164,8 @@ public class UsageImpl extends MinimalEObjectImpl.Container implements Usage
   {
     switch (featureID)
     {
-      case CompoNantesPackage.USAGE__COMPONENT:
-        return component != null;
+      case CompoNantesPackage.USAGE__INTERFACE:
+        return interface_ != null;
     }
     return super.eIsSet(featureID);
   }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compoNantes:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:compoNantes="http://www.xtext.org/example/compoNantes/CompoNantes">
+  <subsystem xsi:type="compoNantes:SubSystem" name="Webstore">
+    <ports name="ProductSearch"/>
+    <ports name="OnlineShopping"/>
+    <ports name="UserSession"/>
+    <ports name="SearchInventory"/>
+    <ports name="ManageOrder"/>
+    <ports name="ManageCustomer"/>
+    <interfaces type="provided" name="IProductSearch" port="sample/test.cpn#|0"/>
+    <interfaces type="provided" name="IOnlineShopping" port="sample/test.cpn#|1"/>
+    <interfaces type="provided" name="IUserSession" port="sample/test.cpn#|2"/>
+    <interfaces name="ISearchInventory" port="sample/test.cpn#|3"/>
+    <interfaces name="IManageOrder" port="sample/test.cpn#|4"/>
+    <interfaces name="IManageCustomer" port="sample/test.cpn#|5"/>
+    <components name="SearchEngine">
+      <ports name="ProductSearch"/>
+      <interfaces type="provided" name="IProductSearch" port="sample/test.cpn#|6"/>
+      <connectors name="toExternal" int1="sample/test.cpn#|7" int2="sample/test.cpn#|8"/>
+    </components>
+  </subsystem>
+  <subsystem xsi:type="compoNantes:SubSystem" name="Wharehouse">
+    <ports name="SearchInventory"/>
+    <interfaces type="provided" name="ISearchInventory" port="sample/test.cpn#|9"/>
+    <connectors type="delegation" name="toWebStore" int1="sample/test.cpn#|10" int2="sample/test.cpn#|11"/>
+  </subsystem>
+  <subsystem xsi:type="compoNantes:SubSystem" name="Accounting">
+    <ports name="ManageCustomer"/>
+    <interfaces type="provided" name="IManageCustomer" port="sample/test.cpn#|12"/>
+    <connectors type="delegation" name="toWebstore" int1="sample/test.cpn#|13" int2="sample/test.cpn#|14"/>
+  </subsystem>
+</compoNantes:Model>

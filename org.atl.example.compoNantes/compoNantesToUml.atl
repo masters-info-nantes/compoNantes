@@ -4,9 +4,17 @@
 module compoNantesToUml;
 create OUT : UML from IN : COMPO;
 
-helper context COMPO!Component def: providedInterfaces(): Collection(UML!Interface)=
-	;
-	
+helper context COMPO!Interface def: isProvided() : Boolean =
+	if self.type.toString() = 'provided' 
+	then true
+	else false
+	endif
+;
+
+helper context COMPO!Component def: getProvided() : Sequence(COMPO!Interface) = 
+	self.interfaces->collect(e|e.type.toString()='provided')
+;
+
 rule ComponanteToComponent {
 	from
 		cpn : COMPO!Component
@@ -14,7 +22,26 @@ rule ComponanteToComponent {
 		cn : UML!Component (
 			name <- cpn.name,
 			ownedPort <- cpn.ports,
-			provided <- cpn,
-			
+			provided <- cpn.getProvided(),
+			required <- cpn.interfaces->collect(e | not e.isProvided())			
+	)
+}
+
+rule SubSystemToCpn {
+	from
+		sub : COMPO!SubSystem
+	to
+		cn : UML!Component(
+			name <- sub.name,
+			ownedElement <- sub.components
+		)
+}
+
+rule InterfaceToCpn {
+	from
+		int : COMPO!Interface
+	to
+		cn : UML!Interface(
+			name <- int.name
 		)
 }

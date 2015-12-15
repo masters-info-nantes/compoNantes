@@ -1125,7 +1125,7 @@ public class InternalCompoNantesParser extends AbstractInternalAntlrParser {
                    		set(
                    			current, 
                    			"type",
-                    		true, 
+                    		lv_type_1_0, 
                     		"ConnectorType");
             	        afterParserOrEnumRuleCall();
             	    
@@ -1683,7 +1683,7 @@ public class InternalCompoNantesParser extends AbstractInternalAntlrParser {
             	        }
                     
              
-            	        newCompositeNode(grammarAccess.getUsageAccess().getComponentElementCrossReference_1_0()); 
+            	        newCompositeNode(grammarAccess.getUsageAccess().getInterfaceInterfaceCrossReference_1_0()); 
             	    
             pushFollow(FOLLOW_ruleQualifiedName_in_ruleUsage1325);
             ruleQualifiedName();

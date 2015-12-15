@@ -1,0 +1,29 @@
+subsystem Webstore{
+	port ProductSearch
+	port OnlineShopping
+	port UserSession
+	port SearchInventory
+	port ManageOrder
+	port ManageCustomer
+	interface provided IProductSearch port ProductSearch
+	interface provided IOnlineShopping port OnlineShopping
+	interface provided IUserSession port UserSession
+	interface required ISearchInventory port SearchInventory
+	interface required IManageOrder port ManageOrder
+	interface required IManageCustomer port ManageCustomer
+	component SearchEngine{
+		port ProductSearch
+		interface provided IProductSearch port ProductSearch
+		connector assembly toExternal : Webstore.IProductSearch to IProductSearch
+	}
+}
+subsystem Wharehouse{
+	port SearchInventory
+	interface provided ISearchInventory port SearchInventory
+	connector delegation toWebStore : Webstore.ISearchInventory to ISearchInventory
+}
+subsystem Accounting{
+	port ManageCustomer
+	interface provided IManageCustomer port ManageCustomer
+	connector delegation toWebstore : Webstore.IManageCustomer to IManageCustomer
+}

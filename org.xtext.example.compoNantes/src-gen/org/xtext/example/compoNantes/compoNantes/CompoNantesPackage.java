@@ -481,13 +481,13 @@ public interface CompoNantesPackage extends EPackage
   int USAGE = 7;
 
   /**
-   * The feature id for the '<em><b>Component</b></em>' reference.
+   * The feature id for the '<em><b>Interface</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int USAGE__COMPONENT = 0;
+  int USAGE__INTERFACE = 0;
 
   /**
    * The number of structural features of the '<em>Usage</em>' class.
@@ -582,11 +582,11 @@ public interface CompoNantesPackage extends EPackage
   EClass getConnector();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.compoNantes.compoNantes.Connector#isType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.compoNantes.compoNantes.Connector#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Type</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Connector#isType()
+   * @see org.xtext.example.compoNantes.compoNantes.Connector#getType()
    * @see #getConnector()
    * @generated
    */
@@ -721,15 +721,15 @@ public interface CompoNantesPackage extends EPackage
   EClass getUsage();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Usage#getComponent <em>Component</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Usage#getInterface <em>Interface</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Component</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Usage#getComponent()
+   * @return the meta object for the reference '<em>Interface</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Usage#getInterface()
    * @see #getUsage()
    * @generated
    */
-  EReference getUsage_Component();
+  EReference getUsage_Interface();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.compoNantes.compoNantes.Element <em>Element</em>}'.
@@ -1019,12 +1019,12 @@ public interface CompoNantesPackage extends EPackage
     EClass USAGE = eINSTANCE.getUsage();
 
     /**
-     * The meta object literal for the '<em><b>Component</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Interface</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference USAGE__COMPONENT = eINSTANCE.getUsage_Component();
+    EReference USAGE__INTERFACE = eINSTANCE.getUsage_Interface();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.compoNantes.compoNantes.impl.ElementImpl <em>Element</em>}' class.

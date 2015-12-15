@@ -40,7 +40,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Dependency/component"/>
     </genClasses>
     <genClasses ecoreClass="CompoNantes.ecore#//Usage">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Usage/component"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Usage/interface"/>
     </genClasses>
     <genClasses ecoreClass="CompoNantes.ecore#//Element">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Element/name"/>

@@ -73,7 +73,7 @@ public class CompoNantesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInterfaceAccess().getPortAssignment_4(), "rule__Interface__PortAssignment_4");
 					put(grammarAccess.getPortAccess().getNameAssignment_1(), "rule__Port__NameAssignment_1");
 					put(grammarAccess.getDependencyAccess().getComponentAssignment_1(), "rule__Dependency__ComponentAssignment_1");
-					put(grammarAccess.getUsageAccess().getComponentAssignment_1(), "rule__Usage__ComponentAssignment_1");
+					put(grammarAccess.getUsageAccess().getInterfaceAssignment_1(), "rule__Usage__InterfaceAssignment_1");
 				}
 			};
 		}
