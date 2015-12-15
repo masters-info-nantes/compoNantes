@@ -68,11 +68,12 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
       case CompoNantesPackage.MODEL: return createModel();
       case CompoNantesPackage.SUB_SYSTEM: return createSubSystem();
       case CompoNantesPackage.COMPONENT: return createComponent();
+      case CompoNantesPackage.CONNECTOR: return createConnector();
       case CompoNantesPackage.INTERFACE: return createInterface();
       case CompoNantesPackage.PORT: return createPort();
       case CompoNantesPackage.DEPENDENCY: return createDependency();
       case CompoNantesPackage.USAGE: return createUsage();
-      case CompoNantesPackage.TRUC: return createTruc();
+      case CompoNantesPackage.ELEMENT: return createElement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -88,8 +89,10 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
   {
     switch (eDataType.getClassifierID())
     {
-      case CompoNantesPackage.TYPE:
-        return createTypeFromString(eDataType, initialValue);
+      case CompoNantesPackage.INTERFACE_TYPE:
+        return createInterfaceTypeFromString(eDataType, initialValue);
+      case CompoNantesPackage.CONNECTOR_TYPE:
+        return createConnectorTypeFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -105,8 +108,10 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
   {
     switch (eDataType.getClassifierID())
     {
-      case CompoNantesPackage.TYPE:
-        return convertTypeToString(eDataType, instanceValue);
+      case CompoNantesPackage.INTERFACE_TYPE:
+        return convertInterfaceTypeToString(eDataType, instanceValue);
+      case CompoNantesPackage.CONNECTOR_TYPE:
+        return convertConnectorTypeToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -143,6 +148,17 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
   {
     ComponentImpl component = new ComponentImpl();
     return component;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Connector createConnector()
+  {
+    ConnectorImpl connector = new ConnectorImpl();
+    return connector;
   }
 
   /**
@@ -194,10 +210,10 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
    * <!-- end-user-doc -->
    * @generated
    */
-  public Truc createTruc()
+  public Element createElement()
   {
-    TrucImpl truc = new TrucImpl();
-    return truc;
+    ElementImpl element = new ElementImpl();
+    return element;
   }
 
   /**
@@ -205,9 +221,9 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type createTypeFromString(EDataType eDataType, String initialValue)
+  public InterfaceType createInterfaceTypeFromString(EDataType eDataType, String initialValue)
   {
-    Type result = Type.get(initialValue);
+    InterfaceType result = InterfaceType.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -217,7 +233,29 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertTypeToString(EDataType eDataType, Object instanceValue)
+  public String convertInterfaceTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConnectorType createConnectorTypeFromString(EDataType eDataType, String initialValue)
+  {
+    ConnectorType result = ConnectorType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertConnectorTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

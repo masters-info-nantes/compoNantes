@@ -10,14 +10,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Interface Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getType()
+ * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getInterfaceType()
  * @model
  * @generated
  */
-public enum Type implements Enumerator
+public enum InterfaceType implements Enumerator
 {
   /**
    * The '<em><b>REQUIRED</b></em>' literal object.
@@ -70,39 +70,39 @@ public enum Type implements Enumerator
   public static final int PROVIDED_VALUE = 1;
 
   /**
-   * An array of all the '<em><b>Type</b></em>' enumerators.
+   * An array of all the '<em><b>Interface Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final Type[] VALUES_ARRAY =
-    new Type[]
+  private static final InterfaceType[] VALUES_ARRAY =
+    new InterfaceType[]
     {
       REQUIRED,
       PROVIDED,
     };
 
   /**
-   * A public read-only list of all the '<em><b>Type</b></em>' enumerators.
+   * A public read-only list of all the '<em><b>Interface Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final List<Type> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<InterfaceType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Type</b></em>' literal with the specified literal value.
+   * Returns the '<em><b>Interface Type</b></em>' literal with the specified literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param literal the literal.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static Type get(String literal)
+  public static InterfaceType get(String literal)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      Type result = VALUES_ARRAY[i];
+      InterfaceType result = VALUES_ARRAY[i];
       if (result.toString().equals(literal))
       {
         return result;
@@ -112,18 +112,18 @@ public enum Type implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Type</b></em>' literal with the specified name.
+   * Returns the '<em><b>Interface Type</b></em>' literal with the specified name.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param name the name.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static Type getByName(String name)
+  public static InterfaceType getByName(String name)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      Type result = VALUES_ARRAY[i];
+      InterfaceType result = VALUES_ARRAY[i];
       if (result.getName().equals(name))
       {
         return result;
@@ -133,14 +133,14 @@ public enum Type implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Type</b></em>' literal with the specified integer value.
+   * Returns the '<em><b>Interface Type</b></em>' literal with the specified integer value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the integer value.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static Type get(int value)
+  public static InterfaceType get(int value)
   {
     switch (value)
     {
@@ -177,7 +177,7 @@ public enum Type implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
-  private Type(int value, String name, String literal)
+  private InterfaceType(int value, String name, String literal)
   {
     this.value = value;
     this.name = name;
@@ -226,4 +226,4 @@ public enum Type implements Enumerator
     return literal;
   }
   
-} //Type
+} //InterfaceType

@@ -13,6 +13,6 @@ package org.xtext.example.compoNantes.compoNantes;
  * @model
  * @generated
  */
-public interface Component extends Truc
+public interface Component extends Element
 {
 } // Component

@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SubSystem extends Truc
+public interface SubSystem extends Element
 {
   /**
    * Returns the value of the '<em><b>Components</b></em>' containment reference list.

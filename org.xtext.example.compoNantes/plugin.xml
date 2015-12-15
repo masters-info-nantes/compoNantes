@@ -6,7 +6,7 @@
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
        uri = "http://www.xtext.org/example/compoNantes/CompoNantes" 
-       class = "org.xtext.example.compoNantes.myDsl.MyDslPackage"
+       class = "org.xtext.example.compoNantes.compoNantes.CompoNantesPackage"
        genModel = "model/generated/CompoNantes.genmodel" /> 
 	
   </extension>

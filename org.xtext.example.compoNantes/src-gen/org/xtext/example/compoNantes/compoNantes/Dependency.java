@@ -31,12 +31,12 @@ public interface Dependency extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Component</em>' reference.
-   * @see #setComponent(Truc)
+   * @see #setComponent(Element)
    * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getDependency_Component()
    * @model
    * @generated
    */
-  Truc getComponent();
+  Element getComponent();
 
   /**
    * Sets the value of the '{@link org.xtext.example.compoNantes.compoNantes.Dependency#getComponent <em>Component</em>}' reference.
@@ -46,6 +46,6 @@ public interface Dependency extends EObject
    * @see #getComponent()
    * @generated
    */
-  void setComponent(Truc value);
+  void setComponent(Element value);
 
 } // Dependency

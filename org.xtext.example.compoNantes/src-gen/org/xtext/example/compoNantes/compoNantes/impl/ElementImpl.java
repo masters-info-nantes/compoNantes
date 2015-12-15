@@ -19,30 +19,32 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.compoNantes.compoNantes.CompoNantesPackage;
+import org.xtext.example.compoNantes.compoNantes.Connector;
 import org.xtext.example.compoNantes.compoNantes.Dependency;
+import org.xtext.example.compoNantes.compoNantes.Element;
 import org.xtext.example.compoNantes.compoNantes.Interface;
 import org.xtext.example.compoNantes.compoNantes.Port;
-import org.xtext.example.compoNantes.compoNantes.Truc;
 import org.xtext.example.compoNantes.compoNantes.Usage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Truc</b></em>'.
+ * An implementation of the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.TrucImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.TrucImpl#getInterfaces <em>Interfaces</em>}</li>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.TrucImpl#getPorts <em>Ports</em>}</li>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.TrucImpl#getDependencies <em>Dependencies</em>}</li>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.TrucImpl#getUsages <em>Usages</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ElementImpl#getPorts <em>Ports</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ElementImpl#getInterfaces <em>Interfaces</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ElementImpl#getDependencies <em>Dependencies</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ElementImpl#getUsages <em>Usages</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ElementImpl#getConnectors <em>Connectors</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
+public class ElementImpl extends MinimalEObjectImpl.Container implements Element
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -65,16 +67,6 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInterfaces()
-   * @generated
-   * @ordered
-   */
-  protected EList<Interface> interfaces;
-
-  /**
    * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -83,6 +75,16 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
    * @ordered
    */
   protected EList<Port> ports;
+
+  /**
+   * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInterfaces()
+   * @generated
+   * @ordered
+   */
+  protected EList<Interface> interfaces;
 
   /**
    * The cached value of the '{@link #getDependencies() <em>Dependencies</em>}' containment reference list.
@@ -105,11 +107,21 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
   protected EList<Usage> usages;
 
   /**
+   * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConnectors()
+   * @generated
+   * @ordered
+   */
+  protected EList<Connector> connectors;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TrucImpl()
+  protected ElementImpl()
   {
     super();
   }
@@ -122,7 +134,7 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
   @Override
   protected EClass eStaticClass()
   {
-    return CompoNantesPackage.Literals.TRUC;
+    return CompoNantesPackage.Literals.ELEMENT;
   }
 
   /**
@@ -145,21 +157,7 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.TRUC__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Interface> getInterfaces()
-  {
-    if (interfaces == null)
-    {
-      interfaces = new EObjectContainmentEList<Interface>(Interface.class, this, CompoNantesPackage.TRUC__INTERFACES);
-    }
-    return interfaces;
+      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.ELEMENT__NAME, oldName, name));
   }
 
   /**
@@ -171,9 +169,23 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
   {
     if (ports == null)
     {
-      ports = new EObjectContainmentEList<Port>(Port.class, this, CompoNantesPackage.TRUC__PORTS);
+      ports = new EObjectContainmentEList<Port>(Port.class, this, CompoNantesPackage.ELEMENT__PORTS);
     }
     return ports;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Interface> getInterfaces()
+  {
+    if (interfaces == null)
+    {
+      interfaces = new EObjectContainmentEList<Interface>(Interface.class, this, CompoNantesPackage.ELEMENT__INTERFACES);
+    }
+    return interfaces;
   }
 
   /**
@@ -185,7 +197,7 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
   {
     if (dependencies == null)
     {
-      dependencies = new EObjectContainmentEList<Dependency>(Dependency.class, this, CompoNantesPackage.TRUC__DEPENDENCIES);
+      dependencies = new EObjectContainmentEList<Dependency>(Dependency.class, this, CompoNantesPackage.ELEMENT__DEPENDENCIES);
     }
     return dependencies;
   }
@@ -199,9 +211,23 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
   {
     if (usages == null)
     {
-      usages = new EObjectContainmentEList<Usage>(Usage.class, this, CompoNantesPackage.TRUC__USAGES);
+      usages = new EObjectContainmentEList<Usage>(Usage.class, this, CompoNantesPackage.ELEMENT__USAGES);
     }
     return usages;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Connector> getConnectors()
+  {
+    if (connectors == null)
+    {
+      connectors = new EObjectContainmentEList<Connector>(Connector.class, this, CompoNantesPackage.ELEMENT__CONNECTORS);
+    }
+    return connectors;
   }
 
   /**
@@ -214,14 +240,16 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
   {
     switch (featureID)
     {
-      case CompoNantesPackage.TRUC__INTERFACES:
-        return ((InternalEList<?>)getInterfaces()).basicRemove(otherEnd, msgs);
-      case CompoNantesPackage.TRUC__PORTS:
+      case CompoNantesPackage.ELEMENT__PORTS:
         return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
-      case CompoNantesPackage.TRUC__DEPENDENCIES:
+      case CompoNantesPackage.ELEMENT__INTERFACES:
+        return ((InternalEList<?>)getInterfaces()).basicRemove(otherEnd, msgs);
+      case CompoNantesPackage.ELEMENT__DEPENDENCIES:
         return ((InternalEList<?>)getDependencies()).basicRemove(otherEnd, msgs);
-      case CompoNantesPackage.TRUC__USAGES:
+      case CompoNantesPackage.ELEMENT__USAGES:
         return ((InternalEList<?>)getUsages()).basicRemove(otherEnd, msgs);
+      case CompoNantesPackage.ELEMENT__CONNECTORS:
+        return ((InternalEList<?>)getConnectors()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -236,16 +264,18 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
   {
     switch (featureID)
     {
-      case CompoNantesPackage.TRUC__NAME:
+      case CompoNantesPackage.ELEMENT__NAME:
         return getName();
-      case CompoNantesPackage.TRUC__INTERFACES:
-        return getInterfaces();
-      case CompoNantesPackage.TRUC__PORTS:
+      case CompoNantesPackage.ELEMENT__PORTS:
         return getPorts();
-      case CompoNantesPackage.TRUC__DEPENDENCIES:
+      case CompoNantesPackage.ELEMENT__INTERFACES:
+        return getInterfaces();
+      case CompoNantesPackage.ELEMENT__DEPENDENCIES:
         return getDependencies();
-      case CompoNantesPackage.TRUC__USAGES:
+      case CompoNantesPackage.ELEMENT__USAGES:
         return getUsages();
+      case CompoNantesPackage.ELEMENT__CONNECTORS:
+        return getConnectors();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -261,24 +291,28 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
   {
     switch (featureID)
     {
-      case CompoNantesPackage.TRUC__NAME:
+      case CompoNantesPackage.ELEMENT__NAME:
         setName((String)newValue);
         return;
-      case CompoNantesPackage.TRUC__INTERFACES:
-        getInterfaces().clear();
-        getInterfaces().addAll((Collection<? extends Interface>)newValue);
-        return;
-      case CompoNantesPackage.TRUC__PORTS:
+      case CompoNantesPackage.ELEMENT__PORTS:
         getPorts().clear();
         getPorts().addAll((Collection<? extends Port>)newValue);
         return;
-      case CompoNantesPackage.TRUC__DEPENDENCIES:
+      case CompoNantesPackage.ELEMENT__INTERFACES:
+        getInterfaces().clear();
+        getInterfaces().addAll((Collection<? extends Interface>)newValue);
+        return;
+      case CompoNantesPackage.ELEMENT__DEPENDENCIES:
         getDependencies().clear();
         getDependencies().addAll((Collection<? extends Dependency>)newValue);
         return;
-      case CompoNantesPackage.TRUC__USAGES:
+      case CompoNantesPackage.ELEMENT__USAGES:
         getUsages().clear();
         getUsages().addAll((Collection<? extends Usage>)newValue);
+        return;
+      case CompoNantesPackage.ELEMENT__CONNECTORS:
+        getConnectors().clear();
+        getConnectors().addAll((Collection<? extends Connector>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -294,20 +328,23 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
   {
     switch (featureID)
     {
-      case CompoNantesPackage.TRUC__NAME:
+      case CompoNantesPackage.ELEMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case CompoNantesPackage.TRUC__INTERFACES:
-        getInterfaces().clear();
-        return;
-      case CompoNantesPackage.TRUC__PORTS:
+      case CompoNantesPackage.ELEMENT__PORTS:
         getPorts().clear();
         return;
-      case CompoNantesPackage.TRUC__DEPENDENCIES:
+      case CompoNantesPackage.ELEMENT__INTERFACES:
+        getInterfaces().clear();
+        return;
+      case CompoNantesPackage.ELEMENT__DEPENDENCIES:
         getDependencies().clear();
         return;
-      case CompoNantesPackage.TRUC__USAGES:
+      case CompoNantesPackage.ELEMENT__USAGES:
         getUsages().clear();
+        return;
+      case CompoNantesPackage.ELEMENT__CONNECTORS:
+        getConnectors().clear();
         return;
     }
     super.eUnset(featureID);
@@ -323,16 +360,18 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
   {
     switch (featureID)
     {
-      case CompoNantesPackage.TRUC__NAME:
+      case CompoNantesPackage.ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case CompoNantesPackage.TRUC__INTERFACES:
-        return interfaces != null && !interfaces.isEmpty();
-      case CompoNantesPackage.TRUC__PORTS:
+      case CompoNantesPackage.ELEMENT__PORTS:
         return ports != null && !ports.isEmpty();
-      case CompoNantesPackage.TRUC__DEPENDENCIES:
+      case CompoNantesPackage.ELEMENT__INTERFACES:
+        return interfaces != null && !interfaces.isEmpty();
+      case CompoNantesPackage.ELEMENT__DEPENDENCIES:
         return dependencies != null && !dependencies.isEmpty();
-      case CompoNantesPackage.TRUC__USAGES:
+      case CompoNantesPackage.ELEMENT__USAGES:
         return usages != null && !usages.isEmpty();
+      case CompoNantesPackage.ELEMENT__CONNECTORS:
+        return connectors != null && !connectors.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -354,4 +393,4 @@ public class TrucImpl extends MinimalEObjectImpl.Container implements Truc
     return result.toString();
   }
 
-} //TrucImpl
+} //ElementImpl

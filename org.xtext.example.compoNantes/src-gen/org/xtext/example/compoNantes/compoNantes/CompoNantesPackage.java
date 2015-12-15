@@ -86,14 +86,14 @@ public interface CompoNantesPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.compoNantes.compoNantes.impl.TrucImpl <em>Truc</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.compoNantes.compoNantes.impl.ElementImpl <em>Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.compoNantes.compoNantes.impl.TrucImpl
-   * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getTruc()
+   * @see org.xtext.example.compoNantes.compoNantes.impl.ElementImpl
+   * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getElement()
    * @generated
    */
-  int TRUC = 7;
+  int ELEMENT = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,16 +102,7 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRUC__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Interfaces</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRUC__INTERFACES = 1;
+  int ELEMENT__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Ports</b></em>' containment reference list.
@@ -120,7 +111,16 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRUC__PORTS = 2;
+  int ELEMENT__PORTS = 1;
+
+  /**
+   * The feature id for the '<em><b>Interfaces</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__INTERFACES = 2;
 
   /**
    * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
@@ -129,7 +129,7 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRUC__DEPENDENCIES = 3;
+  int ELEMENT__DEPENDENCIES = 3;
 
   /**
    * The feature id for the '<em><b>Usages</b></em>' containment reference list.
@@ -138,16 +138,25 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRUC__USAGES = 4;
+  int ELEMENT__USAGES = 4;
 
   /**
-   * The number of structural features of the '<em>Truc</em>' class.
+   * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRUC_FEATURE_COUNT = 5;
+  int ELEMENT__CONNECTORS = 5;
+
+  /**
+   * The number of structural features of the '<em>Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.xtext.example.compoNantes.compoNantes.impl.SubSystemImpl <em>Sub System</em>}' class.
@@ -166,16 +175,7 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_SYSTEM__NAME = TRUC__NAME;
-
-  /**
-   * The feature id for the '<em><b>Interfaces</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_SYSTEM__INTERFACES = TRUC__INTERFACES;
+  int SUB_SYSTEM__NAME = ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Ports</b></em>' containment reference list.
@@ -184,7 +184,16 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_SYSTEM__PORTS = TRUC__PORTS;
+  int SUB_SYSTEM__PORTS = ELEMENT__PORTS;
+
+  /**
+   * The feature id for the '<em><b>Interfaces</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_SYSTEM__INTERFACES = ELEMENT__INTERFACES;
 
   /**
    * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
@@ -193,7 +202,7 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_SYSTEM__DEPENDENCIES = TRUC__DEPENDENCIES;
+  int SUB_SYSTEM__DEPENDENCIES = ELEMENT__DEPENDENCIES;
 
   /**
    * The feature id for the '<em><b>Usages</b></em>' containment reference list.
@@ -202,7 +211,16 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_SYSTEM__USAGES = TRUC__USAGES;
+  int SUB_SYSTEM__USAGES = ELEMENT__USAGES;
+
+  /**
+   * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_SYSTEM__CONNECTORS = ELEMENT__CONNECTORS;
 
   /**
    * The feature id for the '<em><b>Components</b></em>' containment reference list.
@@ -211,7 +229,7 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_SYSTEM__COMPONENTS = TRUC_FEATURE_COUNT + 0;
+  int SUB_SYSTEM__COMPONENTS = ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Sub System</em>' class.
@@ -220,7 +238,7 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_SYSTEM_FEATURE_COUNT = TRUC_FEATURE_COUNT + 1;
+  int SUB_SYSTEM_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.compoNantes.compoNantes.impl.ComponentImpl <em>Component</em>}' class.
@@ -239,16 +257,7 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__NAME = TRUC__NAME;
-
-  /**
-   * The feature id for the '<em><b>Interfaces</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__INTERFACES = TRUC__INTERFACES;
+  int COMPONENT__NAME = ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Ports</b></em>' containment reference list.
@@ -257,7 +266,16 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__PORTS = TRUC__PORTS;
+  int COMPONENT__PORTS = ELEMENT__PORTS;
+
+  /**
+   * The feature id for the '<em><b>Interfaces</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__INTERFACES = ELEMENT__INTERFACES;
 
   /**
    * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
@@ -266,7 +284,7 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__DEPENDENCIES = TRUC__DEPENDENCIES;
+  int COMPONENT__DEPENDENCIES = ELEMENT__DEPENDENCIES;
 
   /**
    * The feature id for the '<em><b>Usages</b></em>' containment reference list.
@@ -275,7 +293,16 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__USAGES = TRUC__USAGES;
+  int COMPONENT__USAGES = ELEMENT__USAGES;
+
+  /**
+   * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__CONNECTORS = ELEMENT__CONNECTORS;
 
   /**
    * The number of structural features of the '<em>Component</em>' class.
@@ -284,7 +311,62 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_FEATURE_COUNT = TRUC_FEATURE_COUNT + 0;
+  int COMPONENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl <em>Connector</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl
+   * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getConnector()
+   * @generated
+   */
+  int CONNECTOR = 3;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECTOR__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECTOR__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Int1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECTOR__INT1 = 2;
+
+  /**
+   * The feature id for the '<em><b>Int2</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECTOR__INT2 = 3;
+
+  /**
+   * The number of structural features of the '<em>Connector</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECTOR_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.xtext.example.compoNantes.compoNantes.impl.InterfaceImpl <em>Interface</em>}' class.
@@ -294,7 +376,7 @@ public interface CompoNantesPackage extends EPackage
    * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getInterface()
    * @generated
    */
-  int INTERFACE = 3;
+  int INTERFACE = 4;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -315,13 +397,22 @@ public interface CompoNantesPackage extends EPackage
   int INTERFACE__NAME = 1;
 
   /**
+   * The feature id for the '<em><b>Port</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERFACE__PORT = 2;
+
+  /**
    * The number of structural features of the '<em>Interface</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERFACE_FEATURE_COUNT = 2;
+  int INTERFACE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.compoNantes.compoNantes.impl.PortImpl <em>Port</em>}' class.
@@ -331,7 +422,7 @@ public interface CompoNantesPackage extends EPackage
    * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getPort()
    * @generated
    */
-  int PORT = 4;
+  int PORT = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -359,7 +450,7 @@ public interface CompoNantesPackage extends EPackage
    * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getDependency()
    * @generated
    */
-  int DEPENDENCY = 5;
+  int DEPENDENCY = 6;
 
   /**
    * The feature id for the '<em><b>Component</b></em>' reference.
@@ -387,7 +478,7 @@ public interface CompoNantesPackage extends EPackage
    * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getUsage()
    * @generated
    */
-  int USAGE = 6;
+  int USAGE = 7;
 
   /**
    * The feature id for the '<em><b>Component</b></em>' reference.
@@ -408,14 +499,24 @@ public interface CompoNantesPackage extends EPackage
   int USAGE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.compoNantes.compoNantes.Type <em>Type</em>}' enum.
+   * The meta object id for the '{@link org.xtext.example.compoNantes.compoNantes.InterfaceType <em>Interface Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.compoNantes.compoNantes.Type
-   * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getType()
+   * @see org.xtext.example.compoNantes.compoNantes.InterfaceType
+   * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getInterfaceType()
    * @generated
    */
-  int TYPE = 8;
+  int INTERFACE_TYPE = 9;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.compoNantes.compoNantes.ConnectorType <em>Connector Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.compoNantes.compoNantes.ConnectorType
+   * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getConnectorType()
+   * @generated
+   */
+  int CONNECTOR_TYPE = 10;
 
 
   /**
@@ -471,6 +572,60 @@ public interface CompoNantesPackage extends EPackage
   EClass getComponent();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.compoNantes.compoNantes.Connector <em>Connector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Connector</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Connector
+   * @generated
+   */
+  EClass getConnector();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.compoNantes.compoNantes.Connector#isType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Connector#isType()
+   * @see #getConnector()
+   * @generated
+   */
+  EAttribute getConnector_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.compoNantes.compoNantes.Connector#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Connector#getName()
+   * @see #getConnector()
+   * @generated
+   */
+  EAttribute getConnector_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt1 <em>Int1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Int1</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Connector#getInt1()
+   * @see #getConnector()
+   * @generated
+   */
+  EReference getConnector_Int1();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt2 <em>Int2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Int2</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Connector#getInt2()
+   * @see #getConnector()
+   * @generated
+   */
+  EReference getConnector_Int2();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.compoNantes.compoNantes.Interface <em>Interface</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -501,6 +656,17 @@ public interface CompoNantesPackage extends EPackage
    * @generated
    */
   EAttribute getInterface_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Interface#getPort <em>Port</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Port</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Interface#getPort()
+   * @see #getInterface()
+   * @generated
+   */
+  EReference getInterface_Port();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.compoNantes.compoNantes.Port <em>Port</em>}'.
@@ -566,79 +732,100 @@ public interface CompoNantesPackage extends EPackage
   EReference getUsage_Component();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.compoNantes.compoNantes.Truc <em>Truc</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.compoNantes.compoNantes.Element <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Truc</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Truc
+   * @return the meta object for class '<em>Element</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Element
    * @generated
    */
-  EClass getTruc();
+  EClass getElement();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.compoNantes.compoNantes.Truc#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.compoNantes.compoNantes.Element#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Truc#getName()
-   * @see #getTruc()
+   * @see org.xtext.example.compoNantes.compoNantes.Element#getName()
+   * @see #getElement()
    * @generated
    */
-  EAttribute getTruc_Name();
+  EAttribute getElement_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.compoNantes.compoNantes.Truc#getInterfaces <em>Interfaces</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Interfaces</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Truc#getInterfaces()
-   * @see #getTruc()
-   * @generated
-   */
-  EReference getTruc_Interfaces();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.compoNantes.compoNantes.Truc#getPorts <em>Ports</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.compoNantes.compoNantes.Element#getPorts <em>Ports</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Ports</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Truc#getPorts()
-   * @see #getTruc()
+   * @see org.xtext.example.compoNantes.compoNantes.Element#getPorts()
+   * @see #getElement()
    * @generated
    */
-  EReference getTruc_Ports();
+  EReference getElement_Ports();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.compoNantes.compoNantes.Truc#getDependencies <em>Dependencies</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.compoNantes.compoNantes.Element#getInterfaces <em>Interfaces</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Interfaces</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Element#getInterfaces()
+   * @see #getElement()
+   * @generated
+   */
+  EReference getElement_Interfaces();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.compoNantes.compoNantes.Element#getDependencies <em>Dependencies</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Dependencies</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Truc#getDependencies()
-   * @see #getTruc()
+   * @see org.xtext.example.compoNantes.compoNantes.Element#getDependencies()
+   * @see #getElement()
    * @generated
    */
-  EReference getTruc_Dependencies();
+  EReference getElement_Dependencies();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.compoNantes.compoNantes.Truc#getUsages <em>Usages</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.compoNantes.compoNantes.Element#getUsages <em>Usages</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Usages</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Truc#getUsages()
-   * @see #getTruc()
+   * @see org.xtext.example.compoNantes.compoNantes.Element#getUsages()
+   * @see #getElement()
    * @generated
    */
-  EReference getTruc_Usages();
+  EReference getElement_Usages();
 
   /**
-   * Returns the meta object for enum '{@link org.xtext.example.compoNantes.compoNantes.Type <em>Type</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.compoNantes.compoNantes.Element#getConnectors <em>Connectors</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Type</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Type
+   * @return the meta object for the containment reference list '<em>Connectors</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Element#getConnectors()
+   * @see #getElement()
    * @generated
    */
-  EEnum getType();
+  EReference getElement_Connectors();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.example.compoNantes.compoNantes.InterfaceType <em>Interface Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Interface Type</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.InterfaceType
+   * @generated
+   */
+  EEnum getInterfaceType();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.example.compoNantes.compoNantes.ConnectorType <em>Connector Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Connector Type</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.ConnectorType
+   * @generated
+   */
+  EEnum getConnectorType();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -710,6 +897,48 @@ public interface CompoNantesPackage extends EPackage
     EClass COMPONENT = eINSTANCE.getComponent();
 
     /**
+     * The meta object literal for the '{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl <em>Connector</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl
+     * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getConnector()
+     * @generated
+     */
+    EClass CONNECTOR = eINSTANCE.getConnector();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONNECTOR__TYPE = eINSTANCE.getConnector_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONNECTOR__NAME = eINSTANCE.getConnector_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Int1</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONNECTOR__INT1 = eINSTANCE.getConnector_Int1();
+
+    /**
+     * The meta object literal for the '<em><b>Int2</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONNECTOR__INT2 = eINSTANCE.getConnector_Int2();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.compoNantes.compoNantes.impl.InterfaceImpl <em>Interface</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -734,6 +963,14 @@ public interface CompoNantesPackage extends EPackage
      * @generated
      */
     EAttribute INTERFACE__NAME = eINSTANCE.getInterface_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Port</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERFACE__PORT = eINSTANCE.getInterface_Port();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.compoNantes.compoNantes.impl.PortImpl <em>Port</em>}' class.
@@ -790,14 +1027,14 @@ public interface CompoNantesPackage extends EPackage
     EReference USAGE__COMPONENT = eINSTANCE.getUsage_Component();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.compoNantes.compoNantes.impl.TrucImpl <em>Truc</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.compoNantes.compoNantes.impl.ElementImpl <em>Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.compoNantes.compoNantes.impl.TrucImpl
-     * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getTruc()
+     * @see org.xtext.example.compoNantes.compoNantes.impl.ElementImpl
+     * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getElement()
      * @generated
      */
-    EClass TRUC = eINSTANCE.getTruc();
+    EClass ELEMENT = eINSTANCE.getElement();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -805,15 +1042,7 @@ public interface CompoNantesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TRUC__NAME = eINSTANCE.getTruc_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Interfaces</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TRUC__INTERFACES = eINSTANCE.getTruc_Interfaces();
+    EAttribute ELEMENT__NAME = eINSTANCE.getElement_Name();
 
     /**
      * The meta object literal for the '<em><b>Ports</b></em>' containment reference list feature.
@@ -821,7 +1050,15 @@ public interface CompoNantesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRUC__PORTS = eINSTANCE.getTruc_Ports();
+    EReference ELEMENT__PORTS = eINSTANCE.getElement_Ports();
+
+    /**
+     * The meta object literal for the '<em><b>Interfaces</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT__INTERFACES = eINSTANCE.getElement_Interfaces();
 
     /**
      * The meta object literal for the '<em><b>Dependencies</b></em>' containment reference list feature.
@@ -829,7 +1066,7 @@ public interface CompoNantesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRUC__DEPENDENCIES = eINSTANCE.getTruc_Dependencies();
+    EReference ELEMENT__DEPENDENCIES = eINSTANCE.getElement_Dependencies();
 
     /**
      * The meta object literal for the '<em><b>Usages</b></em>' containment reference list feature.
@@ -837,17 +1074,35 @@ public interface CompoNantesPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRUC__USAGES = eINSTANCE.getTruc_Usages();
+    EReference ELEMENT__USAGES = eINSTANCE.getElement_Usages();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.compoNantes.compoNantes.Type <em>Type</em>}' enum.
+     * The meta object literal for the '<em><b>Connectors</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.compoNantes.compoNantes.Type
-     * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getType()
      * @generated
      */
-    EEnum TYPE = eINSTANCE.getType();
+    EReference ELEMENT__CONNECTORS = eINSTANCE.getElement_Connectors();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.compoNantes.compoNantes.InterfaceType <em>Interface Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.compoNantes.compoNantes.InterfaceType
+     * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getInterfaceType()
+     * @generated
+     */
+    EEnum INTERFACE_TYPE = eINSTANCE.getInterfaceType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.compoNantes.compoNantes.ConnectorType <em>Connector Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.compoNantes.compoNantes.ConnectorType
+     * @see org.xtext.example.compoNantes.compoNantes.impl.CompoNantesPackageImpl#getConnectorType()
+     * @generated
+     */
+    EEnum CONNECTOR_TYPE = eINSTANCE.getConnectorType();
 
   }
 

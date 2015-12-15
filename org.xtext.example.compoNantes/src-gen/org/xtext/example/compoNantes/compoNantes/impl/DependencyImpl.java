@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.compoNantes.compoNantes.CompoNantesPackage;
 import org.xtext.example.compoNantes.compoNantes.Dependency;
-import org.xtext.example.compoNantes.compoNantes.Truc;
+import org.xtext.example.compoNantes.compoNantes.Element;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +37,7 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
    * @generated
    * @ordered
    */
-  protected Truc component;
+  protected Element component;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,12 +65,12 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
    * <!-- end-user-doc -->
    * @generated
    */
-  public Truc getComponent()
+  public Element getComponent()
   {
     if (component != null && component.eIsProxy())
     {
       InternalEObject oldComponent = (InternalEObject)component;
-      component = (Truc)eResolveProxy(oldComponent);
+      component = (Element)eResolveProxy(oldComponent);
       if (component != oldComponent)
       {
         if (eNotificationRequired())
@@ -85,7 +85,7 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
    * <!-- end-user-doc -->
    * @generated
    */
-  public Truc basicGetComponent()
+  public Element basicGetComponent()
   {
     return component;
   }
@@ -95,9 +95,9 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setComponent(Truc newComponent)
+  public void setComponent(Element newComponent)
   {
-    Truc oldComponent = component;
+    Element oldComponent = component;
     component = newComponent;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.DEPENDENCY__COMPONENT, oldComponent, component));
@@ -131,7 +131,7 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
     switch (featureID)
     {
       case CompoNantesPackage.DEPENDENCY__COMPONENT:
-        setComponent((Truc)newValue);
+        setComponent((Element)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -148,7 +148,7 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
     switch (featureID)
     {
       case CompoNantesPackage.DEPENDENCY__COMPONENT:
-        setComponent((Truc)null);
+        setComponent((Element)null);
         return;
     }
     super.eUnset(featureID);

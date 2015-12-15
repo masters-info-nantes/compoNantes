@@ -7,26 +7,32 @@ Model:
 
 SubSystem:
 	'subsystem' name=ID '{'
-		components+=Component*
-		interfaces+=Interface*
 		ports+=Port*
+		interfaces+=Interface*
+		components+=Component*
 		dependencies+=Dependency*
 		usages+=Usage*
+		connectors+=Connector*
 	'}'
 ;
 
 Component:
 	'component' name=ID '{'
-		interfaces+=Interface*
 		ports+=Port*
+		interfaces+=Interface*
 		dependencies+=Dependency*
 		usages+=Usage*
+		connectors+=Connector*
 	'}'
 	
 ;
-	
+
+Connector:
+	'connector' type=ConnectorType name=ID ':' int1=[Interface|QualifiedName] 'to' int2=[Interface|QualifiedName]
+;
+
 Interface:
-	'interface' type=Type name=ID
+	'interface' type=InterfaceType name=ID 'port' port=[Port]
 ;
 	
 Port:
@@ -48,6 +54,10 @@ Element:
 QualifiedName:
     ID ('.' ID)*;
 
-enum Type:
+enum InterfaceType:
 	REQUIRED='required' | PROVIDED='provided'
+;
+
+enum ConnectorType:
+	ASSEMBLY='assembly' | DELEGATION='delegation'
 ;

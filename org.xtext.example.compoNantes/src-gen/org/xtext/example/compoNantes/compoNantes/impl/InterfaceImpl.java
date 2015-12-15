@@ -5,13 +5,15 @@ package org.xtext.example.compoNantes.compoNantes.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.compoNantes.compoNantes.CompoNantesPackage;
 import org.xtext.example.compoNantes.compoNantes.Interface;
-import org.xtext.example.compoNantes.compoNantes.Type;
+import org.xtext.example.compoNantes.compoNantes.InterfaceType;
+import org.xtext.example.compoNantes.compoNantes.Port;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +25,7 @@ import org.xtext.example.compoNantes.compoNantes.Type;
  * <ul>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.InterfaceImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.InterfaceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.InterfaceImpl#getPort <em>Port</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,7 +40,7 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
    * @generated
    * @ordered
    */
-  protected static final Type TYPE_EDEFAULT = Type.REQUIRED;
+  protected static final InterfaceType TYPE_EDEFAULT = InterfaceType.REQUIRED;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -47,7 +50,7 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
    * @generated
    * @ordered
    */
-  protected Type type = TYPE_EDEFAULT;
+  protected InterfaceType type = TYPE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -68,6 +71,16 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPort() <em>Port</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPort()
+   * @generated
+   * @ordered
+   */
+  protected Port port;
 
   /**
    * <!-- begin-user-doc -->
@@ -95,7 +108,7 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type getType()
+  public InterfaceType getType()
   {
     return type;
   }
@@ -105,9 +118,9 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(Type newType)
+  public void setType(InterfaceType newType)
   {
-    Type oldType = type;
+    InterfaceType oldType = type;
     type = newType == null ? TYPE_EDEFAULT : newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.INTERFACE__TYPE, oldType, type));
@@ -141,6 +154,49 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
    * <!-- end-user-doc -->
    * @generated
    */
+  public Port getPort()
+  {
+    if (port != null && port.eIsProxy())
+    {
+      InternalEObject oldPort = (InternalEObject)port;
+      port = (Port)eResolveProxy(oldPort);
+      if (port != oldPort)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompoNantesPackage.INTERFACE__PORT, oldPort, port));
+      }
+    }
+    return port;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Port basicGetPort()
+  {
+    return port;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPort(Port newPort)
+  {
+    Port oldPort = port;
+    port = newPort;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.INTERFACE__PORT, oldPort, port));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -150,6 +206,9 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
         return getType();
       case CompoNantesPackage.INTERFACE__NAME:
         return getName();
+      case CompoNantesPackage.INTERFACE__PORT:
+        if (resolve) return getPort();
+        return basicGetPort();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -165,10 +224,13 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
     switch (featureID)
     {
       case CompoNantesPackage.INTERFACE__TYPE:
-        setType((Type)newValue);
+        setType((InterfaceType)newValue);
         return;
       case CompoNantesPackage.INTERFACE__NAME:
         setName((String)newValue);
+        return;
+      case CompoNantesPackage.INTERFACE__PORT:
+        setPort((Port)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -190,6 +252,9 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
       case CompoNantesPackage.INTERFACE__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case CompoNantesPackage.INTERFACE__PORT:
+        setPort((Port)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -208,6 +273,8 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
         return type != TYPE_EDEFAULT;
       case CompoNantesPackage.INTERFACE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case CompoNantesPackage.INTERFACE__PORT:
+        return port != null;
     }
     return super.eIsSet(featureID);
   }

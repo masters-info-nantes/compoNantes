@@ -50,6 +50,15 @@ public interface CompoNantesFactory extends EFactory
   Component createComponent();
 
   /**
+   * Returns a new object of class '<em>Connector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connector</em>'.
+   * @generated
+   */
+  Connector createConnector();
+
+  /**
    * Returns a new object of class '<em>Interface</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -86,13 +95,13 @@ public interface CompoNantesFactory extends EFactory
   Usage createUsage();
 
   /**
-   * Returns a new object of class '<em>Truc</em>'.
+   * Returns a new object of class '<em>Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Truc</em>'.
+   * @return a new object of class '<em>Element</em>'.
    * @generated
    */
-  Truc createTruc();
+  Element createElement();
 
   /**
    * Returns the package supported by this factory.

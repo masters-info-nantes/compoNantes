@@ -13,13 +13,15 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.xtext.example.compoNantes.compoNantes.CompoNantesFactory;
 import org.xtext.example.compoNantes.compoNantes.CompoNantesPackage;
 import org.xtext.example.compoNantes.compoNantes.Component;
+import org.xtext.example.compoNantes.compoNantes.Connector;
+import org.xtext.example.compoNantes.compoNantes.ConnectorType;
 import org.xtext.example.compoNantes.compoNantes.Dependency;
+import org.xtext.example.compoNantes.compoNantes.Element;
 import org.xtext.example.compoNantes.compoNantes.Interface;
+import org.xtext.example.compoNantes.compoNantes.InterfaceType;
 import org.xtext.example.compoNantes.compoNantes.Model;
 import org.xtext.example.compoNantes.compoNantes.Port;
 import org.xtext.example.compoNantes.compoNantes.SubSystem;
-import org.xtext.example.compoNantes.compoNantes.Truc;
-import org.xtext.example.compoNantes.compoNantes.Type;
 import org.xtext.example.compoNantes.compoNantes.Usage;
 
 /**
@@ -56,6 +58,13 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass connectorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass interfaceEClass = null;
 
   /**
@@ -84,14 +93,21 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass trucEClass = null;
+  private EClass elementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum typeEEnum = null;
+  private EEnum interfaceTypeEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum connectorTypeEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -211,6 +227,56 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getConnector()
+  {
+    return connectorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConnector_Type()
+  {
+    return (EAttribute)connectorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConnector_Name()
+  {
+    return (EAttribute)connectorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConnector_Int1()
+  {
+    return (EReference)connectorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConnector_Int2()
+  {
+    return (EReference)connectorEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getInterface()
   {
     return interfaceEClass;
@@ -234,6 +300,16 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
   public EAttribute getInterface_Name()
   {
     return (EAttribute)interfaceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInterface_Port()
+  {
+    return (EReference)interfaceEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -301,9 +377,9 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTruc()
+  public EClass getElement()
   {
-    return trucEClass;
+    return elementEClass;
   }
 
   /**
@@ -311,9 +387,9 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTruc_Name()
+  public EAttribute getElement_Name()
   {
-    return (EAttribute)trucEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)elementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -321,9 +397,9 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTruc_Interfaces()
+  public EReference getElement_Ports()
   {
-    return (EReference)trucEClass.getEStructuralFeatures().get(1);
+    return (EReference)elementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -331,9 +407,9 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTruc_Ports()
+  public EReference getElement_Interfaces()
   {
-    return (EReference)trucEClass.getEStructuralFeatures().get(2);
+    return (EReference)elementEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -341,9 +417,9 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTruc_Dependencies()
+  public EReference getElement_Dependencies()
   {
-    return (EReference)trucEClass.getEStructuralFeatures().get(3);
+    return (EReference)elementEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -351,9 +427,9 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTruc_Usages()
+  public EReference getElement_Usages()
   {
-    return (EReference)trucEClass.getEStructuralFeatures().get(4);
+    return (EReference)elementEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -361,9 +437,29 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getType()
+  public EReference getElement_Connectors()
   {
-    return typeEEnum;
+    return (EReference)elementEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getInterfaceType()
+  {
+    return interfaceTypeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getConnectorType()
+  {
+    return connectorTypeEEnum;
   }
 
   /**
@@ -404,9 +500,16 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
 
     componentEClass = createEClass(COMPONENT);
 
+    connectorEClass = createEClass(CONNECTOR);
+    createEAttribute(connectorEClass, CONNECTOR__TYPE);
+    createEAttribute(connectorEClass, CONNECTOR__NAME);
+    createEReference(connectorEClass, CONNECTOR__INT1);
+    createEReference(connectorEClass, CONNECTOR__INT2);
+
     interfaceEClass = createEClass(INTERFACE);
     createEAttribute(interfaceEClass, INTERFACE__TYPE);
     createEAttribute(interfaceEClass, INTERFACE__NAME);
+    createEReference(interfaceEClass, INTERFACE__PORT);
 
     portEClass = createEClass(PORT);
     createEAttribute(portEClass, PORT__NAME);
@@ -417,15 +520,17 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
     usageEClass = createEClass(USAGE);
     createEReference(usageEClass, USAGE__COMPONENT);
 
-    trucEClass = createEClass(TRUC);
-    createEAttribute(trucEClass, TRUC__NAME);
-    createEReference(trucEClass, TRUC__INTERFACES);
-    createEReference(trucEClass, TRUC__PORTS);
-    createEReference(trucEClass, TRUC__DEPENDENCIES);
-    createEReference(trucEClass, TRUC__USAGES);
+    elementEClass = createEClass(ELEMENT);
+    createEAttribute(elementEClass, ELEMENT__NAME);
+    createEReference(elementEClass, ELEMENT__PORTS);
+    createEReference(elementEClass, ELEMENT__INTERFACES);
+    createEReference(elementEClass, ELEMENT__DEPENDENCIES);
+    createEReference(elementEClass, ELEMENT__USAGES);
+    createEReference(elementEClass, ELEMENT__CONNECTORS);
 
     // Create enums
-    typeEEnum = createEEnum(TYPE);
+    interfaceTypeEEnum = createEEnum(INTERFACE_TYPE);
+    connectorTypeEEnum = createEEnum(CONNECTOR_TYPE);
   }
 
   /**
@@ -457,42 +562,54 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    subSystemEClass.getESuperTypes().add(this.getTruc());
-    componentEClass.getESuperTypes().add(this.getTruc());
+    subSystemEClass.getESuperTypes().add(this.getElement());
+    componentEClass.getESuperTypes().add(this.getElement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Subsystem(), this.getTruc(), null, "subsystem", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Subsystem(), this.getElement(), null, "subsystem", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subSystemEClass, SubSystem.class, "SubSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSubSystem_Components(), this.getComponent(), null, "components", null, 0, -1, SubSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(connectorEClass, Connector.class, "Connector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConnector_Type(), ecorePackage.getEBoolean(), "type", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConnector_Name(), ecorePackage.getEString(), "name", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConnector_Int1(), this.getInterface(), null, "int1", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConnector_Int2(), this.getInterface(), null, "int2", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInterface_Type(), this.getType(), "type", null, 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInterface_Type(), this.getInterfaceType(), "type", null, 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInterface_Name(), ecorePackage.getEString(), "name", null, 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInterface_Port(), this.getPort(), null, "port", null, 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dependencyEClass, Dependency.class, "Dependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDependency_Component(), this.getTruc(), null, "component", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDependency_Component(), this.getElement(), null, "component", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(usageEClass, Usage.class, "Usage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUsage_Component(), this.getTruc(), null, "component", null, 0, 1, Usage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUsage_Component(), this.getElement(), null, "component", null, 0, 1, Usage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(trucEClass, Truc.class, "Truc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTruc_Name(), ecorePackage.getEString(), "name", null, 0, 1, Truc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTruc_Interfaces(), this.getInterface(), null, "interfaces", null, 0, -1, Truc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTruc_Ports(), this.getPort(), null, "ports", null, 0, -1, Truc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTruc_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1, Truc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTruc_Usages(), this.getUsage(), null, "usages", null, 0, -1, Truc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElement_Ports(), this.getPort(), null, "ports", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElement_Interfaces(), this.getInterface(), null, "interfaces", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElement_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElement_Usages(), this.getUsage(), null, "usages", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElement_Connectors(), this.getConnector(), null, "connectors", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
-    initEEnum(typeEEnum, Type.class, "Type");
-    addEEnumLiteral(typeEEnum, Type.REQUIRED);
-    addEEnumLiteral(typeEEnum, Type.PROVIDED);
+    initEEnum(interfaceTypeEEnum, InterfaceType.class, "InterfaceType");
+    addEEnumLiteral(interfaceTypeEEnum, InterfaceType.REQUIRED);
+    addEEnumLiteral(interfaceTypeEEnum, InterfaceType.PROVIDED);
+
+    initEEnum(connectorTypeEEnum, ConnectorType.class, "ConnectorType");
+    addEEnumLiteral(connectorTypeEEnum, ConnectorType.ASSEMBLY);
+    addEEnumLiteral(connectorTypeEEnum, ConnectorType.DELEGATION);
 
     // Create resource
     createResource(eNS_URI);

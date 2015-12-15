@@ -14,7 +14,7 @@ import org.xtext.example.compoNantes.compoNantes.Component;
  *
  * @generated
  */
-public class ComponentImpl extends TrucImpl implements Component
+public class ComponentImpl extends ElementImpl implements Component
 {
   /**
    * <!-- begin-user-doc -->

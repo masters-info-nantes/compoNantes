@@ -83,7 +83,7 @@ public class CompoNantesSwitch<T> extends Switch<T>
       {
         SubSystem subSystem = (SubSystem)theEObject;
         T result = caseSubSystem(subSystem);
-        if (result == null) result = caseTruc(subSystem);
+        if (result == null) result = caseElement(subSystem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -91,7 +91,14 @@ public class CompoNantesSwitch<T> extends Switch<T>
       {
         Component component = (Component)theEObject;
         T result = caseComponent(component);
-        if (result == null) result = caseTruc(component);
+        if (result == null) result = caseElement(component);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CompoNantesPackage.CONNECTOR:
+      {
+        Connector connector = (Connector)theEObject;
+        T result = caseConnector(connector);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -123,10 +130,10 @@ public class CompoNantesSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CompoNantesPackage.TRUC:
+      case CompoNantesPackage.ELEMENT:
       {
-        Truc truc = (Truc)theEObject;
-        T result = caseTruc(truc);
+        Element element = (Element)theEObject;
+        T result = caseElement(element);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -178,6 +185,22 @@ public class CompoNantesSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseComponent(Component object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Connector</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Connector</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConnector(Connector object)
   {
     return null;
   }
@@ -247,17 +270,17 @@ public class CompoNantesSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Truc</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Truc</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTruc(Truc object)
+  public T caseElement(Element object)
   {
     return null;
   }

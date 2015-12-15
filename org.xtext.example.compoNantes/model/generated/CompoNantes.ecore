@@ -4,39 +4,52 @@
     nsPrefix="compoNantes">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subsystem" upperBound="-1"
-        eType="#//Truc" containment="true"/>
+        eType="#//Element" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SubSystem" eSuperTypes="#//Truc">
+  <eClassifiers xsi:type="ecore:EClass" name="SubSystem" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
         eType="#//Component" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Truc"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Interface">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="int1" eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="int2" eType="#//Interface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Interface">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//InterfaceType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//Port"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Port">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dependency">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Truc"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Element"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Usage">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Truc"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Element"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Truc">
+  <eClassifiers xsi:type="ecore:EClass" name="Element">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
-        eType="#//Interface" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
         eType="#//Port" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
+        eType="#//Interface" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
         eType="#//Dependency" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usages" upperBound="-1"
         eType="#//Usage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
+        eType="#//Connector" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Type">
+  <eClassifiers xsi:type="ecore:EEnum" name="InterfaceType">
     <eLiterals name="REQUIRED" literal="required"/>
     <eLiterals name="PROVIDED" value="1" literal="provided"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConnectorType">
+    <eLiterals name="ASSEMBLY" literal="assembly"/>
+    <eLiterals name="DELEGATION" value="1" literal="delegation"/>
   </eClassifiers>
 </ecore:EPackage>

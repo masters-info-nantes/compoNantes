@@ -31,7 +31,7 @@ import org.xtext.example.compoNantes.compoNantes.SubSystem;
  *
  * @generated
  */
-public class SubSystemImpl extends TrucImpl implements SubSystem
+public class SubSystemImpl extends ElementImpl implements SubSystem
 {
   /**
    * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference list.

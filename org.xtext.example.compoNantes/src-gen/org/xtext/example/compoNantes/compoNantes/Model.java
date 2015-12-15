@@ -26,7 +26,7 @@ public interface Model extends EObject
 {
   /**
    * Returns the value of the '<em><b>Subsystem</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.compoNantes.compoNantes.Truc}.
+   * The list contents are of type {@link org.xtext.example.compoNantes.compoNantes.Element}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Subsystem</em>' containment reference list isn't clear,
@@ -38,6 +38,6 @@ public interface Model extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Truc> getSubsystem();
+  EList<Element> getSubsystem();
 
 } // Model

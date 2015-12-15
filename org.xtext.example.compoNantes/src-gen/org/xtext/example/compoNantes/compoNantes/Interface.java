@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.Interface#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.Interface#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.Interface#getPort <em>Port</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getInterface()
@@ -25,7 +26,7 @@ public interface Interface extends EObject
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.
-   * The literals are from the enumeration {@link org.xtext.example.compoNantes.compoNantes.Type}.
+   * The literals are from the enumeration {@link org.xtext.example.compoNantes.compoNantes.InterfaceType}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -33,24 +34,24 @@ public interface Interface extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' attribute.
-   * @see org.xtext.example.compoNantes.compoNantes.Type
-   * @see #setType(Type)
+   * @see org.xtext.example.compoNantes.compoNantes.InterfaceType
+   * @see #setType(InterfaceType)
    * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getInterface_Type()
    * @model
    * @generated
    */
-  Type getType();
+  InterfaceType getType();
 
   /**
    * Sets the value of the '{@link org.xtext.example.compoNantes.compoNantes.Interface#getType <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' attribute.
-   * @see org.xtext.example.compoNantes.compoNantes.Type
+   * @see org.xtext.example.compoNantes.compoNantes.InterfaceType
    * @see #getType()
    * @generated
    */
-  void setType(Type value);
+  void setType(InterfaceType value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -77,5 +78,31 @@ public interface Interface extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Port</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Port</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Port</em>' reference.
+   * @see #setPort(Port)
+   * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getInterface_Port()
+   * @model
+   * @generated
+   */
+  Port getPort();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.compoNantes.compoNantes.Interface#getPort <em>Port</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Port</em>' reference.
+   * @see #getPort()
+   * @generated
+   */
+  void setPort(Port value);
 
 } // Interface

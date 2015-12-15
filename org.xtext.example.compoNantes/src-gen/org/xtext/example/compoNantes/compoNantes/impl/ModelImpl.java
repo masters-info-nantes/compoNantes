@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.compoNantes.compoNantes.CompoNantesPackage;
+import org.xtext.example.compoNantes.compoNantes.Element;
 import org.xtext.example.compoNantes.compoNantes.Model;
-import org.xtext.example.compoNantes.compoNantes.Truc;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    * @ordered
    */
-  protected EList<Truc> subsystem;
+  protected EList<Element> subsystem;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +71,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Truc> getSubsystem()
+  public EList<Element> getSubsystem()
   {
     if (subsystem == null)
     {
-      subsystem = new EObjectContainmentEList<Truc>(Truc.class, this, CompoNantesPackage.MODEL__SUBSYSTEM);
+      subsystem = new EObjectContainmentEList<Element>(Element.class, this, CompoNantesPackage.MODEL__SUBSYSTEM);
     }
     return subsystem;
   }
@@ -125,7 +125,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case CompoNantesPackage.MODEL__SUBSYSTEM:
         getSubsystem().clear();
-        getSubsystem().addAll((Collection<? extends Truc>)newValue);
+        getSubsystem().addAll((Collection<? extends Element>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
