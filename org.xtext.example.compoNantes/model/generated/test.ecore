@@ -14,20 +14,47 @@
     <interfaces name="ISearchInventory" port="sample/test.cpn#|3"/>
     <interfaces name="IManageOrder" port="sample/test.cpn#|4"/>
     <interfaces name="IManageCustomer" port="sample/test.cpn#|5"/>
+    <connectors type="delegation" name="fromSearch" int1="sample/test.cpn#|6" int2="sample/test.cpn#|7"/>
+    <connectors type="delegation" name="fromShopping" int1="sample/test.cpn#|8" int2="sample/test.cpn#|9"/>
+    <connectors type="delegation" name="fromAuth" int1="sample/test.cpn#|10" int2="sample/test.cpn#|11"/>
+    <connectors type="delegation" name="toSearch" int1="sample/test.cpn#|12" int2="sample/test.cpn#|13"/>
+    <connectors type="delegation" name="toShopping" int1="sample/test.cpn#|14" int2="sample/test.cpn#|15"/>
+    <connectors type="delegation" name="toAuth" int1="sample/test.cpn#|16" int2="sample/test.cpn#|17"/>
+    <connectors name="UserSession" int1="sample/test.cpn#|18" int2="sample/test.cpn#|19"/>
     <components name="SearchEngine">
       <ports name="ProductSearch"/>
-      <interfaces type="provided" name="IProductSearch" port="sample/test.cpn#|6"/>
-      <connectors name="toExternal" int1="sample/test.cpn#|7" int2="sample/test.cpn#|8"/>
+      <ports name="SearchInventory"/>
+      <interfaces type="provided" name="IProductSearch" port="sample/test.cpn#|20"/>
+      <interfaces name="ISearchInventory" port="sample/test.cpn#|21"/>
+    </components>
+    <components name="ShoppingCart">
+      <ports name="OnlineShopping"/>
+      <ports name="ManageOrder"/>
+      <ports name="toAuth"/>
+      <interfaces type="provided" name="IOnlineShopping" port="sample/test.cpn#|22"/>
+      <interfaces name="IManageOrder" port="sample/test.cpn#|23"/>
+      <interfaces type="provided" name="IToAuth" port="sample/test.cpn#|24"/>
+    </components>
+    <components name="Authentification">
+      <ports name="UserSession"/>
+      <ports name="ManageCustomer"/>
+      <ports name="fromShop"/>
+      <interfaces type="provided" name="IUserSession" port="sample/test.cpn#|25"/>
+      <interfaces name="IManageCustomer" port="sample/test.cpn#|26"/>
+      <interfaces name="IFromShop" port="sample/test.cpn#|27"/>
     </components>
   </subsystem>
   <subsystem xsi:type="compoNantes:SubSystem" name="Wharehouse">
     <ports name="SearchInventory"/>
-    <interfaces type="provided" name="ISearchInventory" port="sample/test.cpn#|9"/>
-    <connectors type="delegation" name="toWebStore" int1="sample/test.cpn#|10" int2="sample/test.cpn#|11"/>
+    <interfaces type="provided" name="ISearchInventory" port="sample/test.cpn#|28"/>
+    <connectors type="delegation" name="toWebStore" int1="sample/test.cpn#|29" int2="sample/test.cpn#|30"/>
+    <components name="Inventory"/>
   </subsystem>
   <subsystem xsi:type="compoNantes:SubSystem" name="Accounting">
     <ports name="ManageCustomer"/>
-    <interfaces type="provided" name="IManageCustomer" port="sample/test.cpn#|12"/>
-    <connectors type="delegation" name="toWebstore" int1="sample/test.cpn#|13" int2="sample/test.cpn#|14"/>
+    <interfaces type="provided" name="IManageCustomer" port="sample/test.cpn#|31"/>
+    <connectors type="delegation" name="toWebstore" int1="sample/test.cpn#|32" int2="sample/test.cpn#|33"/>
+    <components name="Order"/>
+    <components name="Customers"/>
   </subsystem>
 </compoNantes:Model>

@@ -1,5 +1,5 @@
 -- @path COMPO=/org.xtext.example.compoNantes/model/generated/CompoNantes.ecore
--- @nsURI UML=http://www.eclipse.org/uml2/5.0.0/UML
+-- @nsURI UML=/org.xtext.example.compoNantes/model/reference/UML.ecore
 
 module compoNantesToUml;
 create OUT : UML from IN : COMPO;
@@ -23,7 +23,9 @@ rule ComponanteToComponent {
 			name <- cpn.name,
 			ownedPort <- cpn.ports,
 			provided <- cpn.getProvided(),
-			required <- cpn.interfaces->collect(e | not e.isProvided())			
+			required <- cpn.interfaces->collect(e | not e.isProvided()),
+			ownedConnector <- cpn.connectors
+			
 	)
 }
 

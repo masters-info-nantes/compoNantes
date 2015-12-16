@@ -13,17 +13,50 @@ subsystem Webstore{
 	interface required IManageCustomer port ManageCustomer
 	component SearchEngine{
 		port ProductSearch
+		port SearchInventory
 		interface provided IProductSearch port ProductSearch
-		connector assembly toExternal : Webstore.IProductSearch to IProductSearch
+		interface required ISearchInventory port SearchInventory
 	}
+	component ShoppingCart{
+		port OnlineShopping 
+		port ManageOrder
+		port toAuth
+		interface provided IOnlineShopping port OnlineShopping
+		interface required IManageOrder port ManageOrder
+		interface provided IToAuth port toAuth
+	}
+	component Authentification{
+		port UserSession
+		port ManageCustomer
+		port fromShop
+		interface provided IUserSession port UserSession
+		interface required IManageCustomer port ManageCustomer
+		interface required IFromShop port fromShop
+	}
+	connector delegation fromSearch : SearchEngine.IProductSearch to IProductSearch
+	connector delegation fromShopping : ShoppingCart.IOnlineShopping to IOnlineShopping
+	connector delegation fromAuth : Authentification.IUserSession to IUserSession
+	connector delegation toSearch : SearchEngine.ISearchInventory to ISearchInventory
+	connector delegation toShopping : ShoppingCart.IManageOrder to IManageOrder
+	connector delegation toAuth : Authentification.IManageCustomer to IManageCustomer
+	connector assembly UserSession : ShoppingCart.IToAuth to Authentification.IFromShop
 }
 subsystem Wharehouse{
 	port SearchInventory
 	interface provided ISearchInventory port SearchInventory
+	component Inventory{
+		
+	}
 	connector delegation toWebStore : Webstore.ISearchInventory to ISearchInventory
 }
 subsystem Accounting{
 	port ManageCustomer
 	interface provided IManageCustomer port ManageCustomer
+	component Order{
+		
+	}
+	component Customers{
+		
+	}
 	connector delegation toWebstore : Webstore.IManageCustomer to IManageCustomer
 }
