@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Component name="SearchEngine"/>
+  <uml:Component name="ShoppingCart"/>
+  <uml:Component name="Authentification"/>
+  <uml:Component name="Inventory"/>
+  <uml:Component name="Order"/>
+  <uml:Component name="Customers"/>
+  <uml:Interface name="IProductSearch"/>
+  <uml:Interface name="IOnlineShopping"/>
+  <uml:Interface name="IUserSession"/>
+  <uml:Interface name="ISearchInventory"/>
+  <uml:Interface name="IManageOrder"/>
+  <uml:Interface name="IManageCustomer"/>
+  <uml:Interface name="IProductSearch"/>
+  <uml:Interface name="ISearchInventory"/>
+  <uml:Interface name="IOnlineShopping"/>
+  <uml:Interface name="IManageOrder"/>
+  <uml:Interface name="IToAuth"/>
+  <uml:Interface name="IUserSession"/>
+  <uml:Interface name="IManageCustomer"/>
+  <uml:Interface name="IFromShop"/>
+  <uml:Interface name="ISearchInventory"/>
+  <uml:Interface name="IManageCustomer"/>
+  <uml:Connector name="fromSearch"/>
+  <uml:Connector name="fromShopping"/>
+  <uml:Connector name="fromAuth"/>
+  <uml:Connector name="toSearch"/>
+  <uml:Connector name="toShopping"/>
+  <uml:Connector name="toAuth"/>
+  <uml:Connector name="UserSession"/>
+  <uml:Connector name="toWebStore"/>
+  <uml:Connector name="toWebstore"/>
+</xmi:XMI>
