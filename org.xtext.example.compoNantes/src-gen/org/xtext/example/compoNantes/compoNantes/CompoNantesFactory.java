@@ -32,15 +32,6 @@ public interface CompoNantesFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Sub System</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub System</em>'.
-   * @generated
-   */
-  SubSystem createSubSystem();
-
-  /**
    * Returns a new object of class '<em>Component</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -48,24 +39,6 @@ public interface CompoNantesFactory extends EFactory
    * @generated
    */
   Component createComponent();
-
-  /**
-   * Returns a new object of class '<em>Connector</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Connector</em>'.
-   * @generated
-   */
-  Connector createConnector();
-
-  /**
-   * Returns a new object of class '<em>Interface</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interface</em>'.
-   * @generated
-   */
-  Interface createInterface();
 
   /**
    * Returns a new object of class '<em>Port</em>'.
@@ -77,6 +50,24 @@ public interface CompoNantesFactory extends EFactory
   Port createPort();
 
   /**
+   * Returns a new object of class '<em>Interface</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interface</em>'.
+   * @generated
+   */
+  Interface createInterface();
+
+  /**
+   * Returns a new object of class '<em>Connector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connector</em>'.
+   * @generated
+   */
+  Connector createConnector();
+
+  /**
    * Returns a new object of class '<em>Dependency</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -84,24 +75,6 @@ public interface CompoNantesFactory extends EFactory
    * @generated
    */
   Dependency createDependency();
-
-  /**
-   * Returns a new object of class '<em>Usage</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Usage</em>'.
-   * @generated
-   */
-  Usage createUsage();
-
-  /**
-   * Returns a new object of class '<em>Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Element</em>'.
-   * @generated
-   */
-  Element createElement();
 
   /**
    * Returns the package supported by this factory.

@@ -80,24 +80,9 @@ public class CompoNantesAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseSubSystem(SubSystem object)
-      {
-        return createSubSystemAdapter();
-      }
-      @Override
       public Adapter caseComponent(Component object)
       {
         return createComponentAdapter();
-      }
-      @Override
-      public Adapter caseConnector(Connector object)
-      {
-        return createConnectorAdapter();
-      }
-      @Override
-      public Adapter caseInterface(Interface object)
-      {
-        return createInterfaceAdapter();
       }
       @Override
       public Adapter casePort(Port object)
@@ -105,19 +90,19 @@ public class CompoNantesAdapterFactory extends AdapterFactoryImpl
         return createPortAdapter();
       }
       @Override
+      public Adapter caseInterface(Interface object)
+      {
+        return createInterfaceAdapter();
+      }
+      @Override
+      public Adapter caseConnector(Connector object)
+      {
+        return createConnectorAdapter();
+      }
+      @Override
       public Adapter caseDependency(Dependency object)
       {
         return createDependencyAdapter();
-      }
-      @Override
-      public Adapter caseUsage(Usage object)
-      {
-        return createUsageAdapter();
-      }
-      @Override
-      public Adapter caseElement(Element object)
-      {
-        return createElementAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -157,21 +142,6 @@ public class CompoNantesAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.compoNantes.SubSystem <em>Sub System</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.compoNantes.compoNantes.SubSystem
-   * @generated
-   */
-  public Adapter createSubSystemAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.compoNantes.Component <em>Component</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -182,36 +152,6 @@ public class CompoNantesAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createComponentAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.compoNantes.Connector <em>Connector</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.compoNantes.compoNantes.Connector
-   * @generated
-   */
-  public Adapter createConnectorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.compoNantes.Interface <em>Interface</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.compoNantes.compoNantes.Interface
-   * @generated
-   */
-  public Adapter createInterfaceAdapter()
   {
     return null;
   }
@@ -232,6 +172,36 @@ public class CompoNantesAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.compoNantes.Interface <em>Interface</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.compoNantes.compoNantes.Interface
+   * @generated
+   */
+  public Adapter createInterfaceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.compoNantes.Connector <em>Connector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.compoNantes.compoNantes.Connector
+   * @generated
+   */
+  public Adapter createConnectorAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.compoNantes.Dependency <em>Dependency</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -242,36 +212,6 @@ public class CompoNantesAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDependencyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.compoNantes.Usage <em>Usage</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.compoNantes.compoNantes.Usage
-   * @generated
-   */
-  public Adapter createUsageAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.compoNantes.compoNantes.Element <em>Element</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.compoNantes.compoNantes.Element
-   * @generated
-   */
-  public Adapter createElementAdapter()
   {
     return null;
   }

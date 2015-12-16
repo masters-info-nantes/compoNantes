@@ -3,52 +3,32 @@ grammar org.xtext.example.compoNantes.CompoNantes with org.eclipse.xtext.common.
 generate compoNantes "http://www.xtext.org/example/compoNantes/CompoNantes"
 
 Model:
-	subsystem+=(SubSystem|Component)*;
-
-SubSystem:
-	'subsystem' name=ID '{'
-		ports+=Port*
-		interfaces+=Interface*
-		components+=Component*
-		dependencies+=Dependency*
-		usages+=Usage*
-		connectors+=Connector*
-	'}'
-;
+	components+=Component*;
 
 Component:
 	'component' name=ID '{'
 		ports+=Port*
 		interfaces+=Interface*
-		dependencies+=Dependency*
-		usages+=Usage*
+		components+=Component*
 		connectors+=Connector*
+		dependencies+=Dependency*
 	'}'
-	
+;
+
+Port:
+	'port' name=ID
+;
+
+Interface:
+	'interface' type=InterfaceType name=ID 'port' port=[Port]
 ;
 
 Connector:
 	'connector' type=ConnectorType name=ID ':' int1=[Interface|QualifiedName] 'to' int2=[Interface|QualifiedName]
 ;
 
-Interface:
-	'interface' type=InterfaceType name=ID 'port' port=[Port]
-;
-	
-Port:
-	'port' name=ID
-;
-	
 Dependency:
-	'dependency' component = [Element|QualifiedName]
-;
-
-Usage:
-	'usage' interface = [Interface|QualifiedName]
-;
-
-Element:
-	Component | SubSystem
+	'dependency' type=DependencyType name=ID ":" component1=[Interface|QualifiedName] 'to' component2=[Interface|QualifiedName]
 ;
 
 QualifiedName:
@@ -60,4 +40,8 @@ enum InterfaceType:
 
 enum ConnectorType:
 	ASSEMBLY='assembly' | DELEGATION='delegation'
+;
+
+enum DependencyType:
+	USAGE='usage' | ASSOCIATION='association'
 ;

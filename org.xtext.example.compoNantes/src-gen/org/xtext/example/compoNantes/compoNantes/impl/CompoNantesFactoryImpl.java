@@ -66,14 +66,11 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
     switch (eClass.getClassifierID())
     {
       case CompoNantesPackage.MODEL: return createModel();
-      case CompoNantesPackage.SUB_SYSTEM: return createSubSystem();
       case CompoNantesPackage.COMPONENT: return createComponent();
-      case CompoNantesPackage.CONNECTOR: return createConnector();
-      case CompoNantesPackage.INTERFACE: return createInterface();
       case CompoNantesPackage.PORT: return createPort();
+      case CompoNantesPackage.INTERFACE: return createInterface();
+      case CompoNantesPackage.CONNECTOR: return createConnector();
       case CompoNantesPackage.DEPENDENCY: return createDependency();
-      case CompoNantesPackage.USAGE: return createUsage();
-      case CompoNantesPackage.ELEMENT: return createElement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -93,6 +90,8 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
         return createInterfaceTypeFromString(eDataType, initialValue);
       case CompoNantesPackage.CONNECTOR_TYPE:
         return createConnectorTypeFromString(eDataType, initialValue);
+      case CompoNantesPackage.DEPENDENCY_TYPE:
+        return createDependencyTypeFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -112,6 +111,8 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
         return convertInterfaceTypeToString(eDataType, instanceValue);
       case CompoNantesPackage.CONNECTOR_TYPE:
         return convertConnectorTypeToString(eDataType, instanceValue);
+      case CompoNantesPackage.DEPENDENCY_TYPE:
+        return convertDependencyTypeToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -133,43 +134,10 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubSystem createSubSystem()
-  {
-    SubSystemImpl subSystem = new SubSystemImpl();
-    return subSystem;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Component createComponent()
   {
     ComponentImpl component = new ComponentImpl();
     return component;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Connector createConnector()
-  {
-    ConnectorImpl connector = new ConnectorImpl();
-    return connector;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Interface createInterface()
-  {
-    InterfaceImpl interface_ = new InterfaceImpl();
-    return interface_;
   }
 
   /**
@@ -188,32 +156,32 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
    * <!-- end-user-doc -->
    * @generated
    */
+  public Interface createInterface()
+  {
+    InterfaceImpl interface_ = new InterfaceImpl();
+    return interface_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Connector createConnector()
+  {
+    ConnectorImpl connector = new ConnectorImpl();
+    return connector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Dependency createDependency()
   {
     DependencyImpl dependency = new DependencyImpl();
     return dependency;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Usage createUsage()
-  {
-    UsageImpl usage = new UsageImpl();
-    return usage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Element createElement()
-  {
-    ElementImpl element = new ElementImpl();
-    return element;
   }
 
   /**
@@ -256,6 +224,28 @@ public class CompoNantesFactoryImpl extends EFactoryImpl implements CompoNantesF
    * @generated
    */
   public String convertConnectorTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DependencyType createDependencyTypeFromString(EDataType eDataType, String initialValue)
+  {
+    DependencyType result = DependencyType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertDependencyTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

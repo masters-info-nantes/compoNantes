@@ -15,40 +15,40 @@
       <genEnumLiterals ecoreEnumLiteral="CompoNantes.ecore#//ConnectorType/ASSEMBLY"/>
       <genEnumLiterals ecoreEnumLiteral="CompoNantes.ecore#//ConnectorType/DELEGATION"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CompoNantes.ecore#//DependencyType">
+      <genEnumLiterals ecoreEnumLiteral="CompoNantes.ecore#//DependencyType/USAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="CompoNantes.ecore#//DependencyType/ASSOCIATION"/>
+    </genEnums>
     <genClasses ecoreClass="CompoNantes.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Model/subsystem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Model/components"/>
     </genClasses>
-    <genClasses ecoreClass="CompoNantes.ecore#//SubSystem">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//SubSystem/components"/>
+    <genClasses ecoreClass="CompoNantes.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Component/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Component/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Component/interfaces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Component/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Component/connectors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Component/dependencies"/>
     </genClasses>
-    <genClasses ecoreClass="CompoNantes.ecore#//Component"/>
-    <genClasses ecoreClass="CompoNantes.ecore#//Connector">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Connector/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Connector/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Connector/int1"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Connector/int2"/>
+    <genClasses ecoreClass="CompoNantes.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Port/name"/>
     </genClasses>
     <genClasses ecoreClass="CompoNantes.ecore#//Interface">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Interface/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Interface/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Interface/port"/>
     </genClasses>
-    <genClasses ecoreClass="CompoNantes.ecore#//Port">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Port/name"/>
+    <genClasses ecoreClass="CompoNantes.ecore#//Connector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Connector/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Connector/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Connector/int1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Connector/int2"/>
     </genClasses>
     <genClasses ecoreClass="CompoNantes.ecore#//Dependency">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Dependency/component"/>
-    </genClasses>
-    <genClasses ecoreClass="CompoNantes.ecore#//Usage">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Usage/interface"/>
-    </genClasses>
-    <genClasses ecoreClass="CompoNantes.ecore#//Element">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Element/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Element/ports"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Element/interfaces"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Element/dependencies"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Element/usages"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Element/connectors"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Dependency/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Dependency/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Dependency/component1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Dependency/component2"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

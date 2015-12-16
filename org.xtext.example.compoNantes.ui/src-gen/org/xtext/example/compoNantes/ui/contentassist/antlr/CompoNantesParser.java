@@ -37,43 +37,35 @@ public class CompoNantesParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getModelAccess().getSubsystemAlternatives_0(), "rule__Model__SubsystemAlternatives_0");
-					put(grammarAccess.getElementAccess().getAlternatives(), "rule__Element__Alternatives");
 					put(grammarAccess.getInterfaceTypeAccess().getAlternatives(), "rule__InterfaceType__Alternatives");
 					put(grammarAccess.getConnectorTypeAccess().getAlternatives(), "rule__ConnectorType__Alternatives");
-					put(grammarAccess.getSubSystemAccess().getGroup(), "rule__SubSystem__Group__0");
+					put(grammarAccess.getDependencyTypeAccess().getAlternatives(), "rule__DependencyType__Alternatives");
 					put(grammarAccess.getComponentAccess().getGroup(), "rule__Component__Group__0");
-					put(grammarAccess.getConnectorAccess().getGroup(), "rule__Connector__Group__0");
-					put(grammarAccess.getInterfaceAccess().getGroup(), "rule__Interface__Group__0");
 					put(grammarAccess.getPortAccess().getGroup(), "rule__Port__Group__0");
+					put(grammarAccess.getInterfaceAccess().getGroup(), "rule__Interface__Group__0");
+					put(grammarAccess.getConnectorAccess().getGroup(), "rule__Connector__Group__0");
 					put(grammarAccess.getDependencyAccess().getGroup(), "rule__Dependency__Group__0");
-					put(grammarAccess.getUsageAccess().getGroup(), "rule__Usage__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
-					put(grammarAccess.getModelAccess().getSubsystemAssignment(), "rule__Model__SubsystemAssignment");
-					put(grammarAccess.getSubSystemAccess().getNameAssignment_1(), "rule__SubSystem__NameAssignment_1");
-					put(grammarAccess.getSubSystemAccess().getPortsAssignment_3(), "rule__SubSystem__PortsAssignment_3");
-					put(grammarAccess.getSubSystemAccess().getInterfacesAssignment_4(), "rule__SubSystem__InterfacesAssignment_4");
-					put(grammarAccess.getSubSystemAccess().getComponentsAssignment_5(), "rule__SubSystem__ComponentsAssignment_5");
-					put(grammarAccess.getSubSystemAccess().getDependenciesAssignment_6(), "rule__SubSystem__DependenciesAssignment_6");
-					put(grammarAccess.getSubSystemAccess().getUsagesAssignment_7(), "rule__SubSystem__UsagesAssignment_7");
-					put(grammarAccess.getSubSystemAccess().getConnectorsAssignment_8(), "rule__SubSystem__ConnectorsAssignment_8");
+					put(grammarAccess.getModelAccess().getComponentsAssignment(), "rule__Model__ComponentsAssignment");
 					put(grammarAccess.getComponentAccess().getNameAssignment_1(), "rule__Component__NameAssignment_1");
 					put(grammarAccess.getComponentAccess().getPortsAssignment_3(), "rule__Component__PortsAssignment_3");
 					put(grammarAccess.getComponentAccess().getInterfacesAssignment_4(), "rule__Component__InterfacesAssignment_4");
-					put(grammarAccess.getComponentAccess().getDependenciesAssignment_5(), "rule__Component__DependenciesAssignment_5");
-					put(grammarAccess.getComponentAccess().getUsagesAssignment_6(), "rule__Component__UsagesAssignment_6");
-					put(grammarAccess.getComponentAccess().getConnectorsAssignment_7(), "rule__Component__ConnectorsAssignment_7");
+					put(grammarAccess.getComponentAccess().getComponentsAssignment_5(), "rule__Component__ComponentsAssignment_5");
+					put(grammarAccess.getComponentAccess().getConnectorsAssignment_6(), "rule__Component__ConnectorsAssignment_6");
+					put(grammarAccess.getComponentAccess().getDependenciesAssignment_7(), "rule__Component__DependenciesAssignment_7");
+					put(grammarAccess.getPortAccess().getNameAssignment_1(), "rule__Port__NameAssignment_1");
+					put(grammarAccess.getInterfaceAccess().getTypeAssignment_1(), "rule__Interface__TypeAssignment_1");
+					put(grammarAccess.getInterfaceAccess().getNameAssignment_2(), "rule__Interface__NameAssignment_2");
+					put(grammarAccess.getInterfaceAccess().getPortAssignment_4(), "rule__Interface__PortAssignment_4");
 					put(grammarAccess.getConnectorAccess().getTypeAssignment_1(), "rule__Connector__TypeAssignment_1");
 					put(grammarAccess.getConnectorAccess().getNameAssignment_2(), "rule__Connector__NameAssignment_2");
 					put(grammarAccess.getConnectorAccess().getInt1Assignment_4(), "rule__Connector__Int1Assignment_4");
 					put(grammarAccess.getConnectorAccess().getInt2Assignment_6(), "rule__Connector__Int2Assignment_6");
-					put(grammarAccess.getInterfaceAccess().getTypeAssignment_1(), "rule__Interface__TypeAssignment_1");
-					put(grammarAccess.getInterfaceAccess().getNameAssignment_2(), "rule__Interface__NameAssignment_2");
-					put(grammarAccess.getInterfaceAccess().getPortAssignment_4(), "rule__Interface__PortAssignment_4");
-					put(grammarAccess.getPortAccess().getNameAssignment_1(), "rule__Port__NameAssignment_1");
-					put(grammarAccess.getDependencyAccess().getComponentAssignment_1(), "rule__Dependency__ComponentAssignment_1");
-					put(grammarAccess.getUsageAccess().getInterfaceAssignment_1(), "rule__Usage__InterfaceAssignment_1");
+					put(grammarAccess.getDependencyAccess().getTypeAssignment_1(), "rule__Dependency__TypeAssignment_1");
+					put(grammarAccess.getDependencyAccess().getNameAssignment_2(), "rule__Dependency__NameAssignment_2");
+					put(grammarAccess.getDependencyAccess().getComponent1Assignment_4(), "rule__Dependency__Component1Assignment_4");
+					put(grammarAccess.getDependencyAccess().getComponent2Assignment_6(), "rule__Dependency__Component2Assignment_6");
 				}
 			};
 		}

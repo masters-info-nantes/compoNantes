@@ -7,24 +7,19 @@ create OUT : UML from IN : COMPO;
 helper context COMPO!Component def: getProvided() : Sequence(COMPO!Interface) = 
 	self.interfaces->collect(e|e.type.toString()='provided')
 ;
-rule CpnSubToUmlEl {
+helper context COMPO!Component def: getRequired() : Sequence(COMPO!Interface) = 
+	self.interfaces->collect(e|e.type.toString()='required')
+;
+rule CpnComponentToUmlComponent {
 	from
-		CpnSub : COMPO!SubSystem
-	to
-		el : UML!Component(
-			name <- CpnSub.name,
-			ownedElement <- CpnSub.components
-		)
-}
-rule ComponanteToComponent {
-	from
-		cpn : COMPO!Component
+		CpnComp : COMPO!Component
 	to 
-		cn : UML!Component (
-			name <- cpn.name,
-			ownedPort <- cpn.ports,
-			provided <- cpn.getProvided(),
-			ownedConnector <- cpn.connectors
+		UmlComp : UML!Component (
+			name <- CpnComp.name,
+			ownedPort <- CpnComp.ports,
+			provided <- CpnComp.getProvided(),
+			required <- CpnComp.getRequired(),
+			ownedConnector <- CpnComp.connectors
 		)
 }
 
@@ -34,7 +29,6 @@ rule CpnIntToUmlInt {
 	to
 		UmlInt : UML!Interface (
 			name <- CpnInt.name
-			
 		)
 }
 
@@ -44,5 +38,14 @@ rule CpnConToUmlCon {
 	to
 		UmlCon : UML!Connector (
 			name <- CpnCon.name
+		)
+}
+
+rule CpnPrtToUmlPrt {
+	from
+		CpnPrt : COMPO!Port
+	to
+		UmlPrt : UML!Port (
+			name <- CpnPrt.name
 		)
 }

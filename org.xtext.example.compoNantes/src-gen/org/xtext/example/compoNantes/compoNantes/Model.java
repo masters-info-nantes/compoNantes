@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.Model#getSubsystem <em>Subsystem</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.Model#getComponents <em>Components</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getModel()
@@ -25,19 +25,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Subsystem</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.compoNantes.compoNantes.Element}.
+   * Returns the value of the '<em><b>Components</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.compoNantes.compoNantes.Component}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Subsystem</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Components</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Subsystem</em>' containment reference list.
-   * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getModel_Subsystem()
+   * @return the value of the '<em>Components</em>' containment reference list.
+   * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getModel_Components()
    * @model containment="true"
    * @generated
    */
-  EList<Element> getSubsystem();
+  EList<Component> getComponents();
 
 } // Model

@@ -23,8 +23,6 @@ import org.xtext.example.compoNantes.compoNantes.Dependency;
 import org.xtext.example.compoNantes.compoNantes.Interface;
 import org.xtext.example.compoNantes.compoNantes.Model;
 import org.xtext.example.compoNantes.compoNantes.Port;
-import org.xtext.example.compoNantes.compoNantes.SubSystem;
-import org.xtext.example.compoNantes.compoNantes.Usage;
 import org.xtext.example.compoNantes.services.CompoNantesGrammarAccess;
 
 @SuppressWarnings("all")
@@ -54,12 +52,6 @@ public class CompoNantesSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case CompoNantesPackage.PORT:
 				sequence_Port(context, (Port) semanticObject); 
 				return; 
-			case CompoNantesPackage.SUB_SYSTEM:
-				sequence_SubSystem(context, (SubSystem) semanticObject); 
-				return; 
-			case CompoNantesPackage.USAGE:
-				sequence_Usage(context, (Usage) semanticObject); 
-				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -70,9 +62,9 @@ public class CompoNantesSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *         name=ID 
 	 *         ports+=Port* 
 	 *         interfaces+=Interface* 
-	 *         dependencies+=Dependency* 
-	 *         usages+=Usage* 
-	 *         connectors+=Connector*
+	 *         components+=Component* 
+	 *         connectors+=Connector* 
+	 *         dependencies+=Dependency*
 	 *     )
 	 */
 	protected void sequence_Component(EObject context, Component semanticObject) {
@@ -107,16 +99,25 @@ public class CompoNantesSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Constraint:
-	 *     component=[Element|QualifiedName]
+	 *     (type=DependencyType name=ID component1=[Interface|QualifiedName] component2=[Interface|QualifiedName])
 	 */
 	protected void sequence_Dependency(EObject context, Dependency semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT));
+			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__TYPE));
+			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__NAME));
+			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT1));
+			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT2) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT2));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDependencyAccess().getComponentElementQualifiedNameParserRuleCall_1_0_1(), semanticObject.getComponent());
+		feeder.accept(grammarAccess.getDependencyAccess().getTypeDependencyTypeEnumRuleCall_1_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getDependencyAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDependencyAccess().getComponent1InterfaceQualifiedNameParserRuleCall_4_0_1(), semanticObject.getComponent1());
+		feeder.accept(grammarAccess.getDependencyAccess().getComponent2InterfaceQualifiedNameParserRuleCall_6_0_1(), semanticObject.getComponent2());
 		feeder.finish();
 	}
 	
@@ -145,7 +146,7 @@ public class CompoNantesSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Constraint:
-	 *     (subsystem+=SubSystem | subsystem+=Component)*
+	 *     components+=Component*
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -164,39 +165,6 @@ public class CompoNantesSemanticSequencer extends AbstractDelegatingSemanticSequ
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getPortAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         ports+=Port* 
-	 *         interfaces+=Interface* 
-	 *         components+=Component* 
-	 *         dependencies+=Dependency* 
-	 *         usages+=Usage* 
-	 *         connectors+=Connector*
-	 *     )
-	 */
-	protected void sequence_SubSystem(EObject context, SubSystem semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     interface=[Interface|QualifiedName]
-	 */
-	protected void sequence_Usage(EObject context, Usage semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.USAGE__INTERFACE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.USAGE__INTERFACE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUsageAccess().getInterfaceInterfaceQualifiedNameParserRuleCall_1_0_1(), semanticObject.getInterface());
 		feeder.finish();
 	}
 }

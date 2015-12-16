@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.compoNantes.compoNantes.CompoNantesPackage;
-import org.xtext.example.compoNantes.compoNantes.Element;
+import org.xtext.example.compoNantes.compoNantes.Component;
 import org.xtext.example.compoNantes.compoNantes.Model;
 
 /**
@@ -28,7 +28,7 @@ import org.xtext.example.compoNantes.compoNantes.Model;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ModelImpl#getSubsystem <em>Subsystem</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ModelImpl#getComponents <em>Components</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,14 +36,14 @@ import org.xtext.example.compoNantes.compoNantes.Model;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getSubsystem() <em>Subsystem</em>}' containment reference list.
+   * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSubsystem()
+   * @see #getComponents()
    * @generated
    * @ordered
    */
-  protected EList<Element> subsystem;
+  protected EList<Component> components;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +71,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Element> getSubsystem()
+  public EList<Component> getComponents()
   {
-    if (subsystem == null)
+    if (components == null)
     {
-      subsystem = new EObjectContainmentEList<Element>(Element.class, this, CompoNantesPackage.MODEL__SUBSYSTEM);
+      components = new EObjectContainmentEList<Component>(Component.class, this, CompoNantesPackage.MODEL__COMPONENTS);
     }
-    return subsystem;
+    return components;
   }
 
   /**
@@ -90,8 +90,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CompoNantesPackage.MODEL__SUBSYSTEM:
-        return ((InternalEList<?>)getSubsystem()).basicRemove(otherEnd, msgs);
+      case CompoNantesPackage.MODEL__COMPONENTS:
+        return ((InternalEList<?>)getComponents()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CompoNantesPackage.MODEL__SUBSYSTEM:
-        return getSubsystem();
+      case CompoNantesPackage.MODEL__COMPONENTS:
+        return getComponents();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CompoNantesPackage.MODEL__SUBSYSTEM:
-        getSubsystem().clear();
-        getSubsystem().addAll((Collection<? extends Element>)newValue);
+      case CompoNantesPackage.MODEL__COMPONENTS:
+        getComponents().clear();
+        getComponents().addAll((Collection<? extends Component>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CompoNantesPackage.MODEL__SUBSYSTEM:
-        getSubsystem().clear();
+      case CompoNantesPackage.MODEL__COMPONENTS:
+        getComponents().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +158,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CompoNantesPackage.MODEL__SUBSYSTEM:
-        return subsystem != null && !subsystem.isEmpty();
+      case CompoNantesPackage.MODEL__COMPONENTS:
+        return components != null && !components.isEmpty();
     }
     return super.eIsSet(featureID);
   }
