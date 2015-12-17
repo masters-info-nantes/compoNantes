@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compoNantes:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:compoNantes="http://www.xtext.org/example/compoNantes/CompoNantes">
+  <components name="Webstore">
+    <ports name="ProductSearch"/>
+    <ports name="OnlineShopping"/>
+    <ports name="UserSession"/>
+    <ports name="SearchInventory"/>
+    <ports name="ManageOrder"/>
+    <ports name="ManageCustomer"/>
+    <interfaces type="provided" name="IProductSearch" port="sample/test.cpn#|0"/>
+    <interfaces type="provided" name="IOnlineShopping" port="sample/test.cpn#|1"/>
+    <interfaces type="provided" name="IUserSession" port="sample/test.cpn#|2"/>
+    <interfaces name="ISearchInventory" port="sample/test.cpn#|3"/>
+    <interfaces name="IManageOrder" port="sample/test.cpn#|4"/>
+    <interfaces name="IManageCustomer" port="sample/test.cpn#|5"/>
+    <components name="SearchEngine">
+      <ports name="ProductSearch"/>
+      <ports name="SearchInventory"/>
+      <interfaces type="provided" name="IProductSearch" port="sample/test.cpn#|6"/>
+      <interfaces name="ISearchInventory" port="sample/test.cpn#|7"/>
+    </components>
+    <components name="ShoppingCart">
+      <ports name="OnlineShopping"/>
+      <ports name="ManageOrder"/>
+      <ports name="toAuth"/>
+      <interfaces type="provided" name="IOnlineShopping" port="sample/test.cpn#|8"/>
+      <interfaces name="IManageOrder" port="sample/test.cpn#|9"/>
+      <interfaces type="provided" name="IToAuth" port="sample/test.cpn#|10"/>
+    </components>
+    <components name="Authentification">
+      <ports name="UserSession"/>
+      <ports name="ManageCustomer"/>
+      <ports name="fromShop"/>
+      <interfaces type="provided" name="IUserSession" port="sample/test.cpn#|11"/>
+      <interfaces name="IManageCustomer" port="sample/test.cpn#|12"/>
+      <interfaces name="IFromShop" port="sample/test.cpn#|13"/>
+    </components>
+    <connectors type="delegation" name="fromSearch" int_from="sample/test.cpn#|14"
+        int_to="sample/test.cpn#|15"/>
+    <connectors type="delegation" name="fromShopping" int_from="sample/test.cpn#|16"
+        int_to="sample/test.cpn#|17"/>
+    <connectors type="delegation" name="fromAuth" int_from="sample/test.cpn#|18" int_to="sample/test.cpn#|19"/>
+    <connectors type="delegation" name="toSearch" int_from="sample/test.cpn#|20" int_to="sample/test.cpn#|21"/>
+    <connectors type="delegation" name="toShopping" int_from="sample/test.cpn#|22"
+        int_to="sample/test.cpn#|23"/>
+    <connectors type="delegation" name="toAuth" int_from="sample/test.cpn#|24" int_to="sample/test.cpn#|25"/>
+    <connectors name="UserSession" int_from="sample/test.cpn#|26" int_to="sample/test.cpn#|27"/>
+    <dependencies name="StoreWarehouse" component_from="sample/test.cpn#|28" component_to="sample/test.cpn#|29"/>
+    <dependencies name="StoreAccount1" component_from="sample/test.cpn#|30" component_to="sample/test.cpn#|31"/>
+    <dependencies name="StoreAccount2" component_from="sample/test.cpn#|32" component_to="sample/test.cpn#|33"/>
+  </components>
+  <components name="Warehouse">
+    <ports name="SearchInventory"/>
+    <ports name="ManageInventory"/>
+    <interfaces type="provided" name="ISearchInventory" port="sample/test.cpn#|34"/>
+    <interfaces type="provided" name="IManageInventory" port="sample/test.cpn#|35"/>
+    <components name="Inventory">
+      <ports name="SearchInventory"/>
+      <ports name="ManageInventory"/>
+      <interfaces type="provided" name="ISearchInventory" port="sample/test.cpn#|36"/>
+      <interfaces type="provided" name="IManageInventory" port="sample/test.cpn#|37"/>
+    </components>
+    <connectors type="delegation" name="toWebStore" int_from="sample/test.cpn#|38"
+        int_to="sample/test.cpn#|39"/>
+    <connectors type="delegation" name="toAccounting" int_from="sample/test.cpn#|40"
+        int_to="sample/test.cpn#|41"/>
+  </components>
+  <components name="Accounting">
+    <ports name="ManageOrders"/>
+    <ports name="ManageCustomer"/>
+    <ports name="ManageInventory"/>
+    <interfaces type="provided" name="IManageCustomer" port="sample/test.cpn#|42"/>
+    <interfaces type="provided" name="IManageOrder" port="sample/test.cpn#|43"/>
+    <interfaces name="IManageInventory" port="sample/test.cpn#|44"/>
+    <components name="Order">
+      <ports name="ManageOrders"/>
+      <ports name="ManageInventory"/>
+      <ports name="ManageCustomers"/>
+      <interfaces type="provided" name="IManageOrders" port="sample/test.cpn#|45"/>
+      <interfaces name="IManageInventory" port="sample/test.cpn#|46"/>
+      <interfaces name="IManageCustomers" port="sample/test.cpn#|47"/>
+    </components>
+    <components name="Customers">
+      <ports name="ManageCustomer1"/>
+      <ports name="ManageCustomer2"/>
+      <interfaces type="provided" name="IManageCustomers1" port="sample/test.cpn#|48"/>
+      <interfaces type="provided" name="IManageCustomers2" port="sample/test.cpn#|49"/>
+    </components>
+    <connectors type="delegation" name="toWebstore1" int_from="sample/test.cpn#|50"
+        int_to="sample/test.cpn#|51"/>
+    <connectors type="delegation" name="toWebstore2" int_from="sample/test.cpn#|52"
+        int_to="sample/test.cpn#|53"/>
+    <connectors type="delegation" name="toWarehouse" int_from="sample/test.cpn#|54"
+        int_to="sample/test.cpn#|55"/>
+    <connectors name="ManageCustomer" int_from="sample/test.cpn#|56" int_to="sample/test.cpn#|57"/>
+    <dependencies name="AccountWarehouse" component_from="sample/test.cpn#|58" component_to="sample/test.cpn#|59"/>
+  </components>
+</compoNantes:Model>
