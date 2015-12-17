@@ -4,10 +4,12 @@
 module compoNantesToUml;
 create OUT : UML from IN : COMPO;
 
-helper context COMPO!Component def: getProvided() : Sequence(COMPO!Interface) = 
+helper context COMPO!Component 
+	def: getProvided() : Set(COMPO!Interface) = 
 	self.interfaces->collect(e|e.type.toString()='provided')
 ;
-helper context COMPO!Component def: getRequired() : Sequence(COMPO!Interface) = 
+helper context COMPO!Component 
+	def: getRequired() : Set(COMPO!Interface) = 
 	self.interfaces->collect(e|e.type.toString()='required')
 ;
 rule CpnComponentToUmlComponent {
