@@ -33,19 +33,19 @@ component Webstore{
 		interface required IManageCustomer port ManageCustomer
 		interface required IFromShop port fromShop
 	}
-	connector delegation fromSearch : SearchEngine.IProductSearch to IProductSearch
-	connector delegation fromShopping : ShoppingCart.IOnlineShopping to IOnlineShopping
-	connector delegation fromAuth : Authentification.IUserSession to IUserSession
+	connector delegation fromSearch {from SearchEngine.IProductSearch to IProductSearch}
+	connector delegation fromShopping { from ShoppingCart.IOnlineShopping to IOnlineShopping}
+	connector delegation fromAuth { from Authentification.IUserSession to IUserSession}
 	
-	connector delegation toSearch : SearchEngine.ISearchInventory to ISearchInventory
-	connector delegation toShopping : ShoppingCart.IManageOrder to IManageOrder
-	connector delegation toAuth : Authentification.IManageCustomer to IManageCustomer
+	connector delegation toSearch { from SearchEngine.ISearchInventory to ISearchInventory}
+	connector delegation toShopping { from ShoppingCart.IManageOrder to IManageOrder}
+	connector delegation toAuth { from Authentification.IManageCustomer to IManageCustomer}
 	
-	connector assembly UserSession : ShoppingCart.IToAuth to Authentification.IFromShop
+	connector assembly UserSession { from ShoppingCart.IToAuth to Authentification.IFromShop}
 	
-	dependency usage StoreWarehouse : ISearchInventory to Warehouse.ISearchInventory
-	dependency usage StoreAccount1 : IManageOrder to Accounting.IManageOrder
-	dependency usage StoreAccount2 : IManageCustomer to Accounting.IManageCustomer
+	dependency usage StoreWarehouse { from ISearchInventory to Warehouse.ISearchInventory}
+	dependency usage StoreAccount1 { from IManageOrder to Accounting.IManageOrder}
+	dependency usage StoreAccount2 { from IManageCustomer to Accounting.IManageCustomer}
 }
 component Warehouse{
 	port SearchInventory
@@ -58,8 +58,8 @@ component Warehouse{
 		interface provided ISearchInventory port SearchInventory
 		interface provided IManageInventory port ManageInventory
 	}
-	connector delegation toWebStore : Inventory.ISearchInventory to ISearchInventory
-	connector delegation toAccounting : Inventory.IManageInventory to IManageInventory
+	connector delegation toWebStore { from Inventory.ISearchInventory to ISearchInventory }
+	connector delegation toAccounting { from Inventory.IManageInventory to IManageInventory }
 }
 component Accounting{
 	port ManageOrders
@@ -82,9 +82,9 @@ component Accounting{
 		interface provided IManageCustomers1 port ManageCustomer1
 		interface provided IManageCustomers2 port ManageCustomer2
 	}
-	connector delegation toWebstore1 : Customers.IManageCustomers1 to IManageCustomer
-	connector delegation toWebstore2 : Order.IManageOrders to IManageOrder
-	connector delegation toWarehouse : Order.IManageInventory to IManageInventory
-	connector assembly ManageCustomer : Order.IManageCustomers to Customers.IManageCustomers2
-	dependency usage AccountWarehouse : Accounting.IManageInventory to Warehouse.IManageInventory
+	connector delegation toWebstore1 { from Customers.IManageCustomers1 to IManageCustomer} 
+	connector delegation toWebstore2 { from Order.IManageOrders to IManageOrder} 
+	connector delegation toWarehouse { from Order.IManageInventory to IManageInventory} 
+	connector assembly ManageCustomer { from Order.IManageCustomers to Customers.IManageCustomers2} 
+	dependency usage AccountWarehouse { from Accounting.IManageInventory to Warehouse.IManageInventory} 
 }

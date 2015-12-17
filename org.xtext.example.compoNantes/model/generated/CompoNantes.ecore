@@ -30,14 +30,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="Connector">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ConnectorType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="int1" eType="#//Interface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="int2" eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="int_from" eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="int_to" eType="#//Interface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dependency">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DependencyType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component1" eType="#//Interface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component2" eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component_from" eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component_to" eType="#//Interface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="InterfaceType">
     <eLiterals name="REQUIRED" literal="required"/>

@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.Connector#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.Connector#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt1 <em>Int1</em>}</li>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt2 <em>Int2</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt_from <em>Int from</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt_to <em>Int to</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getConnector()
@@ -81,55 +81,55 @@ public interface Connector extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Int1</b></em>' reference.
+   * Returns the value of the '<em><b>Int from</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Int1</em>' reference isn't clear,
+   * If the meaning of the '<em>Int from</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Int1</em>' reference.
-   * @see #setInt1(Interface)
-   * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getConnector_Int1()
+   * @return the value of the '<em>Int from</em>' reference.
+   * @see #setInt_from(Interface)
+   * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getConnector_Int_from()
    * @model
    * @generated
    */
-  Interface getInt1();
+  Interface getInt_from();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt1 <em>Int1</em>}' reference.
+   * Sets the value of the '{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt_from <em>Int from</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Int1</em>' reference.
-   * @see #getInt1()
+   * @param value the new value of the '<em>Int from</em>' reference.
+   * @see #getInt_from()
    * @generated
    */
-  void setInt1(Interface value);
+  void setInt_from(Interface value);
 
   /**
-   * Returns the value of the '<em><b>Int2</b></em>' reference.
+   * Returns the value of the '<em><b>Int to</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Int2</em>' reference isn't clear,
+   * If the meaning of the '<em>Int to</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Int2</em>' reference.
-   * @see #setInt2(Interface)
-   * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getConnector_Int2()
+   * @return the value of the '<em>Int to</em>' reference.
+   * @see #setInt_to(Interface)
+   * @see org.xtext.example.compoNantes.compoNantes.CompoNantesPackage#getConnector_Int_to()
    * @model
    * @generated
    */
-  Interface getInt2();
+  Interface getInt_to();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt2 <em>Int2</em>}' reference.
+   * Sets the value of the '{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt_to <em>Int to</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Int2</em>' reference.
-   * @see #getInt2()
+   * @param value the new value of the '<em>Int to</em>' reference.
+   * @see #getInt_to()
    * @generated
    */
-  void setInt2(Interface value);
+  void setInt_to(Interface value);
 
 } // Connector

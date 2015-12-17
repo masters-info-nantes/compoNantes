@@ -60,12 +60,12 @@ public class CompoNantesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInterfaceAccess().getPortAssignment_4(), "rule__Interface__PortAssignment_4");
 					put(grammarAccess.getConnectorAccess().getTypeAssignment_1(), "rule__Connector__TypeAssignment_1");
 					put(grammarAccess.getConnectorAccess().getNameAssignment_2(), "rule__Connector__NameAssignment_2");
-					put(grammarAccess.getConnectorAccess().getInt1Assignment_4(), "rule__Connector__Int1Assignment_4");
-					put(grammarAccess.getConnectorAccess().getInt2Assignment_6(), "rule__Connector__Int2Assignment_6");
+					put(grammarAccess.getConnectorAccess().getInt_fromAssignment_5(), "rule__Connector__Int_fromAssignment_5");
+					put(grammarAccess.getConnectorAccess().getInt_toAssignment_7(), "rule__Connector__Int_toAssignment_7");
 					put(grammarAccess.getDependencyAccess().getTypeAssignment_1(), "rule__Dependency__TypeAssignment_1");
 					put(grammarAccess.getDependencyAccess().getNameAssignment_2(), "rule__Dependency__NameAssignment_2");
-					put(grammarAccess.getDependencyAccess().getComponent1Assignment_4(), "rule__Dependency__Component1Assignment_4");
-					put(grammarAccess.getDependencyAccess().getComponent2Assignment_6(), "rule__Dependency__Component2Assignment_6");
+					put(grammarAccess.getDependencyAccess().getComponent_fromAssignment_5(), "rule__Dependency__Component_fromAssignment_5");
+					put(grammarAccess.getDependencyAccess().getComponent_toAssignment_7(), "rule__Dependency__Component_toAssignment_7");
 				}
 			};
 		}

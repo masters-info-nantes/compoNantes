@@ -25,8 +25,8 @@ import org.xtext.example.compoNantes.compoNantes.Interface;
  * <ul>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl#getInt1 <em>Int1</em>}</li>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl#getInt2 <em>Int2</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl#getInt_from <em>Int from</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.ConnectorImpl#getInt_to <em>Int to</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,24 +74,24 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getInt1() <em>Int1</em>}' reference.
+   * The cached value of the '{@link #getInt_from() <em>Int from</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInt1()
+   * @see #getInt_from()
    * @generated
    * @ordered
    */
-  protected Interface int1;
+  protected Interface int_from;
 
   /**
-   * The cached value of the '{@link #getInt2() <em>Int2</em>}' reference.
+   * The cached value of the '{@link #getInt_to() <em>Int to</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInt2()
+   * @see #getInt_to()
    * @generated
    * @ordered
    */
-  protected Interface int2;
+  protected Interface int_to;
 
   /**
    * <!-- begin-user-doc -->
@@ -165,19 +165,19 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * <!-- end-user-doc -->
    * @generated
    */
-  public Interface getInt1()
+  public Interface getInt_from()
   {
-    if (int1 != null && int1.eIsProxy())
+    if (int_from != null && int_from.eIsProxy())
     {
-      InternalEObject oldInt1 = (InternalEObject)int1;
-      int1 = (Interface)eResolveProxy(oldInt1);
-      if (int1 != oldInt1)
+      InternalEObject oldInt_from = (InternalEObject)int_from;
+      int_from = (Interface)eResolveProxy(oldInt_from);
+      if (int_from != oldInt_from)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompoNantesPackage.CONNECTOR__INT1, oldInt1, int1));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompoNantesPackage.CONNECTOR__INT_FROM, oldInt_from, int_from));
       }
     }
-    return int1;
+    return int_from;
   }
 
   /**
@@ -185,9 +185,9 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * <!-- end-user-doc -->
    * @generated
    */
-  public Interface basicGetInt1()
+  public Interface basicGetInt_from()
   {
-    return int1;
+    return int_from;
   }
 
   /**
@@ -195,12 +195,12 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInt1(Interface newInt1)
+  public void setInt_from(Interface newInt_from)
   {
-    Interface oldInt1 = int1;
-    int1 = newInt1;
+    Interface oldInt_from = int_from;
+    int_from = newInt_from;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.CONNECTOR__INT1, oldInt1, int1));
+      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.CONNECTOR__INT_FROM, oldInt_from, int_from));
   }
 
   /**
@@ -208,19 +208,19 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * <!-- end-user-doc -->
    * @generated
    */
-  public Interface getInt2()
+  public Interface getInt_to()
   {
-    if (int2 != null && int2.eIsProxy())
+    if (int_to != null && int_to.eIsProxy())
     {
-      InternalEObject oldInt2 = (InternalEObject)int2;
-      int2 = (Interface)eResolveProxy(oldInt2);
-      if (int2 != oldInt2)
+      InternalEObject oldInt_to = (InternalEObject)int_to;
+      int_to = (Interface)eResolveProxy(oldInt_to);
+      if (int_to != oldInt_to)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompoNantesPackage.CONNECTOR__INT2, oldInt2, int2));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompoNantesPackage.CONNECTOR__INT_TO, oldInt_to, int_to));
       }
     }
-    return int2;
+    return int_to;
   }
 
   /**
@@ -228,9 +228,9 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * <!-- end-user-doc -->
    * @generated
    */
-  public Interface basicGetInt2()
+  public Interface basicGetInt_to()
   {
-    return int2;
+    return int_to;
   }
 
   /**
@@ -238,12 +238,12 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInt2(Interface newInt2)
+  public void setInt_to(Interface newInt_to)
   {
-    Interface oldInt2 = int2;
-    int2 = newInt2;
+    Interface oldInt_to = int_to;
+    int_to = newInt_to;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.CONNECTOR__INT2, oldInt2, int2));
+      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.CONNECTOR__INT_TO, oldInt_to, int_to));
   }
 
   /**
@@ -260,12 +260,12 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
         return getType();
       case CompoNantesPackage.CONNECTOR__NAME:
         return getName();
-      case CompoNantesPackage.CONNECTOR__INT1:
-        if (resolve) return getInt1();
-        return basicGetInt1();
-      case CompoNantesPackage.CONNECTOR__INT2:
-        if (resolve) return getInt2();
-        return basicGetInt2();
+      case CompoNantesPackage.CONNECTOR__INT_FROM:
+        if (resolve) return getInt_from();
+        return basicGetInt_from();
+      case CompoNantesPackage.CONNECTOR__INT_TO:
+        if (resolve) return getInt_to();
+        return basicGetInt_to();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -286,11 +286,11 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
       case CompoNantesPackage.CONNECTOR__NAME:
         setName((String)newValue);
         return;
-      case CompoNantesPackage.CONNECTOR__INT1:
-        setInt1((Interface)newValue);
+      case CompoNantesPackage.CONNECTOR__INT_FROM:
+        setInt_from((Interface)newValue);
         return;
-      case CompoNantesPackage.CONNECTOR__INT2:
-        setInt2((Interface)newValue);
+      case CompoNantesPackage.CONNECTOR__INT_TO:
+        setInt_to((Interface)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -312,11 +312,11 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
       case CompoNantesPackage.CONNECTOR__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case CompoNantesPackage.CONNECTOR__INT1:
-        setInt1((Interface)null);
+      case CompoNantesPackage.CONNECTOR__INT_FROM:
+        setInt_from((Interface)null);
         return;
-      case CompoNantesPackage.CONNECTOR__INT2:
-        setInt2((Interface)null);
+      case CompoNantesPackage.CONNECTOR__INT_TO:
+        setInt_to((Interface)null);
         return;
     }
     super.eUnset(featureID);
@@ -336,10 +336,10 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
         return type != TYPE_EDEFAULT;
       case CompoNantesPackage.CONNECTOR__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case CompoNantesPackage.CONNECTOR__INT1:
-        return int1 != null;
-      case CompoNantesPackage.CONNECTOR__INT2:
-        return int2 != null;
+      case CompoNantesPackage.CONNECTOR__INT_FROM:
+        return int_from != null;
+      case CompoNantesPackage.CONNECTOR__INT_TO:
+        return int_to != null;
     }
     return super.eIsSet(featureID);
   }

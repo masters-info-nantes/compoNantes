@@ -24,11 +24,17 @@ Interface:
 ;
 
 Connector:
-	'connector' type=ConnectorType name=ID ':' int1=[Interface|QualifiedName] 'to' int2=[Interface|QualifiedName]
+	'connector' type=ConnectorType name=ID '{' 
+		'from' int_from=[Interface|QualifiedName] 
+		'to' int_to=[Interface|QualifiedName]
+	'}'
 ;
 
 Dependency:
-	'dependency' type=DependencyType name=ID ":" component1=[Interface|QualifiedName] 'to' component2=[Interface|QualifiedName]
+	'dependency' type=DependencyType name=ID '{' 
+		'from' component_from=[Interface|QualifiedName] 
+		'to' component_to=[Interface|QualifiedName]
+	'}'
 ;
 
 QualifiedName:

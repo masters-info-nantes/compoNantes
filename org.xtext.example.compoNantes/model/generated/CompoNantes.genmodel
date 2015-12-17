@@ -41,14 +41,14 @@
     <genClasses ecoreClass="CompoNantes.ecore#//Connector">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Connector/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Connector/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Connector/int1"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Connector/int2"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Connector/int_from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Connector/int_to"/>
     </genClasses>
     <genClasses ecoreClass="CompoNantes.ecore#//Dependency">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Dependency/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CompoNantes.ecore#//Dependency/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Dependency/component1"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Dependency/component2"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Dependency/component_from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CompoNantes.ecore#//Dependency/component_to"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

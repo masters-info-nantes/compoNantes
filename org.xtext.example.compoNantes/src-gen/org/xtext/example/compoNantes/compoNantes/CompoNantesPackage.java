@@ -261,22 +261,22 @@ public interface CompoNantesPackage extends EPackage
   int CONNECTOR__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Int1</b></em>' reference.
+   * The feature id for the '<em><b>Int from</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONNECTOR__INT1 = 2;
+  int CONNECTOR__INT_FROM = 2;
 
   /**
-   * The feature id for the '<em><b>Int2</b></em>' reference.
+   * The feature id for the '<em><b>Int to</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONNECTOR__INT2 = 3;
+  int CONNECTOR__INT_TO = 3;
 
   /**
    * The number of structural features of the '<em>Connector</em>' class.
@@ -316,22 +316,22 @@ public interface CompoNantesPackage extends EPackage
   int DEPENDENCY__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Component1</b></em>' reference.
+   * The feature id for the '<em><b>Component from</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEPENDENCY__COMPONENT1 = 2;
+  int DEPENDENCY__COMPONENT_FROM = 2;
 
   /**
-   * The feature id for the '<em><b>Component2</b></em>' reference.
+   * The feature id for the '<em><b>Component to</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEPENDENCY__COMPONENT2 = 3;
+  int DEPENDENCY__COMPONENT_TO = 3;
 
   /**
    * The number of structural features of the '<em>Dependency</em>' class.
@@ -567,26 +567,26 @@ public interface CompoNantesPackage extends EPackage
   EAttribute getConnector_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt1 <em>Int1</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt_from <em>Int from</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Int1</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Connector#getInt1()
+   * @return the meta object for the reference '<em>Int from</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Connector#getInt_from()
    * @see #getConnector()
    * @generated
    */
-  EReference getConnector_Int1();
+  EReference getConnector_Int_from();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt2 <em>Int2</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Connector#getInt_to <em>Int to</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Int2</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Connector#getInt2()
+   * @return the meta object for the reference '<em>Int to</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Connector#getInt_to()
    * @see #getConnector()
    * @generated
    */
-  EReference getConnector_Int2();
+  EReference getConnector_Int_to();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.compoNantes.compoNantes.Dependency <em>Dependency</em>}'.
@@ -621,26 +621,26 @@ public interface CompoNantesPackage extends EPackage
   EAttribute getDependency_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Dependency#getComponent1 <em>Component1</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Dependency#getComponent_from <em>Component from</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Component1</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Dependency#getComponent1()
+   * @return the meta object for the reference '<em>Component from</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Dependency#getComponent_from()
    * @see #getDependency()
    * @generated
    */
-  EReference getDependency_Component1();
+  EReference getDependency_Component_from();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Dependency#getComponent2 <em>Component2</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.compoNantes.compoNantes.Dependency#getComponent_to <em>Component to</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Component2</em>'.
-   * @see org.xtext.example.compoNantes.compoNantes.Dependency#getComponent2()
+   * @return the meta object for the reference '<em>Component to</em>'.
+   * @see org.xtext.example.compoNantes.compoNantes.Dependency#getComponent_to()
    * @see #getDependency()
    * @generated
    */
-  EReference getDependency_Component2();
+  EReference getDependency_Component_to();
 
   /**
    * Returns the meta object for enum '{@link org.xtext.example.compoNantes.compoNantes.InterfaceType <em>Interface Type</em>}'.
@@ -850,20 +850,20 @@ public interface CompoNantesPackage extends EPackage
     EAttribute CONNECTOR__NAME = eINSTANCE.getConnector_Name();
 
     /**
-     * The meta object literal for the '<em><b>Int1</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Int from</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONNECTOR__INT1 = eINSTANCE.getConnector_Int1();
+    EReference CONNECTOR__INT_FROM = eINSTANCE.getConnector_Int_from();
 
     /**
-     * The meta object literal for the '<em><b>Int2</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Int to</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONNECTOR__INT2 = eINSTANCE.getConnector_Int2();
+    EReference CONNECTOR__INT_TO = eINSTANCE.getConnector_Int_to();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.compoNantes.compoNantes.impl.DependencyImpl <em>Dependency</em>}' class.
@@ -892,20 +892,20 @@ public interface CompoNantesPackage extends EPackage
     EAttribute DEPENDENCY__NAME = eINSTANCE.getDependency_Name();
 
     /**
-     * The meta object literal for the '<em><b>Component1</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Component from</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DEPENDENCY__COMPONENT1 = eINSTANCE.getDependency_Component1();
+    EReference DEPENDENCY__COMPONENT_FROM = eINSTANCE.getDependency_Component_from();
 
     /**
-     * The meta object literal for the '<em><b>Component2</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Component to</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DEPENDENCY__COMPONENT2 = eINSTANCE.getDependency_Component2();
+    EReference DEPENDENCY__COMPONENT_TO = eINSTANCE.getDependency_Component_to();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.compoNantes.compoNantes.InterfaceType <em>Interface Type</em>}' enum.

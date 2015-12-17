@@ -25,8 +25,8 @@ import org.xtext.example.compoNantes.compoNantes.Interface;
  * <ul>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.DependencyImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.DependencyImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.DependencyImpl#getComponent1 <em>Component1</em>}</li>
- *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.DependencyImpl#getComponent2 <em>Component2</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.DependencyImpl#getComponent_from <em>Component from</em>}</li>
+ *   <li>{@link org.xtext.example.compoNantes.compoNantes.impl.DependencyImpl#getComponent_to <em>Component to</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,24 +74,24 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getComponent1() <em>Component1</em>}' reference.
+   * The cached value of the '{@link #getComponent_from() <em>Component from</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComponent1()
+   * @see #getComponent_from()
    * @generated
    * @ordered
    */
-  protected Interface component1;
+  protected Interface component_from;
 
   /**
-   * The cached value of the '{@link #getComponent2() <em>Component2</em>}' reference.
+   * The cached value of the '{@link #getComponent_to() <em>Component to</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComponent2()
+   * @see #getComponent_to()
    * @generated
    * @ordered
    */
-  protected Interface component2;
+  protected Interface component_to;
 
   /**
    * <!-- begin-user-doc -->
@@ -165,19 +165,19 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
    * <!-- end-user-doc -->
    * @generated
    */
-  public Interface getComponent1()
+  public Interface getComponent_from()
   {
-    if (component1 != null && component1.eIsProxy())
+    if (component_from != null && component_from.eIsProxy())
     {
-      InternalEObject oldComponent1 = (InternalEObject)component1;
-      component1 = (Interface)eResolveProxy(oldComponent1);
-      if (component1 != oldComponent1)
+      InternalEObject oldComponent_from = (InternalEObject)component_from;
+      component_from = (Interface)eResolveProxy(oldComponent_from);
+      if (component_from != oldComponent_from)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompoNantesPackage.DEPENDENCY__COMPONENT1, oldComponent1, component1));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompoNantesPackage.DEPENDENCY__COMPONENT_FROM, oldComponent_from, component_from));
       }
     }
-    return component1;
+    return component_from;
   }
 
   /**
@@ -185,9 +185,9 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
    * <!-- end-user-doc -->
    * @generated
    */
-  public Interface basicGetComponent1()
+  public Interface basicGetComponent_from()
   {
-    return component1;
+    return component_from;
   }
 
   /**
@@ -195,12 +195,12 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setComponent1(Interface newComponent1)
+  public void setComponent_from(Interface newComponent_from)
   {
-    Interface oldComponent1 = component1;
-    component1 = newComponent1;
+    Interface oldComponent_from = component_from;
+    component_from = newComponent_from;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.DEPENDENCY__COMPONENT1, oldComponent1, component1));
+      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.DEPENDENCY__COMPONENT_FROM, oldComponent_from, component_from));
   }
 
   /**
@@ -208,19 +208,19 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
    * <!-- end-user-doc -->
    * @generated
    */
-  public Interface getComponent2()
+  public Interface getComponent_to()
   {
-    if (component2 != null && component2.eIsProxy())
+    if (component_to != null && component_to.eIsProxy())
     {
-      InternalEObject oldComponent2 = (InternalEObject)component2;
-      component2 = (Interface)eResolveProxy(oldComponent2);
-      if (component2 != oldComponent2)
+      InternalEObject oldComponent_to = (InternalEObject)component_to;
+      component_to = (Interface)eResolveProxy(oldComponent_to);
+      if (component_to != oldComponent_to)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompoNantesPackage.DEPENDENCY__COMPONENT2, oldComponent2, component2));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompoNantesPackage.DEPENDENCY__COMPONENT_TO, oldComponent_to, component_to));
       }
     }
-    return component2;
+    return component_to;
   }
 
   /**
@@ -228,9 +228,9 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
    * <!-- end-user-doc -->
    * @generated
    */
-  public Interface basicGetComponent2()
+  public Interface basicGetComponent_to()
   {
-    return component2;
+    return component_to;
   }
 
   /**
@@ -238,12 +238,12 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setComponent2(Interface newComponent2)
+  public void setComponent_to(Interface newComponent_to)
   {
-    Interface oldComponent2 = component2;
-    component2 = newComponent2;
+    Interface oldComponent_to = component_to;
+    component_to = newComponent_to;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.DEPENDENCY__COMPONENT2, oldComponent2, component2));
+      eNotify(new ENotificationImpl(this, Notification.SET, CompoNantesPackage.DEPENDENCY__COMPONENT_TO, oldComponent_to, component_to));
   }
 
   /**
@@ -260,12 +260,12 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
         return getType();
       case CompoNantesPackage.DEPENDENCY__NAME:
         return getName();
-      case CompoNantesPackage.DEPENDENCY__COMPONENT1:
-        if (resolve) return getComponent1();
-        return basicGetComponent1();
-      case CompoNantesPackage.DEPENDENCY__COMPONENT2:
-        if (resolve) return getComponent2();
-        return basicGetComponent2();
+      case CompoNantesPackage.DEPENDENCY__COMPONENT_FROM:
+        if (resolve) return getComponent_from();
+        return basicGetComponent_from();
+      case CompoNantesPackage.DEPENDENCY__COMPONENT_TO:
+        if (resolve) return getComponent_to();
+        return basicGetComponent_to();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -286,11 +286,11 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
       case CompoNantesPackage.DEPENDENCY__NAME:
         setName((String)newValue);
         return;
-      case CompoNantesPackage.DEPENDENCY__COMPONENT1:
-        setComponent1((Interface)newValue);
+      case CompoNantesPackage.DEPENDENCY__COMPONENT_FROM:
+        setComponent_from((Interface)newValue);
         return;
-      case CompoNantesPackage.DEPENDENCY__COMPONENT2:
-        setComponent2((Interface)newValue);
+      case CompoNantesPackage.DEPENDENCY__COMPONENT_TO:
+        setComponent_to((Interface)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -312,11 +312,11 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
       case CompoNantesPackage.DEPENDENCY__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case CompoNantesPackage.DEPENDENCY__COMPONENT1:
-        setComponent1((Interface)null);
+      case CompoNantesPackage.DEPENDENCY__COMPONENT_FROM:
+        setComponent_from((Interface)null);
         return;
-      case CompoNantesPackage.DEPENDENCY__COMPONENT2:
-        setComponent2((Interface)null);
+      case CompoNantesPackage.DEPENDENCY__COMPONENT_TO:
+        setComponent_to((Interface)null);
         return;
     }
     super.eUnset(featureID);
@@ -336,10 +336,10 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
         return type != TYPE_EDEFAULT;
       case CompoNantesPackage.DEPENDENCY__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case CompoNantesPackage.DEPENDENCY__COMPONENT1:
-        return component1 != null;
-      case CompoNantesPackage.DEPENDENCY__COMPONENT2:
-        return component2 != null;
+      case CompoNantesPackage.DEPENDENCY__COMPONENT_FROM:
+        return component_from != null;
+      case CompoNantesPackage.DEPENDENCY__COMPONENT_TO:
+        return component_to != null;
     }
     return super.eIsSet(featureID);
   }

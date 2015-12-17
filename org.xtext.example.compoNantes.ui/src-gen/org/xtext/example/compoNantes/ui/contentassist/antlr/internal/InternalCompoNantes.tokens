@@ -1,11 +1,11 @@
 '.'=26
-':'=23
 'assembly'=13
 'association'=16
 'component'=17
 'connector'=22
 'delegation'=14
 'dependency'=25
+'from'=23
 'interface'=21
 'port'=20
 'provided'=12

@@ -419,9 +419,13 @@ ruleConnector returns [EObject current=null]
 	    }
 
 )
-)	otherlv_3=':' 
+)	otherlv_3='{' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getConnectorAccess().getColonKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getConnectorAccess().getLeftCurlyBracketKeyword_3());
+    }
+	otherlv_4='from' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getConnectorAccess().getFromKeyword_4());
     }
 (
 (
@@ -431,16 +435,16 @@ ruleConnector returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getConnectorAccess().getInt1InterfaceCrossReference_4_0()); 
+	        newCompositeNode(grammarAccess.getConnectorAccess().getInt_fromInterfaceCrossReference_5_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_5='to' 
+)	otherlv_6='to' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getConnectorAccess().getToKeyword_5());
+    	newLeafNode(otherlv_6, grammarAccess.getConnectorAccess().getToKeyword_6());
     }
 (
 (
@@ -450,14 +454,18 @@ ruleConnector returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getConnectorAccess().getInt2InterfaceCrossReference_6_0()); 
+	        newCompositeNode(grammarAccess.getConnectorAccess().getInt_toInterfaceCrossReference_7_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))
+)	otherlv_8='}' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getConnectorAccess().getRightCurlyBracketKeyword_8());
+    }
+)
 ;
 
 
@@ -518,9 +526,13 @@ ruleDependency returns [EObject current=null]
 	    }
 
 )
-)	otherlv_3=':' 
+)	otherlv_3='{' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getDependencyAccess().getColonKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getDependencyAccess().getLeftCurlyBracketKeyword_3());
+    }
+	otherlv_4='from' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getDependencyAccess().getFromKeyword_4());
     }
 (
 (
@@ -530,16 +542,16 @@ ruleDependency returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getDependencyAccess().getComponent1InterfaceCrossReference_4_0()); 
+	        newCompositeNode(grammarAccess.getDependencyAccess().getComponent_fromInterfaceCrossReference_5_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_5='to' 
+)	otherlv_6='to' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getDependencyAccess().getToKeyword_5());
+    	newLeafNode(otherlv_6, grammarAccess.getDependencyAccess().getToKeyword_6());
     }
 (
 (
@@ -549,14 +561,18 @@ ruleDependency returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getDependencyAccess().getComponent2InterfaceCrossReference_6_0()); 
+	        newCompositeNode(grammarAccess.getDependencyAccess().getComponent_toInterfaceCrossReference_7_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))
+)	otherlv_8='}' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getDependencyAccess().getRightCurlyBracketKeyword_8());
+    }
+)
 ;
 
 

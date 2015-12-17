@@ -74,7 +74,7 @@ public class CompoNantesSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Constraint:
-	 *     (type=ConnectorType name=ID int1=[Interface|QualifiedName] int2=[Interface|QualifiedName])
+	 *     (type=ConnectorType name=ID int_from=[Interface|QualifiedName] int_to=[Interface|QualifiedName])
 	 */
 	protected void sequence_Connector(EObject context, Connector semanticObject) {
 		if(errorAcceptor != null) {
@@ -82,24 +82,24 @@ public class CompoNantesSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.CONNECTOR__TYPE));
 			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.CONNECTOR__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.CONNECTOR__NAME));
-			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.CONNECTOR__INT1) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.CONNECTOR__INT1));
-			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.CONNECTOR__INT2) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.CONNECTOR__INT2));
+			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.CONNECTOR__INT_FROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.CONNECTOR__INT_FROM));
+			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.CONNECTOR__INT_TO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.CONNECTOR__INT_TO));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getConnectorAccess().getTypeConnectorTypeEnumRuleCall_1_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getConnectorAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getConnectorAccess().getInt1InterfaceQualifiedNameParserRuleCall_4_0_1(), semanticObject.getInt1());
-		feeder.accept(grammarAccess.getConnectorAccess().getInt2InterfaceQualifiedNameParserRuleCall_6_0_1(), semanticObject.getInt2());
+		feeder.accept(grammarAccess.getConnectorAccess().getInt_fromInterfaceQualifiedNameParserRuleCall_5_0_1(), semanticObject.getInt_from());
+		feeder.accept(grammarAccess.getConnectorAccess().getInt_toInterfaceQualifiedNameParserRuleCall_7_0_1(), semanticObject.getInt_to());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (type=DependencyType name=ID component1=[Interface|QualifiedName] component2=[Interface|QualifiedName])
+	 *     (type=DependencyType name=ID component_from=[Interface|QualifiedName] component_to=[Interface|QualifiedName])
 	 */
 	protected void sequence_Dependency(EObject context, Dependency semanticObject) {
 		if(errorAcceptor != null) {
@@ -107,17 +107,17 @@ public class CompoNantesSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__TYPE));
 			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__NAME));
-			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT1) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT1));
-			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT2) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT2));
+			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT_FROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT_FROM));
+			if(transientValues.isValueTransient(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT_TO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompoNantesPackage.Literals.DEPENDENCY__COMPONENT_TO));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getDependencyAccess().getTypeDependencyTypeEnumRuleCall_1_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getDependencyAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDependencyAccess().getComponent1InterfaceQualifiedNameParserRuleCall_4_0_1(), semanticObject.getComponent1());
-		feeder.accept(grammarAccess.getDependencyAccess().getComponent2InterfaceQualifiedNameParserRuleCall_6_0_1(), semanticObject.getComponent2());
+		feeder.accept(grammarAccess.getDependencyAccess().getComponent_fromInterfaceQualifiedNameParserRuleCall_5_0_1(), semanticObject.getComponent_from());
+		feeder.accept(grammarAccess.getDependencyAccess().getComponent_toInterfaceQualifiedNameParserRuleCall_7_0_1(), semanticObject.getComponent_to());
 		feeder.finish();
 	}
 	

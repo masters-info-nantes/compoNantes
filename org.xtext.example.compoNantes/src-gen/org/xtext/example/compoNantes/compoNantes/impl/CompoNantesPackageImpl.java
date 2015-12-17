@@ -341,7 +341,7 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConnector_Int1()
+  public EReference getConnector_Int_from()
   {
     return (EReference)connectorEClass.getEStructuralFeatures().get(2);
   }
@@ -351,7 +351,7 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConnector_Int2()
+  public EReference getConnector_Int_to()
   {
     return (EReference)connectorEClass.getEStructuralFeatures().get(3);
   }
@@ -391,7 +391,7 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDependency_Component1()
+  public EReference getDependency_Component_from()
   {
     return (EReference)dependencyEClass.getEStructuralFeatures().get(2);
   }
@@ -401,7 +401,7 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDependency_Component2()
+  public EReference getDependency_Component_to()
   {
     return (EReference)dependencyEClass.getEStructuralFeatures().get(3);
   }
@@ -488,14 +488,14 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
     connectorEClass = createEClass(CONNECTOR);
     createEAttribute(connectorEClass, CONNECTOR__TYPE);
     createEAttribute(connectorEClass, CONNECTOR__NAME);
-    createEReference(connectorEClass, CONNECTOR__INT1);
-    createEReference(connectorEClass, CONNECTOR__INT2);
+    createEReference(connectorEClass, CONNECTOR__INT_FROM);
+    createEReference(connectorEClass, CONNECTOR__INT_TO);
 
     dependencyEClass = createEClass(DEPENDENCY);
     createEAttribute(dependencyEClass, DEPENDENCY__TYPE);
     createEAttribute(dependencyEClass, DEPENDENCY__NAME);
-    createEReference(dependencyEClass, DEPENDENCY__COMPONENT1);
-    createEReference(dependencyEClass, DEPENDENCY__COMPONENT2);
+    createEReference(dependencyEClass, DEPENDENCY__COMPONENT_FROM);
+    createEReference(dependencyEClass, DEPENDENCY__COMPONENT_TO);
 
     // Create enums
     interfaceTypeEEnum = createEEnum(INTERFACE_TYPE);
@@ -556,14 +556,14 @@ public class CompoNantesPackageImpl extends EPackageImpl implements CompoNantesP
     initEClass(connectorEClass, Connector.class, "Connector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConnector_Type(), this.getConnectorType(), "type", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConnector_Name(), ecorePackage.getEString(), "name", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConnector_Int1(), this.getInterface(), null, "int1", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConnector_Int2(), this.getInterface(), null, "int2", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConnector_Int_from(), this.getInterface(), null, "int_from", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConnector_Int_to(), this.getInterface(), null, "int_to", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dependencyEClass, Dependency.class, "Dependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDependency_Type(), this.getDependencyType(), "type", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDependency_Name(), ecorePackage.getEString(), "name", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDependency_Component1(), this.getInterface(), null, "component1", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDependency_Component2(), this.getInterface(), null, "component2", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDependency_Component_from(), this.getInterface(), null, "component_from", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDependency_Component_to(), this.getInterface(), null, "component_to", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(interfaceTypeEEnum, InterfaceType.class, "InterfaceType");
